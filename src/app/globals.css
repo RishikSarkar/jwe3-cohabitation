@@ -135,7 +135,8 @@ body {
   }
 
   .sort-dropdown-option:hover,
-  .sort-dropdown-option.is-active {
+  .sort-dropdown-option.is-active,
+  .sort-dropdown-option.is-focused {
     background-color: rgba(var(--brand), 0.12);
     color: rgb(var(--brand));
   }
@@ -392,8 +393,16 @@ body {
     transition: color 0.2s ease-in-out;
   }
 
+  .dino-delta li[data-blocked="true"] {
+    color: rgb(var(--red));
+  }
+
   .dino-row:hover .dino-delta li[data-positive="true"] {
     color: rgb(var(--amber));
+  }
+
+  .dino-row:hover .dino-delta li[data-blocked="true"] {
+    color: rgb(var(--orange));
   }
 
   .dino-row .count-input {
@@ -616,13 +625,47 @@ body {
 
   .count-input {
     @apply text-center text-base font-semibold;
+    -moz-appearance: textfield;
+    appearance: textfield;
     background-color: rgba(var(--black), 0.5);
     border: 1px solid rgba(var(--brand), 0.3);
     border-radius: 4px;
     color: rgb(var(--offwhite));
+    color-scheme: dark;
     font-weight: 500;
     width: 3rem;
     padding: 6px 4px;
+  }
+
+  .sex-count-badge {
+    align-items: center;
+    background: rgba(var(--brand), 0.12);
+    border: 1px solid rgba(var(--brand), 0.3);
+    border-radius: 9999px;
+    color: rgb(var(--brand));
+    display: inline-flex;
+    flex-shrink: 0;
+    font-family: var(--font-chakra), system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    height: 1.35rem;
+    justify-content: center;
+    line-height: 1;
+    text-transform: lowercase;
+    width: 1.35rem;
+  }
+
+  .sex-count-badge-f {
+    background: rgba(var(--sky), 0.12);
+    border-color: rgba(var(--sky), 0.35);
+    color: rgb(var(--sky));
+  }
+
+  .count-input::-webkit-inner-spin-button,
+  .count-input::-webkit-outer-spin-button {
+    height: 1.35rem;
+    margin-left: 2px;
+    opacity: 1;
   }
 
   .terrain-bar-track {
@@ -695,5 +738,115 @@ body {
     background-color: rgba(var(--red), 0.15);
     border-color: rgb(var(--red));
     color: rgb(var(--red));
+  }
+
+  .compat-tooltip {
+    display: inline-flex;
+    position: relative;
+  }
+
+  .compat-tooltip-trigger {
+    align-items: center;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: inherit;
+    display: inline-flex;
+    font: inherit;
+    gap: 0.65rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .compat-tooltip-trigger:focus-visible {
+    border-radius: 0.25rem;
+    outline: 2px solid rgb(var(--brand));
+    outline-offset: 3px;
+  }
+
+  .compat-tooltip-panel-floating {
+    animation: compat-tooltip-in 0.16s ease-out;
+    border-radius: var(--border-radius-inner);
+    color: rgb(var(--offwhite));
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.25;
+    overflow: hidden;
+    padding: 0.5rem 0.65rem;
+    pointer-events: none;
+  }
+
+  .compat-tooltip-panel-floating::before {
+    border: 7px solid transparent;
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .compat-tooltip-panel-left::before {
+    border-left-color: var(--tooltip-arrow, rgb(var(--darkblue)));
+    right: -14px;
+  }
+
+  .compat-tooltip-panel-right::before {
+    border-right-color: var(--tooltip-arrow, rgb(var(--darkblue)));
+    left: -14px;
+  }
+
+  @keyframes compat-tooltip-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .compat-tooltip-metrics {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .compat-tooltip-metrics li {
+    align-items: center;
+    border-radius: calc(var(--border-radius-inner) / 2);
+    display: flex;
+    gap: 0.75rem;
+    justify-content: space-between;
+    line-height: 1.2;
+    padding: 0.28rem 0.35rem;
+  }
+
+  .compat-tooltip-metrics li:last-child {
+    padding-bottom: 0.28rem;
+  }
+
+  .compat-tooltip-metrics li:nth-child(odd) {
+    background: rgba(var(--black), 0.18);
+  }
+
+  .compat-tooltip-metric-label {
+    color: rgba(var(--offwhite), 0.68);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .compat-tooltip-metric-weight {
+    color: rgba(var(--offwhite), 0.35);
+    font-size: 0.62rem;
+    font-weight: 700;
+    margin-left: 0.35rem;
+  }
+
+  .compat-tooltip-metric-value {
+    font-family: var(--font-chakra), system-ui, sans-serif;
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    min-width: 2ch;
+    text-align: right;
   }
 }

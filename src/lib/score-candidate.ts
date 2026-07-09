@@ -15,7 +15,7 @@ import {
   SCORE_WEIGHTS,
   RECOMMENDED_SORT_WEIGHTS,
 } from "@/constants/scoring";
-import { isBlockedPair, resolveCohabitation } from "./compatibility";
+import { isBlockedPair, resolveCohabitation, describeCohabBlock } from "./compatibility";
 import {
   buildEnclosureProfile,
   dietCompatibilityScore,
@@ -28,6 +28,7 @@ import {
   habitatToVector,
   sharedKeyCoverage,
 } from "./vectors";
+import { buildFeederDelta, summarizeFeederDelta } from "./feeder-delta";
 import { matchesDinoSearch } from "./search";
 
 function tierFromScore(
@@ -36,7 +37,8 @@ function tierFromScore(
   inEnclosure: boolean,
 ): CompatibilityTier {
   if (inEnclosure) return "Excellent";
-  if (blocked || score === null || score <= 0) return "Blocked";
+  if (blocked || score === null) return "Blocked";
+  if (score <= 0) return "Poor";
   if (score >= 80) return "Excellent";
   if (score >= 60) return "Good";
   if (score >= 40) return "Risky";
@@ -63,7 +65,7 @@ function cohabitationAggregate(
   for (const member of members) {
     if (isBlockedPair(member, candidate)) {
       blocked = true;
-      notes.push(`${member.name} ↔ ${candidate.name}: incompatible`);
+      notes.push(describeCohabBlock(member, candidate));
       continue;
     }
     const mr = resolveCohabitation(member, candidate);
@@ -71,10 +73,12 @@ function cohabitationAggregate(
     if (mr === "liked") {
       notes.push(`${member.name} likes ${candidate.name}`);
       total += COHAB_SCORE.memberLikesCandidate;
-    } else if (cr === "liked") {
+    }
+    if (cr === "liked") {
       notes.push(`${candidate.name} likes ${member.name}`);
       total += COHAB_SCORE.candidateLikesMember;
-    } else {
+    }
+    if (mr !== "liked" && cr !== "liked") {
       notes.push(`Neutral with ${member.name} (−comfort)`);
       total -= COHAB_SCORE.neutralPenalty;
     }
@@ -105,6 +109,7 @@ function scoreOne(
         terrain: "Already in enclosure",
         newTerrainKeys: [],
         diet: "Current feeder set",
+        feederNotes: [],
         newFeedingTypes: [],
         socialNotes: [],
         space: "-",
@@ -124,7 +129,7 @@ function scoreOne(
   const isLagoon = state.type === "Lagoon";
 
   const cohab = cohabitationAggregate(profile.members, candidate);
-  let blocked = cohab.blocked;
+  const blocked = cohab.blocked;
 
   const compromiseVec = habitatToVector(profile.envelope.compromise);
   const candidateVec = habitatToVector(candidate.habitat);
@@ -151,8 +156,6 @@ function scoreOne(
         profile.members,
       );
 
-  if (diet <= 0 && !isLagoon) blocked = true;
-
   const space = spaceHeadroomScore(profile, candidate, state);
 
   let sizeHarmony = 50;
@@ -175,9 +178,11 @@ function scoreOne(
   const finalScore = blocked ? 0 : Math.round(composite);
 
   const { newKeys } = envelopeWidenDelta(profile.envelope, candidate);
-  const newFeeding = profile.feedingTypes.has(candidate.feedingType)
-    ? []
-    : [candidate.feedingType];
+  const { notes: feederNotes, newFeedingTypes: newFeeding } = buildFeederDelta(
+    candidate,
+    profile,
+    newKeys,
+  );
 
   let spaceLabel = `Fits ${state.size} enclosure`;
   const growth = 1 + (candidate.spaceGrowthPercent ?? 25) / 100;
@@ -199,16 +204,11 @@ function scoreOne(
           ? "No new terrain types needed"
           : `+ ${newKeys.map((k) => HABITAT_LABELS[k]).join(", ")} required`,
       newTerrainKeys: newKeys,
-      diet:
-        newFeeding.length === 0
-          ? "Same feeders"
-          : `+ ${newFeeding.join(", ")} needed`,
+      diet: summarizeFeederDelta(feederNotes),
+      feederNotes,
       newFeedingTypes: newFeeding,
       socialNotes: cohab.notes,
       space: spaceLabel,
-      appealNote: candidate.appeal
-        ? `Base appeal ${candidate.appeal.toLocaleString()}`
-        : undefined,
     },
     breakdown: {
       habitatCosine,
@@ -249,6 +249,7 @@ export function scoreAllDinosaurs(
         terrain: "-",
         newTerrainKeys: [],
         diet: "-",
+        feederNotes: [],
         newFeedingTypes: [],
         socialNotes: [],
         space: "-",

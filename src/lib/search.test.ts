@@ -80,4 +80,17 @@ describe("matchesDinoSearch", () => {
     expect(matchesDinoSearch("", trike)).toBe(true);
     expect(matchesDinoSearch("   ", trike)).toBe(true);
   });
+
+  it("matches regex against id and family, not only name", () => {
+    const utah = dino({
+      name: "Utahraptor",
+      id: "utahraptor",
+      family: "Carnivore",
+      threatClass: "Carnivore",
+    });
+    expect(matchesDinoSearch("/utah/", utah)).toBe(true);
+    expect(matchesDinoSearch("/carnivore/", utah)).toBe(true);
+    expect(matchesDinoSearch("/raptor$/", utah)).toBe(true);
+    expect(matchesDinoSearch("/ceratops/", utah)).toBe(false);
+  });
 });

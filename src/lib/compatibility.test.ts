@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { isBlockedPair, resolveCohabitation } from "@/lib/compatibility";
+import {
+  describeCohabBlock,
+  isBlockedPair,
+  resolveCohabitation,
+} from "@/lib/compatibility";
 import { cosineSimilarity, habitatToVector } from "@/lib/vectors";
 import type { Dinosaur } from "@/types/dinosaur";
 
@@ -39,6 +43,9 @@ describe("resolveCohabitation", () => {
       },
     });
     expect(isBlockedPair(tapejara, trope)).toBe(true);
+    expect(describeCohabBlock(tapejara, trope)).toBe(
+      "Tapejara and Tropeognathus dislike each other",
+    );
   });
 
   it("blocks when one species dislikes the other", () => {
@@ -70,6 +77,9 @@ describe("resolveCohabitation", () => {
     });
     expect(resolveCohabitation(deino, acro)).toBe("disliked");
     expect(isBlockedPair(deino, acro)).toBe(true);
+    expect(describeCohabBlock(deino, acro)).toBe(
+      "Deinocheirus dislikes Acrocanthosaurus",
+    );
     expect(isBlockedPair(acro, herrera)).toBe(false);
   });
 

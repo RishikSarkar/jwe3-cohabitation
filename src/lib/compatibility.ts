@@ -182,6 +182,23 @@ export function isBlockedPair(a: Dinosaur, b: Dinosaur): boolean {
   );
 }
 
+/** One-line social block reason for list UI (per member ↔ candidate pair). */
+export function describeCohabBlock(a: Dinosaur, b: Dinosaur): string {
+  const aDislikesB = resolveCohabitation(a, b) === "disliked";
+  const bDislikesA = resolveCohabitation(b, a) === "disliked";
+
+  if (aDislikesB && bDislikesA) {
+    return `${a.name} and ${b.name} dislike each other`;
+  }
+  if (aDislikesB) {
+    return `${a.name} dislikes ${b.name}`;
+  }
+  if (bDislikesA) {
+    return `${b.name} dislikes ${a.name}`;
+  }
+  return `${a.name} and ${b.name} cannot cohabit`;
+}
+
 export function cohabitationScore(from: Dinosaur, to: Dinosaur): number {
   const result = resolveCohabitation(from, to);
   if (result === "liked") return 35;

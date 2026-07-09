@@ -146,14 +146,24 @@ export function matchesDinoSearch(
   const q = query.trim();
   if (!q) return true;
 
-  const { name, id, family = "", threatClass, enclosureType } = fields;
+  const { id, family = "", threatClass, enclosureType } = fields;
 
   if (q.startsWith("/") && q.lastIndexOf("/") > 0) {
     const last = q.lastIndexOf("/");
     const pattern = q.slice(1, last);
     const flags = q.slice(last + 1) || "i";
     try {
-      return new RegExp(pattern, flags).test(name);
+      const re = new RegExp(pattern, flags);
+      const { name, id, family = "", threatClass = "", enclosureType = "" } =
+        fields;
+      return (
+        re.test(name) ||
+        re.test(id) ||
+        re.test(family) ||
+        re.test(threatClass) ||
+        re.test(enclosureType) ||
+        re.test(normalizeDinoSearchTarget(fields))
+      );
     } catch {
       /* fall through */
     }

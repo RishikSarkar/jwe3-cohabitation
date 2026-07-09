@@ -12,5 +12,5 @@ export function openJwe3Dinosaur(id: string): void {
 
 export function isInteractiveRowTarget(target: EventTarget | null): boolean {
   if (!(target instanceof HTMLElement)) return false;
-  return Boolean(target.closest("button, input, label, a"));
+  return Boolean(target.closest("button, input, label, a, .compat-tooltip"));
 }

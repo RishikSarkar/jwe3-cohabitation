@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import dinosaursData from "@/data/dinosaurs.json";
 import { EnclosureBox } from "@/components/EnclosureBox";
@@ -9,10 +9,24 @@ import { SortSelect } from "@/components/SortSelect";
 import { TerrainMixPanel } from "@/components/TerrainMixPanel";
 import { buildEnclosureProfile } from "@/lib/enclosure";
 import { scoreAllDinosaurs, sortScoredRows } from "@/lib/score-candidate";
-import { enclosureToUrl, paramsToEnclosure } from "@/lib/url-state";
+import {
+  enclosureStatesEqual,
+  enclosureToUrl,
+  paramsToEnclosure,
+  sanitizeEnclosureState,
+} from "@/lib/url-state";
 import type { Dinosaur, EnclosureState, SortMode } from "@/types/dinosaur";
 
 const allDinos = dinosaursData as Dinosaur[];
+
+function sortLabelFor(mode: SortMode, hasEnclosure: boolean): string {
+  if (mode === "name") return "name";
+  if (mode === "appeal") return "appeal";
+  if (!hasEnclosure && mode === "recommended") return "appeal";
+  if (mode === "recommended") return "recommended";
+  if (mode === "compatibility" && hasEnclosure) return "compatibility";
+  return hasEnclosure ? "compatibility" : "name";
+}
 
 export function EnclosureOptimizer() {
   const router = useRouter();
@@ -21,24 +35,37 @@ export function EnclosureOptimizer() {
   const [showBlocked, setShowBlocked] = useState(false);
   const [sortMode, setSortMode] = useState<SortMode>("compatibility");
 
-  const state = useMemo(
+  const rawState = useMemo(
     () => paramsToEnclosure(searchParams),
     [searchParams],
   );
 
+  const state = useMemo(
+    () => sanitizeEnclosureState(rawState, allDinos),
+    [rawState],
+  );
+
+  useEffect(() => {
+    if (!enclosureStatesEqual(rawState, state)) {
+      router.replace(enclosureToUrl(state), { scroll: false });
+    }
+  }, [rawState, state, router]);
+
   const onChange = useCallback(
     (next: EnclosureState) => {
-      router.replace(enclosureToUrl(next), { scroll: false });
+      router.replace(enclosureToUrl(sanitizeEnclosureState(next, allDinos)), {
+        scroll: false,
+      });
     },
     [router],
   );
-
-  const hasEnclosure = state.members.some((m) => m.males + m.females > 0);
 
   const profile = useMemo(
     () => buildEnclosureProfile(state, allDinos),
     [state],
   );
+
+  const hasEnclosure = (profile?.members.length ?? 0) > 0;
 
   const allScored = useMemo(
     () =>
@@ -59,14 +86,7 @@ export function EnclosureOptimizer() {
     return sortScoredRows(candidates, sortMode, hasEnclosure);
   }, [allScored, sortMode, hasEnclosure]);
 
-  const sortLabel =
-    sortMode === "compatibility" && hasEnclosure
-      ? "compatibility"
-      : sortMode === "recommended" && hasEnclosure
-        ? "recommended"
-        : sortMode === "appeal"
-          ? "appeal"
-          : "name";
+  const sortLabel = sortLabelFor(sortMode, hasEnclosure);
 
   function addFromList(dinoId: string) {
     if (state.members.some((m) => m.dinosaurId === dinoId)) return;
@@ -79,16 +99,22 @@ export function EnclosureOptimizer() {
     });
   }
 
+  const terrainAside = profile ? (
+    <div className="panel p-6 sm:p-8">
+      <TerrainMixPanel profile={profile} />
+    </div>
+  ) : null;
+
   return (
-    <div className="mx-auto max-w-4xl px-4 py-10 md:px-8">
-      <header className="mb-12 text-center">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+      <header className="mb-10 text-center lg:mb-12">
         <p className="text-sm font-bold uppercase tracking-[0.35em] text-jwe-brand/70">
           Jurassic World Evolution 3
         </p>
         <h1 className="title-jwe mt-4 text-3xl md:text-4xl">
           <span>Enclosure Optimizer</span>
         </h1>
-        <p className="mx-auto mt-5 max-w-xl text-base text-jwe-offwhite/60">
+        <p className="mx-auto mt-5 max-w-2xl text-base text-jwe-offwhite/60">
           Stock your enclosure, then browse candidates ranked by how little you
           would need to change terrain or feeders to add each one.
         </p>
@@ -102,11 +128,7 @@ export function EnclosureOptimizer() {
           onChange={onChange}
         />
 
-        {profile && (
-          <div className="panel p-6 sm:p-8">
-            <TerrainMixPanel profile={profile} />
-          </div>
-        )}
+        {terrainAside}
 
         <section className="panel p-6 sm:p-8">
           <div className="mb-6 flex flex-col gap-4 border-b border-jwe-brand/10 pb-5 sm:flex-row sm:items-center sm:justify-between">
@@ -128,6 +150,7 @@ export function EnclosureOptimizer() {
               value={listSearch}
               onChange={(e) => setListSearch(e.target.value)}
               className="input-jwe min-w-0 flex-1"
+              aria-label="Filter species list"
             />
             <label className="flex shrink-0 cursor-pointer select-none items-center gap-2 text-xs font-semibold uppercase tracking-wide text-jwe-offwhite/45">
               <input
@@ -149,11 +172,12 @@ export function EnclosureOptimizer() {
                 candidateMetrics={
                   hasEnclosure
                     ? "full"
-                    : sortMode === "appeal"
+                    : sortMode === "appeal" || sortMode === "recommended"
                       ? "appeal-only"
                       : "none"
                 }
                 onAdd={() => addFromList(row.dinosaur.id)}
+                enclosureType={state.type}
               />
             ))}
             {rows.length === 0 && (
@@ -165,17 +189,8 @@ export function EnclosureOptimizer() {
         </section>
       </div>
 
-      <footer className="mt-20 border-t border-jwe-brand/10 pt-8 text-center text-sm text-jwe-offwhite/35">
-        Fan-made JWE3 tool. Data from community habitat planners. Images from{" "}
-        <a
-          href="https://www.jurassicworldevolution.com/en-US/3/dinosaurs"
-          className="text-jwe-brand/70 hover:text-jwe-brand hover:underline"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Jurassic World Evolution 3
-        </a>
-        . Not affiliated with Frontier Developments.
+      <footer className="mt-16 border-t border-jwe-brand/10 pt-6 text-center text-xs text-jwe-offwhite/35 lg:mt-20">
+        Unofficial fan tool · Not affiliated with Frontier Developments
       </footer>
     </div>
   );

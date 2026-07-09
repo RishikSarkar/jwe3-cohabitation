@@ -7,6 +7,7 @@ import {
   jwe3DinosaurUrl,
   openJwe3Dinosaur,
 } from "@/lib/jwe3-url";
+import { CompatibilityTooltip } from "./CompatibilityTooltip";
 import { DinoImage } from "./DinoImage";
 
 const tierClass: Record<string, string> = {
@@ -25,6 +26,14 @@ const scoreTierClass: Record<string, string> = {
   Blocked: "tier-score-blocked",
 };
 
+function SexCountBadge({ sex }: { sex: "m" | "f" }) {
+  return (
+    <span className={`sex-count-badge sex-count-badge-${sex}`} aria-hidden>
+      {sex}
+    </span>
+  );
+}
+
 type Props = {
   row: ScoredCandidate;
   mode?: "candidate" | "member";
@@ -35,6 +44,8 @@ type Props = {
   showAdd?: boolean;
   /** What to show in the candidate column (list rows only). */
   candidateMetrics?: "none" | "appeal-only" | "full";
+  /** Land / Aviary / Lagoon — for compatibility score tooltip. */
+  enclosureType?: ScoredCandidate["dinosaur"]["enclosureType"];
 };
 
 export function DinosaurListRow({
@@ -46,14 +57,15 @@ export function DinosaurListRow({
   onUpdateMember,
   showAdd,
   candidateMetrics = "none",
+  enclosureType,
 }: Props) {
-  const { dinosaur, score, tier, delta, blocked } = row;
+  const { dinosaur, score, tier, delta, blocked, breakdown } = row;
   const isMember = mode === "member";
   const showCompatibility =
     candidateMetrics === "full";
   const showAppeal =
     candidateMetrics === "full" || candidateMetrics === "appeal-only";
-  const notes = meaningfulDeltaNotes(delta);
+  const notes = meaningfulDeltaNotes(delta, dinosaur.name);
   const officialUrl = jwe3DinosaurUrl(dinosaur.id);
 
   function handleRowClick(e: React.MouseEvent<HTMLElement>) {
@@ -95,6 +107,7 @@ export function DinosaurListRow({
                 <li
                   key={line.text}
                   data-positive={line.positive ? "true" : undefined}
+                  data-blocked={line.blocked ? "true" : undefined}
                 >
                   {line.text}
                 </li>
@@ -106,13 +119,17 @@ export function DinosaurListRow({
         <div className="dino-row-actions">
           {isMember && member ? (
             <div className="flex flex-wrap items-center gap-4">
-              <label className="flex items-center gap-2 text-sm font-semibold uppercase text-jwe-offwhite/70">
-                M
+              <label
+                className="flex items-center gap-2"
+                aria-label="Males"
+              >
+                <SexCountBadge sex="m" />
                 <input
                   type="number"
                   min={0}
                   max={99}
                   value={member.males}
+                  aria-label="Male count"
                   onChange={(e) =>
                     onUpdateMember?.({
                       males: Math.max(0, parseInt(e.target.value, 10) || 0),
@@ -121,13 +138,17 @@ export function DinosaurListRow({
                   className="count-input"
                 />
               </label>
-              <label className="flex items-center gap-2 text-sm font-semibold uppercase text-jwe-offwhite/70">
-                F
+              <label
+                className="flex items-center gap-2"
+                aria-label="Females"
+              >
+                <SexCountBadge sex="f" />
                 <input
                   type="number"
                   min={0}
                   max={99}
                   value={member.females}
+                  aria-label="Female count"
                   onChange={(e) =>
                     onUpdateMember?.({
                       females: Math.max(0, parseInt(e.target.value, 10) || 0),
@@ -149,16 +170,16 @@ export function DinosaurListRow({
               {(showCompatibility || showAppeal) && (
                 <div className="dino-row-stats">
                   {showCompatibility && (
-                    <div className="dino-row-compat">
-                      <span
-                        className={`font-display text-3xl font-bold leading-none ${scoreTierClass[tier] ?? "tier-score-excellent"}`}
-                      >
-                        {score ?? "-"}
-                      </span>
-                      <span className={`tier-badge ${tierClass[tier] ?? ""}`}>
-                        {tier}
-                      </span>
-                    </div>
+                    <CompatibilityTooltip
+                      score={score}
+                      tier={tier}
+                      scoreClassName={
+                        scoreTierClass[tier] ?? "tier-score-excellent"
+                      }
+                      tierClassName={tierClass[tier] ?? ""}
+                      breakdown={breakdown}
+                      enclosureType={enclosureType ?? dinosaur.enclosureType}
+                    />
                   )}
                   {showAppeal && (
                     <p

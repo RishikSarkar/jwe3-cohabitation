@@ -92,14 +92,20 @@ export type CompatibilityTier =
   | "Poor"
   | "Blocked";
 
+export type FeederDeltaNote = {
+  text: string;
+  positive?: boolean;
+};
+
 export type CandidateDelta = {
   terrain: string;
   newTerrainKeys: HabitatKey[];
+  /** @deprecated Use feederNotes for display */
   diet: string;
+  feederNotes: FeederDeltaNote[];
   newFeedingTypes: string[];
   socialNotes: string[];
   space: string;
-  appealNote?: string;
 };
 
 export type ScoredCandidate = {

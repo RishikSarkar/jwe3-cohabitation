@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import dinosaurs from "@/data/dinosaurs.json";
+import { meaningfulDeltaNotes } from "@/lib/delta-notes";
 import { scoreAllDinosaurs, sortScoredRows } from "@/lib/score-candidate";
 import type { Dinosaur, EnclosureState, ScoredCandidate } from "@/types/dinosaur";
 
@@ -53,6 +54,7 @@ describe("scoreAllDinosaurs", () => {
         terrain: "-",
         newTerrainKeys: [],
         diet: "-",
+        feederNotes: [],
         newFeedingTypes: [],
         socialNotes: [],
         space: "-",
@@ -104,6 +106,7 @@ describe("scoreAllDinosaurs", () => {
         terrain: "-",
         newTerrainKeys: [],
         diet: "-",
+        feederNotes: [],
         newFeedingTypes: [],
         socialNotes: [],
         space: "-",
@@ -121,5 +124,50 @@ describe("scoreAllDinosaurs", () => {
     const rows = [row(dryo, 60), row(trike, 80)];
     const sorted = sortScoredRows(rows, "recommended", true);
     expect(sorted[0]?.dinosaur.id).toBe("triceratops");
+  });
+
+  it("records mutual likes in both directions for ankylodocus and diplodocus", () => {
+    const state: EnclosureState = {
+      type: "Land",
+      size: "Standard",
+      members: [{ dinosaurId: "ankylodocus", males: 0, females: 1 }],
+    };
+    const diplo = scoreAllDinosaurs(state, all).find(
+      (r) => r.dinosaur.id === "diplodocus",
+    );
+    expect(diplo?.delta.socialNotes).toEqual(
+      expect.arrayContaining([
+        "Ankylodocus likes Diplodocus",
+        "Diplodocus likes Ankylodocus",
+      ]),
+    );
+
+    const notes = meaningfulDeltaNotes(diplo!.delta, "Diplodocus");
+    expect(notes.some((n) => n.text === "Mutual like with Ankylodocus")).toBe(
+      true,
+    );
+    expect(notes.some((n) => n.text === "Shared Tall Fruit paleobotany")).toBe(
+      true,
+    );
+    expect(notes.some((n) => n.text === "No new feeder type")).toBe(false);
+  });
+
+  it("penalizes carnivores in herbivore enclosures without a social block", () => {
+    const state: EnclosureState = {
+      type: "Land",
+      size: "Standard",
+      members: [{ dinosaurId: "ankylodocus", males: 0, females: 1 }],
+    };
+    const velo = scoreAllDinosaurs(state, all, { showBlocked: true }).find(
+      (r) => r.dinosaur.id === "velociraptor",
+    );
+    expect(velo?.blocked).toBe(false);
+    expect(velo?.tier).not.toBe("Blocked");
+    expect(velo?.score).toBeGreaterThan(0);
+    expect(velo?.delta.diet).toBe("+ Carnivore feeder needed");
+    expect(velo?.delta.feederNotes).toEqual([
+      { text: "+ Carnivore feeder needed" },
+    ]);
+    expect(velo?.breakdown.dietCompatibility).toBe(0);
   });
 });
