@@ -3,7 +3,11 @@ import type { CandidateDelta } from "@/types/dinosaur";
 export type DeltaNote = {
   text: string;
   positive?: boolean;
-  blocked?: boolean;
+  incompatible?: boolean;
+  /** Prefix before dinosaur names when using truncated list UI. */
+  label?: string;
+  /** Full name list for truncated social notes. */
+  names?: string[];
 };
 
 function isDislikeNote(note: string): boolean {
@@ -11,16 +15,26 @@ function isDislikeNote(note: string): boolean {
 }
 
 function isSpaceWarning(space: string): boolean {
-  return (
-    space.startsWith("May need") ||
-    space.startsWith("Tight fit") ||
-    space.toLowerCase().includes("larger enclosure")
-  );
+  return space.startsWith("Adds ");
 }
 
-function formatNameList(names: string[]): string {
-  if (names.length <= 3) return names.join(", ");
-  return `${names.slice(0, 3).join(", ")} +${names.length - 3} more`;
+function buildNameListNote(
+  label: string,
+  names: string[],
+  flags: Pick<DeltaNote, "positive" | "incompatible"> = {},
+): DeltaNote {
+  if (names.length === 0) {
+    return { text: label.trim(), ...flags };
+  }
+  if (names.length === 1) {
+    return { text: `${label} ${names[0]}`, ...flags };
+  }
+  return {
+    text: `${label} ${names[0]} +${names.length - 1} more`,
+    label,
+    names,
+    ...flags,
+  };
 }
 
 function otherParty(
@@ -33,7 +47,7 @@ function otherParty(
   return null;
 }
 
-function consolidateSocialNotes(
+export function consolidateSocialNotes(
   socialNotes: string[],
   candidateName: string,
 ): DeltaNote[] {
@@ -42,8 +56,15 @@ function consolidateSocialNotes(
   const dislikedBy: string[] = [];
   const dislikes: string[] = [];
   const mutualDislikes: string[] = [];
+  const discomfortWith: string[] = [];
 
   for (const note of socialNotes) {
+    const discomfort = note.match(/^Cohabitation discomfort with (.+)$/i);
+    if (discomfort) {
+      discomfortWith.push(discomfort[1]!);
+      continue;
+    }
+
     const mutualDislike = note.match(/^(.+?) and (.+?) dislike each other$/i);
     if (mutualDislike) {
       const other = otherParty(
@@ -81,37 +102,33 @@ function consolidateSocialNotes(
   const lines: DeltaNote[] = [];
 
   if (mutualDislikes.length > 0) {
-    lines.push({
-      text: `Mutual dislike with ${formatNameList(mutualDislikes)}`,
-      blocked: true,
-    });
+    lines.push(
+      buildNameListNote("Mutual dislike with", mutualDislikes, {
+        incompatible: true,
+      }),
+    );
   }
   if (dislikedBy.length > 0) {
-    lines.push({
-      text: `Disliked by ${formatNameList(dislikedBy)}`,
-      blocked: true,
-    });
+    lines.push(
+      buildNameListNote("Disliked by", dislikedBy, { incompatible: true }),
+    );
   }
   if (dislikes.length > 0) {
-    lines.push({
-      text: `Dislikes ${formatNameList(dislikes)}`,
-      blocked: true,
-    });
+    lines.push(buildNameListNote("Dislikes", dislikes, { incompatible: true }));
+  }
+  if (discomfortWith.length > 0) {
+    lines.push(buildNameListNote("Cohabitation discomfort with", discomfortWith));
   }
   if (mutualLikes.length > 0) {
-    lines.push({
-      text: `Mutual like with ${formatNameList(mutualLikes)}`,
-      positive: true,
-    });
+    lines.push(
+      buildNameListNote("Mutual like with", mutualLikes, { positive: true }),
+    );
   }
   if (likedBy.length > 0) {
-    lines.push({
-      text: `Liked by ${formatNameList(likedBy)}`,
-      positive: true,
-    });
+    lines.push(buildNameListNote("Liked by", likedBy, { positive: true }));
   }
   if (likes.length > 0) {
-    lines.push({ text: `Likes ${formatNameList(likes)}`, positive: true });
+    lines.push(buildNameListNote("Likes", likes, { positive: true }));
   }
 
   return lines;

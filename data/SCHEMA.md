@@ -18,12 +18,14 @@ Single canonical file for all JWE3 species data (101 species). The app loads thi
 | `enclosureType` | `Land` \| `Aviary` \| `Lagoon` |
 | `feedingType`, `era`, `family`, `size` | Roster / taxonomy |
 | `general` | `appeal`, `batchSize`, `modificationsMax`, `securityRating`, `hybrid`, `activeTime`, `sex` |
-| `needs` | Habitat %, prey/fish/shark, population rules |
+| `needs` | Habitat %, prey/fish/shark, population rules (`adultPopulation`, `adultMales`, `adultFemales`) |
 | `attributes` | Stamina, resilience, appetite, thirst, lifespan, area need/growth |
 | `preferences` | `likes`, `dislikes` (verbatim in-game text) |
 | `traits` | Base trait chance % with polarity (stored; not displayed in the optimizer UI yet) |
 
-The catalog layer derives `habitat`, `cohabitation` tags, `threatClass`, and media paths for scoring and row display.
+The catalog layer derives `habitat`, `cohabitation` tags, `threatClass`, `social` population limits, and media paths for scoring and row display.
+
+Population limits are derived from `needs.adultPopulation`, sex count strings, `general.batchSize`, and traits such as Social/Antisocial. Over- or under-stocking a species lowers the enclosure social score.
 
 ## Hybrids
 

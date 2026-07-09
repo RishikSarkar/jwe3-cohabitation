@@ -9,7 +9,6 @@ const all = allDinosaurs;
 function profileFor(memberId: string) {
   const state: EnclosureState = {
     type: "Land",
-    size: "Standard",
     members: [{ dinosaurId: memberId, males: 0, females: 1 }],
   };
   return buildEnclosureProfile(state, all)!;

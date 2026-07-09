@@ -1,14 +1,11 @@
 import {
-  ENCLOSURE_CAPACITY,
-  SIZE_WEIGHT,
   type Dinosaur,
   type EnclosureMember,
-  type EnclosureSize,
   type EnclosureState,
   type HabitatKey,
 } from "@/types/dinosaur";
+import { computeAreaDemandLoad } from "./area-need";
 import { getActiveHabitatKeys } from "./compatibility";
-
 export type HabitatEnvelope = {
   min: Partial<Record<HabitatKey, number>>;
   max: Partial<Record<HabitatKey, number>>;
@@ -22,7 +19,6 @@ export type EnclosureProfile = {
   envelope: HabitatEnvelope;
   feedingTypes: Set<string>;
   spaceLoad: number;
-  spacePressure: number;
 };
 
 function getHeadcount(member: EnclosureMember): number {
@@ -64,22 +60,17 @@ export function computeSpaceLoad(
   members: Dinosaur[],
   memberRows: EnclosureMember[],
 ): number {
-  let load = 0;
-  members.forEach((d, i) => {
-    const count = getHeadcount(memberRows[i]);
-    const growth = 1 + (d.spaceGrowthPercent ?? 25) / 100;
-    load += count * SIZE_WEIGHT[d.size] * growth;
-  });
-  return load;
+  const byId = new Map(memberRows.map((m) => [m.dinosaurId, m]));
+  return computeAreaDemandLoad(
+    members.map((dinosaur) => {
+      const row = byId.get(dinosaur.id);
+      return {
+        dinosaur,
+        count: row ? row.males + row.females : 0,
+      };
+    }),
+  );
 }
-
-export function inferEnclosureSize(spaceLoad: number): EnclosureSize {
-  if (spaceLoad <= ENCLOSURE_CAPACITY.Compact * 0.7) return "Compact";
-  if (spaceLoad <= ENCLOSURE_CAPACITY.Standard * 0.85) return "Standard";
-  if (spaceLoad > ENCLOSURE_CAPACITY.Standard) return "Spacious";
-  return "Standard";
-}
-
 export function buildEnclosureProfile(
   state: EnclosureState,
   allDinos: Dinosaur[],
@@ -103,8 +94,6 @@ export function buildEnclosureProfile(
   const envelope = computeEnvelope(members, counts);
   const feedingTypes = new Set(members.map((d) => d.feedingType));
   const spaceLoad = computeSpaceLoad(members, state.members);
-  const capacity = ENCLOSURE_CAPACITY[state.size];
-  const spacePressure = capacity > 0 ? spaceLoad / capacity : 0;
 
   return {
     members,
@@ -112,7 +101,6 @@ export function buildEnclosureProfile(
     envelope,
     feedingTypes,
     spaceLoad,
-    spacePressure,
   };
 }
 
@@ -156,22 +144,4 @@ export function dietCompatibilityScore(
   }
 
   return Math.max(0, 40 - feedingTypes.size * 15);
-}
-
-export function spaceHeadroomScore(
-  profile: EnclosureProfile,
-  candidate: Dinosaur,
-  state: EnclosureState,
-  extraCount = 1,
-): number {
-  const growth = 1 + (candidate.spaceGrowthPercent ?? 25) / 100;
-  const addedLoad = extraCount * SIZE_WEIGHT[candidate.size] * growth;
-  const newLoad = profile.spaceLoad + addedLoad;
-  const capacity = ENCLOSURE_CAPACITY[state.size];
-  const pressure = newLoad / capacity;
-
-  if (pressure <= 0.85) return 100;
-  if (pressure <= 1) return 70;
-  if (pressure <= 1.2) return 40;
-  return Math.max(0, 100 - (pressure - 1) * 100);
 }

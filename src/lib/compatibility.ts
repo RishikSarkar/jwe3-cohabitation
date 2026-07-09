@@ -2,12 +2,8 @@ import {
   HYBRID_CARNIVORE_IDS,
   MEDIUM_CARNIVORE_IDS,
 } from "@/constants/canonical";
-import type {
-  CohabTag,
-  Dinosaur,
-  HabitatKey,
-  SizeClass,
-} from "@/types/dinosaur";
+import { COHAB_SCORE } from "@/constants/scoring";
+import type { CohabTag, Dinosaur, HabitatKey } from "@/types/dinosaur";
 
 function isHybridCarnivore(d: Dinosaur): boolean {
   return HYBRID_CARNIVORE_IDS.has(d.id);
@@ -174,7 +170,7 @@ function isUniversalCarnivoreConflict(a: Dinosaur, b: Dinosaur): boolean {
   return false;
 }
 
-export function isBlockedPair(a: Dinosaur, b: Dinosaur): boolean {
+export function isIncompatiblePair(a: Dinosaur, b: Dinosaur): boolean {
   if (a.enclosureType !== b.enclosureType) return true;
   return (
     resolveCohabitation(a, b) === "disliked" ||
@@ -182,8 +178,8 @@ export function isBlockedPair(a: Dinosaur, b: Dinosaur): boolean {
   );
 }
 
-/** One-line social block reason for list UI (per member ↔ candidate pair). */
-export function describeCohabBlock(a: Dinosaur, b: Dinosaur): string {
+/** One-line social incompatibility reason for list UI (per member ↔ candidate pair). */
+export function describeCohabIncompatibility(a: Dinosaur, b: Dinosaur): string {
   const aDislikesB = resolveCohabitation(a, b) === "disliked";
   const bDislikesA = resolveCohabitation(b, a) === "disliked";
 
@@ -199,11 +195,26 @@ export function describeCohabBlock(a: Dinosaur, b: Dinosaur): string {
   return `${a.name} and ${b.name} cannot cohabit`;
 }
 
-export function cohabitationScore(from: Dinosaur, to: Dinosaur): number {
-  const result = resolveCohabitation(from, to);
-  if (result === "liked") return 35;
-  if (result === "neutral") return -8;
-  return -100;
+/** Pairwise cohabitation comfort — starts at 100; dislikes are 0, neutral stacks discomfort. */
+export function pairCohabitationScore(
+  a: Dinosaur,
+  b: Dinosaur,
+): { score: number; incompatible: boolean } {
+  if (isIncompatiblePair(a, b)) {
+    return { score: 0, incompatible: true };
+  }
+
+  const aToB = resolveCohabitation(a, b);
+  const bToA = resolveCohabitation(b, a);
+
+  let discomfort = 0;
+  if (aToB === "neutral") discomfort += COHAB_SCORE.neutralDiscomfort;
+  if (bToA === "neutral") discomfort += COHAB_SCORE.neutralDiscomfort;
+
+  return {
+    score: Math.max(0, 100 - discomfort),
+    incompatible: false,
+  };
 }
 
 export function getActiveHabitatKeys(
@@ -212,30 +223,4 @@ export function getActiveHabitatKeys(
   return (Object.keys(habitat) as HabitatKey[]).filter(
     (k) => (habitat[k] ?? 0) > 0,
   );
-}
-
-export function habitatOverlap(
-  a: Partial<Record<HabitatKey, number>>,
-  b: Partial<Record<HabitatKey, number>>,
-): number {
-  const keys = new Set([
-    ...getActiveHabitatKeys(a),
-    ...getActiveHabitatKeys(b),
-  ]);
-  let overlap = 0;
-  let totalB = 0;
-  for (const k of keys) {
-    const bv = b[k] ?? 0;
-    totalB += bv;
-    overlap += Math.min(a[k] ?? 0, bv);
-  }
-  return totalB > 0 ? overlap / totalB : 0;
-}
-
-export function sizeHarmony(a: SizeClass, b: SizeClass): number {
-  const order: SizeClass[] = ["Small", "Medium", "Large"];
-  const diff = Math.abs(order.indexOf(a) - order.indexOf(b));
-  if (diff === 0) return 5;
-  if (diff === 1) return 2;
-  return -5;
 }

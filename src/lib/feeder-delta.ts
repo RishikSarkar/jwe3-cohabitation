@@ -199,10 +199,3 @@ export function buildFeederDelta(
 
   return { notes, newFeedingTypes };
 }
-
-export function summarizeFeederDelta(notes: FeederNote[]): string {
-  if (notes.length === 0) return "No feeder changes";
-  const negative = notes.find((n) => !n.positive);
-  if (negative) return negative.text;
-  return notes[0]!.text;
-}

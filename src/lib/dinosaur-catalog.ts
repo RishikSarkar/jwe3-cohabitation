@@ -18,6 +18,7 @@ import type {
   SourceSpecies,
   ThreatClass,
 } from "@/types/dinosaur";
+import { deriveSocialLimits } from "./population";
 
 function deriveThreatClass(feedingType: string, family: string): ThreatClass {
   const ft = feedingType.toLowerCase();
@@ -175,14 +176,12 @@ function buildDinosaur(sp: SourceSpecies): Dinosaur | null {
     dinosaur.spaceGrowthPercent = sp.attributes.areaNeedGrowthPercent;
   }
 
+  dinosaur.social = deriveSocialLimits(dinosaur);
+
   return dinosaur;
 }
 
 const file = source as DinosaurSourceFile;
-
-export function getSourceFile(): DinosaurSourceFile {
-  return file;
-}
 
 export function getAllDinosaurs(): Dinosaur[] {
   return file.species

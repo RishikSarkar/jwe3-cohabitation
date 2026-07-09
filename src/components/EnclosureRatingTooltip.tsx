@@ -1,31 +1,36 @@
 "use client";
 
 import { useId, useRef, useState } from "react";
-import type { EnclosureType } from "@/types/dinosaur";
-import {
-  compatibilityBreakdownLines,
-  type CompatibilityBreakdown,
-} from "@/lib/compatibility-tooltip";
+import type { EnclosureRating } from "@/lib/enclosure-rating";
+import { enclosureRatingBreakdownLines } from "@/lib/enclosure-rating-tooltip";
 import { scoreTierClassForValue } from "@/lib/tier-score";
 import { TooltipPanel, useFloatingTooltip } from "./floating-tooltip";
 
-type Props = {
-  score: number | null;
-  tier: string;
-  scoreClassName: string;
-  tierClassName: string;
-  breakdown: CompatibilityBreakdown;
-  enclosureType: EnclosureType;
+const tierClass: Record<string, string> = {
+  Excellent: "tier-excellent",
+  Good: "tier-good",
+  Risky: "tier-risky",
+  Poor: "tier-poor",
+  Incompatible: "tier-incompatible",
 };
 
-function BreakdownList({
-  breakdown,
-  enclosureType,
-}: {
-  breakdown: CompatibilityBreakdown;
-  enclosureType: EnclosureType;
-}) {
-  const lines = compatibilityBreakdownLines(breakdown, enclosureType);
+const scoreTierClass: Record<string, string> = {
+  Excellent: "tier-score-excellent",
+  Good: "tier-score-good",
+  Risky: "tier-score-risky",
+  Poor: "tier-score-poor",
+  Incompatible: "tier-score-incompatible",
+};
+
+type Props = {
+  rating: EnclosureRating;
+};
+
+function BreakdownList({ rating }: { rating: EnclosureRating }) {
+  const lines = enclosureRatingBreakdownLines(
+    rating.breakdown,
+    rating.speciesCount,
+  );
 
   return (
     <ul className="compat-tooltip-metrics">
@@ -42,18 +47,19 @@ function BreakdownList({
           </span>
         </li>
       ))}
+      {rating.incompatible && (
+        <li>
+          <span className="compat-tooltip-metric-label">Status</span>
+          <span className="compat-tooltip-metric-value tier-score-incompatible">
+            Incompatible
+          </span>
+        </li>
+      )}
     </ul>
   );
 }
 
-export function CompatibilityTooltip({
-  score,
-  tier,
-  scoreClassName,
-  tierClassName,
-  breakdown,
-  enclosureType,
-}: Props) {
+export function EnclosureRatingTooltip({ rating }: Props) {
   const tooltipId = useId();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
@@ -72,9 +78,9 @@ export function CompatibilityTooltip({
       <button
         ref={triggerRef}
         type="button"
-        className="compat-tooltip-trigger dino-row-compat"
+        className="compat-tooltip-trigger enclosure-rating-trigger"
         aria-describedby={open ? tooltipId : undefined}
-        aria-label={`Compatibility score ${score ?? "unknown"}, ${tier}. Show breakdown.`}
+        aria-label={`Enclosure rating ${rating.score}, ${rating.tier}. Show breakdown.`}
         onClick={(e) => e.stopPropagation()}
         onMouseEnter={show}
         onMouseLeave={hide}
@@ -82,21 +88,23 @@ export function CompatibilityTooltip({
         onBlur={hide}
       >
         <span
-          className={`font-display text-3xl font-bold leading-none ${scoreClassName}`}
+          className={`enclosure-stat-value enclosure-stat-score ${scoreTierClass[rating.tier] ?? "tier-score-excellent"}`}
         >
-          {score ?? "-"}
+          {rating.score}
         </span>
-        <span className={`tier-badge ${tierClassName}`}>{tier}</span>
+        <span className={`tier-badge ${tierClass[rating.tier] ?? ""}`}>
+          {rating.tier}
+        </span>
       </button>
       <TooltipPanel
         id={tooltipId}
         open={open}
         style={panelStyle}
         placement={placement}
-        tier={tier}
+        tier={rating.tier}
         panelRef={panelRef}
       >
-        <BreakdownList breakdown={breakdown} enclosureType={enclosureType} />
+        <BreakdownList rating={rating} />
       </TooltipPanel>
     </span>
   );

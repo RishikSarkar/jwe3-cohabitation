@@ -4,10 +4,10 @@ import { useMemo, useRef, useState } from "react";
 import type {
   Dinosaur,
   EnclosureMember,
-  EnclosureSize,
   EnclosureState,
   EnclosureType,
   ScoredCandidate,
+  SizeClass,
 } from "@/types/dinosaur";
 import { matchesDinoSearch } from "@/lib/search";
 import { computeEnclosureRating } from "@/lib/enclosure-rating";
@@ -54,6 +54,10 @@ const DEFAULT_MEMBER: Pick<EnclosureMember, "males" | "females"> = {
   females: 1,
 };
 
+type SizeFilter = "All" | SizeClass;
+
+const SIZE_FILTER_OPTIONS: SizeFilter[] = ["All", "Small", "Medium", "Large"];
+
 export function EnclosureBox({
   state,
   allDinos,
@@ -62,6 +66,7 @@ export function EnclosureBox({
   onTypeChange,
 }: Props) {
   const [query, setQuery] = useState("");
+  const [sizeFilter, setSizeFilter] = useState<SizeFilter>("All");
   const [showPicker, setShowPicker] = useState(false);
   const pickerRef = useRef<HTMLDivElement>(null);
 
@@ -70,15 +75,13 @@ export function EnclosureBox({
     return allDinos
       .filter((d) => d.enclosureType === state.type)
       .filter((d) => !memberIds.has(d.id))
+      .filter((d) => sizeFilter === "All" || d.size === sizeFilter)
       .filter((d) => matchesDinoSearch(query, d));
-  }, [allDinos, state.type, state.members, query]);
+  }, [allDinos, state.type, state.members, sizeFilter, query]);
 
   function setType(type: EnclosureType) {
+    setSizeFilter("All");
     onTypeChange(type);
-  }
-
-  function setSize(size: EnclosureSize) {
-    onChange({ ...state, size });
   }
 
   function addMember(dino: Dinosaur) {
@@ -139,6 +142,16 @@ export function EnclosureBox({
     [state, allDinos],
   );
 
+  const stockedDinosaurs = useMemo(() => {
+    const byId = new Map(allDinos.map((d) => [d.id, d]));
+    return state.members
+      .map((member) => byId.get(member.dinosaurId))
+      .filter(
+        (dinosaur): dinosaur is Dinosaur =>
+          dinosaur != null && dinosaur.enclosureType === state.type,
+      );
+  }, [allDinos, state.members, state.type]);
+
   return (
     <section className="panel panel-enclosure p-6 sm:p-8">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
@@ -152,11 +165,9 @@ export function EnclosureBox({
         />
       </div>
 
-      {rating && (
-        <div className="enclosure-stats-banner mb-6">
-          <EnclosureRatingBadge rating={rating} />
-        </div>
-      )}
+      <div className="enclosure-stats-banner mb-6">
+        <EnclosureRatingBadge rating={rating} />
+      </div>
 
       {orderedMemberRows.length === 0 ? (
         <p className="py-8 text-center text-base text-jwe-offwhite/50">
@@ -172,6 +183,7 @@ export function EnclosureBox({
                 row={row}
                 mode="member"
                 member={member}
+                stockedDinosaurs={stockedDinosaurs}
                 onRemove={() => removeMember(row.dinosaur.id)}
                 onUpdateMember={(patch) =>
                   updateMember(row.dinosaur.id, patch)
@@ -230,9 +242,9 @@ export function EnclosureBox({
             Size
           </span>
           <SegmentedControl
-            options={["Compact", "Standard", "Spacious"] as EnclosureSize[]}
-            value={state.size}
-            onChange={setSize}
+            options={SIZE_FILTER_OPTIONS}
+            value={sizeFilter}
+            onChange={setSizeFilter}
           />
         </div>
       </div>

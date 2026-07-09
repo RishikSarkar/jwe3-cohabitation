@@ -1,7 +1,8 @@
 "use client";
 
-import type { EnclosureMember, ScoredCandidate } from "@/types/dinosaur";
+import type { EnclosureMember, ScoredCandidate, Dinosaur } from "@/types/dinosaur";
 import { meaningfulDeltaNotes } from "@/lib/delta-notes";
+import { memberSocialRiskNotes } from "@/lib/member-social-notes";
 import {
   isInteractiveRowTarget,
   jwe3DinosaurUrl,
@@ -9,6 +10,7 @@ import {
 } from "@/lib/jwe3-url";
 import { FaMars, FaVenus } from "react-icons/fa6";
 import { CompatibilityTooltip } from "./CompatibilityTooltip";
+import { DeltaNoteLine } from "./DeltaNoteLine";
 import { DinoImage } from "./DinoImage";
 
 const tierClass: Record<string, string> = {
@@ -16,7 +18,7 @@ const tierClass: Record<string, string> = {
   Good: "tier-good",
   Risky: "tier-risky",
   Poor: "tier-poor",
-  Blocked: "tier-blocked",
+  Incompatible: "tier-incompatible",
 };
 
 const scoreTierClass: Record<string, string> = {
@@ -24,7 +26,7 @@ const scoreTierClass: Record<string, string> = {
   Good: "tier-score-good",
   Risky: "tier-score-risky",
   Poor: "tier-score-poor",
-  Blocked: "tier-score-blocked",
+  Incompatible: "tier-score-incompatible",
 };
 
 function SexCountIcon({ sex }: { sex: "m" | "f" }) {
@@ -101,6 +103,8 @@ type Props = {
   candidateMetrics?: "none" | "appeal-only" | "full";
   /** Land / Aviary / Lagoon — for compatibility score tooltip. */
   enclosureType?: ScoredCandidate["dinosaur"]["enclosureType"];
+  /** Other stocked species in the enclosure (member rows only). */
+  stockedDinosaurs?: Dinosaur[];
 };
 
 export function DinosaurListRow({
@@ -113,14 +117,17 @@ export function DinosaurListRow({
   showAdd,
   candidateMetrics = "none",
   enclosureType,
+  stockedDinosaurs = [],
 }: Props) {
-  const { dinosaur, score, tier, delta, blocked, breakdown } = row;
+  const { dinosaur, score, tier, delta, incompatible, breakdown } = row;
   const isMember = mode === "member";
   const showCompatibility =
     candidateMetrics === "full";
   const showAppeal =
     candidateMetrics === "full" || candidateMetrics === "appeal-only";
-  const notes = meaningfulDeltaNotes(delta, dinosaur.name);
+  const notes = isMember && member
+    ? memberSocialRiskNotes(dinosaur, member, stockedDinosaurs)
+    : meaningfulDeltaNotes(delta, dinosaur.name);
   const officialUrl = jwe3DinosaurUrl(dinosaur.id);
 
   function handleRowClick(e: React.MouseEvent<HTMLElement>) {
@@ -135,7 +142,7 @@ export function DinosaurListRow({
 
   return (
     <article
-      className={`group dino-row ${!isMember && blocked ? "opacity-55" : ""}`}
+      className={`group dino-row ${!isMember && incompatible ? "opacity-55" : ""}`}
       onClick={handleRowClick}
       onKeyDown={handleRowKeyDown}
       role="link"
@@ -156,15 +163,15 @@ export function DinosaurListRow({
             {dinosaur.name}
           </h3>
 
-          {!isMember && showCompatibility && notes.length > 0 && (
+          {notes.length > 0 && (
             <ul className="dino-delta">
-              {notes.map((line) => (
+              {notes.map((line, index) => (
                 <li
-                  key={line.text}
+                  key={`${line.text}-${index}`}
                   data-positive={line.positive ? "true" : undefined}
-                  data-blocked={line.blocked ? "true" : undefined}
+                  data-incompatible={line.incompatible ? "true" : undefined}
                 >
-                  {line.text}
+                  <DeltaNoteLine note={line} />
                 </li>
               ))}
             </ul>

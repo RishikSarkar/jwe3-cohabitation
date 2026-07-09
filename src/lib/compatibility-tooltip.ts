@@ -7,7 +7,7 @@ export type CompatibilityBreakdown = {
   envelopeTightness: number;
   dietCompatibility: number;
   cohabitation: number;
-  spaceHeadroom: number;
+  sizeHarmony: number;
 };
 
 export type BreakdownLine = {
@@ -40,10 +40,10 @@ export function compatibilityBreakdownLines(
         weightLabel: pct(weights.cohabitation),
       },
       {
-        label: "Space",
-        value: breakdown.spaceHeadroom,
-        weight: weights.space,
-        weightLabel: pct(weights.space),
+        label: "Size match",
+        value: breakdown.sizeHarmony,
+        weight: weights.sizeHarmony,
+        weightLabel: pct(weights.sizeHarmony),
       },
     ]);
   }
@@ -78,12 +78,6 @@ export function compatibilityBreakdownLines(
       value: breakdown.sharedKeyCoverage,
       weight: weights.sharedKeyCoverage,
       weightLabel: pct(weights.sharedKeyCoverage),
-    },
-    {
-      label: "Space",
-      value: breakdown.spaceHeadroom,
-      weight: weights.space,
-      weightLabel: pct(weights.space),
     },
   ]);
 }

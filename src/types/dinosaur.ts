@@ -1,7 +1,5 @@
 export type EnclosureType = "Land" | "Aviary" | "Lagoon";
 
-export type EnclosureSize = "Compact" | "Standard" | "Spacious";
-
 export type SizeClass = "Small" | "Medium" | "Large";
 
 export type ThreatClass =
@@ -157,7 +155,6 @@ export type EnclosureMember = {
 export type EnclosureState = {
   type: EnclosureType;
   members: EnclosureMember[];
-  size: EnclosureSize;
 };
 
 export type CompatibilityTier =
@@ -165,7 +162,7 @@ export type CompatibilityTier =
   | "Good"
   | "Risky"
   | "Poor"
-  | "Blocked";
+  | "Incompatible";
 
 export type FeederDeltaNote = {
   text: string;
@@ -175,8 +172,6 @@ export type FeederDeltaNote = {
 export type CandidateDelta = {
   terrain: string;
   newTerrainKeys: HabitatKey[];
-  /** @deprecated Use feederNotes for display */
-  diet: string;
   feederNotes: FeederDeltaNote[];
   newFeedingTypes: string[];
   socialNotes: string[];
@@ -187,7 +182,7 @@ export type ScoredCandidate = {
   dinosaur: Dinosaur;
   score: number | null;
   tier: CompatibilityTier;
-  blocked: boolean;
+  incompatible: boolean;
   inEnclosure: boolean;
   delta: CandidateDelta;
   breakdown: {
@@ -196,7 +191,7 @@ export type ScoredCandidate = {
     envelopeTightness: number;
     dietCompatibility: number;
     cohabitation: number;
-    spaceHeadroom: number;
+    sizeHarmony: number;
   };
 };
 
@@ -204,12 +199,6 @@ export const SIZE_WEIGHT: Record<SizeClass, number> = {
   Small: 1,
   Medium: 2,
   Large: 4,
-};
-
-export const ENCLOSURE_CAPACITY: Record<EnclosureSize, number> = {
-  Compact: 14,
-  Standard: 28,
-  Spacious: 56,
 };
 
 export type SortMode = "compatibility" | "recommended" | "name" | "appeal";

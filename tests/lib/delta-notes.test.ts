@@ -5,35 +5,35 @@ import type { CandidateDelta } from "@/types/dinosaur";
 const base: CandidateDelta = {
   terrain: "No new terrain types needed",
   newTerrainKeys: [],
-  diet: "No feeder changes",
   feederNotes: [{ text: "Shared Ground Fiber paleobotany", positive: true }],
   newFeedingTypes: [],
   socialNotes: [],
-  space: "Fits Standard enclosure",
+  space: "-",
 };
 
 describe("meaningfulDeltaNotes", () => {
-  it("shows requirements, positives, blocks, and space pressure", () => {
+  it("shows requirements, positives, blocks, and footprint notes", () => {
     const notes = meaningfulDeltaNotes(
       {
         ...base,
         terrain: "+ Ground Fiber required",
-        space: "May need larger enclosure",
+        space: "Adds significant footprint",
         socialNotes: [
           "Velociraptor dislikes Indominus rex",
           "Tyrannosaurus likes Indominus rex",
-          "Neutral with Atrociraptor (−comfort)",
+          "Cohabitation discomfort with Atrociraptor",
         ],
       },
       "Indominus rex",
     );
 
     expect(notes).toEqual([
-      { text: "Disliked by Velociraptor", blocked: true },
+      { text: "Disliked by Velociraptor", incompatible: true },
+      { text: "Cohabitation discomfort with Atrociraptor" },
       { text: "Liked by Tyrannosaurus", positive: true },
       { text: "+ Ground Fiber required" },
       { text: "Shared Ground Fiber paleobotany", positive: true },
-      { text: "May need larger enclosure" },
+      { text: "Adds significant footprint" },
     ]);
   });
 
@@ -53,7 +53,12 @@ describe("meaningfulDeltaNotes", () => {
 
     expect(notes).toEqual([
       { text: "Mutual like with Acrocanthosaurus", positive: true },
-      { text: "Likes Edmontosaurus, Sauropelta", positive: true },
+      {
+        text: "Likes Edmontosaurus +1 more",
+        label: "Likes",
+        names: ["Edmontosaurus", "Sauropelta"],
+        positive: true,
+      },
       { text: "Shared Ground Fiber paleobotany", positive: true },
     ]);
   });
@@ -62,7 +67,6 @@ describe("meaningfulDeltaNotes", () => {
     const notes = meaningfulDeltaNotes(
       {
         ...base,
-        diet: "-",
         feederNotes: [],
         socialNotes: [
           "Tapejara and Tropeognathus dislike each other",
@@ -74,8 +78,8 @@ describe("meaningfulDeltaNotes", () => {
     );
 
     expect(notes).toEqual([
-      { text: "Disliked by Velociraptor", blocked: true },
-      { text: "Dislikes Herrerasaurus", blocked: true },
+      { text: "Disliked by Velociraptor", incompatible: true },
+      { text: "Dislikes Herrerasaurus", incompatible: true },
     ]);
   });
 
@@ -83,7 +87,6 @@ describe("meaningfulDeltaNotes", () => {
     const notes = meaningfulDeltaNotes(
       {
         ...base,
-        diet: "-",
         feederNotes: [],
         socialNotes: [
           "Acrocanthosaurus and Velociraptor dislike each other",
@@ -95,17 +98,37 @@ describe("meaningfulDeltaNotes", () => {
     );
 
     expect(notes).toEqual([
-      { text: "Mutual dislike with Acrocanthosaurus", blocked: true },
-      { text: "Disliked by Deinonychus", blocked: true },
-      { text: "Dislikes Compsognathus", blocked: true },
+      { text: "Mutual dislike with Acrocanthosaurus", incompatible: true },
+      { text: "Disliked by Deinonychus", incompatible: true },
+      { text: "Dislikes Compsognathus", incompatible: true },
     ]);
+  });
+
+  it("truncates multi-name social lists to one name plus more", () => {
+    const notes = meaningfulDeltaNotes(
+      {
+        ...base,
+        feederNotes: [],
+        socialNotes: [
+          "Cohabitation discomfort with Acrocanthosaurus",
+          "Cohabitation discomfort with Coelophysis",
+          "Cohabitation discomfort with Moros intrepidus",
+        ],
+      },
+      "Chungkingosaurus",
+    );
+
+    expect(notes[0]).toEqual({
+      text: "Cohabitation discomfort with Acrocanthosaurus +2 more",
+      label: "Cohabitation discomfort with",
+      names: ["Acrocanthosaurus", "Coelophysis", "Moros intrepidus"],
+    });
   });
 
   it("truncates long like lists", () => {
     const notes = meaningfulDeltaNotes(
       {
         ...base,
-        diet: "-",
         feederNotes: [],
         socialNotes: [
           "Coelophysis likes Edmontosaurus",
@@ -117,9 +140,12 @@ describe("meaningfulDeltaNotes", () => {
       "Coelophysis",
     );
 
-    expect(notes[0]?.text).toBe(
-      "Likes Edmontosaurus, Sauropelta, Corythosaurus +1 more",
-    );
+    expect(notes[0]).toEqual({
+      text: "Likes Edmontosaurus +3 more",
+      label: "Likes",
+      names: ["Edmontosaurus", "Sauropelta", "Corythosaurus", "Dryosaurus"],
+      positive: true,
+    });
   });
 
   it("drops filler when nothing special applies", () => {
@@ -127,7 +153,6 @@ describe("meaningfulDeltaNotes", () => {
       meaningfulDeltaNotes(
         {
           ...base,
-          diet: "+ Carnivore feeder needed",
           feederNotes: [{ text: "+ Carnivore feeder needed" }],
           terrain: "No new terrain types needed",
         },
@@ -136,17 +161,18 @@ describe("meaningfulDeltaNotes", () => {
     ).toEqual(["+ Carnivore feeder needed"]);
   });
 
-  it("includes tight-fit space warnings", () => {
+  it("includes footprint notes for heavy additions", () => {
     const notes = meaningfulDeltaNotes(
       {
         ...base,
-        space: "Tight fit for Standard",
+        space: "Adds significant footprint",
       },
       "Triceratops",
     );
     expect(notes).toEqual([
       { text: "Shared Ground Fiber paleobotany", positive: true },
-      { text: "Tight fit for Standard" },
+      { text: "Adds significant footprint" },
     ]);
   });
 });
+

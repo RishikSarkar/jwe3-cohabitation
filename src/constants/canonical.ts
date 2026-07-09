@@ -1,4 +1,4 @@
-import type { HabitatKey, SizeClass } from "@/types/dinosaur";
+import type { HabitatKey } from "@/types/dinosaur";
 
 /** Canonical habitat keys — single source of truth for import, math, and UI. */
 export const HABITAT_KEYS = [
@@ -33,25 +33,6 @@ export const HABITAT_LABELS: Record<HabitatKey, string> = {
   tallLeaf: "Tall Leaf",
   tallFiber: "Tall Fiber",
   tallFruit: "Tall Fruit",
-};
-
-/** Maps messy CSV header variants → canonical HabitatKey. */
-export const CSV_HEADER_TO_HABITAT: Record<string, HabitatKey> = {
-  Arid: "arid",
-  Barren: "barren",
-  Cover: "cover",
-  Pasture: "pasture",
-  Wetland: "wetland",
-  Water: "water",
-  "Deep Water": "deepWater",
-  "Ground Leaf": "groundLeaf",
-  "Ground Fiber": "groundFiber",
-  "Ground Fruit": "groundFruit",
-  "Ground Nut": "groundNut",
-  "Tall leaf": "tallLeaf",
-  "Tall Leaf": "tallLeaf",
-  "Tall Fiber": "tallFiber",
-  "Tall Fruit": "tallFruit",
 };
 
 export const LAND_HABITAT_KEYS = HABITAT_KEYS;
@@ -163,13 +144,6 @@ export function normalizeSpeciesName(raw: string): string {
   const trimmed = raw.trim().replace(/\u00ad/g, "");
   const key = trimmed.toLowerCase();
   return SPECIES_NAME_ALIASES[key] ?? trimmed;
-}
-
-export function normalizeSize(raw: string): SizeClass {
-  const s = raw.trim().toLowerCase();
-  if (s === "small") return "Small";
-  if (s === "large") return "Large";
-  return "Medium";
 }
 
 export function slugify(name: string): string {

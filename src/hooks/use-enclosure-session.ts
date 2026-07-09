@@ -118,10 +118,10 @@ export function useEnclosureSession(allDinos: Dinosaur[]) {
     [memory, persist],
   );
 
-  const setShowBlocked = useCallback(
-    (showBlocked: boolean) => {
+  const setShowIncompatible = useCallback(
+    (showIncompatible: boolean) => {
       setUi((prev) => {
-        const nextUi = { ...prev, showBlocked };
+        const nextUi = { ...prev, showIncompatible };
         if (memory) persist(memory, nextUi);
         return nextUi;
       });
@@ -146,7 +146,7 @@ export function useEnclosureSession(allDinos: Dinosaur[]) {
     switchType,
     sortMode: ui.sortMode,
     setSortMode,
-    showBlocked: ui.showBlocked,
-    setShowBlocked,
+    showIncompatible: ui.showIncompatible,
+    setShowIncompatible,
   };
 }

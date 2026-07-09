@@ -15,15 +15,11 @@ export const SCORE_TIER_CLASS: Record<CompatibilityTier, string> = {
   Good: "tier-score-good",
   Risky: "tier-score-risky",
   Poor: "tier-score-poor",
-  Blocked: "tier-score-blocked",
+  Incompatible: "tier-score-incompatible",
 };
 
 export function scoreTierClassForValue(score: number): string {
   return SCORE_TIER_CLASS[compatibilityTierFromScore(score)];
-}
-
-export function scoreTierClassForTier(tier: string): string {
-  return SCORE_TIER_CLASS[tier as CompatibilityTier] ?? SCORE_TIER_CLASS.Excellent;
 }
 
 const TOOLTIP_BASE_BG = "rgb(10, 34, 47)";

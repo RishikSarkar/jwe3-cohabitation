@@ -1,6 +1,5 @@
 import type {
   EnclosureMember,
-  EnclosureSize,
   EnclosureState,
   EnclosureType,
   SortMode,
@@ -10,7 +9,6 @@ const STORAGE_KEY = "jwe3-enclosure-session";
 const STORAGE_VERSION = 1;
 
 export type EnclosureSnapshot = {
-  size: EnclosureSize;
   members: EnclosureMember[];
 };
 
@@ -18,7 +16,7 @@ export type EnclosureMemory = Record<EnclosureType, EnclosureSnapshot>;
 
 export type UiPreferences = {
   sortMode: SortMode;
-  showBlocked: boolean;
+  showIncompatible: boolean;
 };
 
 export type StoredSession = {
@@ -28,15 +26,14 @@ export type StoredSession = {
 };
 
 const ENCLOSURE_TYPES: EnclosureType[] = ["Land", "Aviary", "Lagoon"];
-const SIZES: EnclosureSize[] = ["Compact", "Standard", "Spacious"];
 
 export const DEFAULT_UI: UiPreferences = {
   sortMode: "compatibility",
-  showBlocked: false,
+  showIncompatible: false,
 };
 
-export function emptySnapshot(size: EnclosureSize = "Standard"): EnclosureSnapshot {
-  return { size, members: [] };
+export function emptySnapshot(): EnclosureSnapshot {
+  return { members: [] };
 }
 
 export function defaultMemory(): EnclosureMemory {
@@ -59,10 +56,6 @@ function isEnclosureType(value: string): value is EnclosureType {
   return ENCLOSURE_TYPES.includes(value as EnclosureType);
 }
 
-function isEnclosureSize(value: string): value is EnclosureSize {
-  return SIZES.includes(value as EnclosureSize);
-}
-
 function isSortMode(value: string): value is SortMode {
   return ["compatibility", "recommended", "name", "appeal"].includes(value);
 }
@@ -82,16 +75,12 @@ function sanitizeMember(raw: unknown): EnclosureMember | null {
 function sanitizeSnapshot(raw: unknown): EnclosureSnapshot {
   if (!raw || typeof raw !== "object") return emptySnapshot();
   const snap = raw as Record<string, unknown>;
-  const size =
-    typeof snap.size === "string" && isEnclosureSize(snap.size)
-      ? snap.size
-      : "Standard";
   const members = Array.isArray(snap.members)
     ? snap.members
         .map(sanitizeMember)
         .filter((m): m is EnclosureMember => m != null)
     : [];
-  return { size, members };
+  return { members };
 }
 
 export function parseStoredSession(raw: unknown): StoredSession {
@@ -115,15 +104,17 @@ export function parseStoredSession(raw: unknown): StoredSession {
     typeof uiRaw.sortMode === "string" && isSortMode(uiRaw.sortMode)
       ? uiRaw.sortMode
       : DEFAULT_UI.sortMode;
-  const showBlocked =
-    typeof uiRaw.showBlocked === "boolean"
-      ? uiRaw.showBlocked
-      : DEFAULT_UI.showBlocked;
+  const showIncompatible =
+    typeof uiRaw.showIncompatible === "boolean"
+      ? uiRaw.showIncompatible
+      : typeof uiRaw.showBlocked === "boolean"
+        ? uiRaw.showBlocked
+        : DEFAULT_UI.showIncompatible;
 
   return {
     v: STORAGE_VERSION,
     enclosures,
-    ui: { sortMode, showBlocked },
+    ui: { sortMode, showIncompatible },
   };
 }
 
@@ -151,7 +142,7 @@ export function saveStoredSession(session: StoredSession): void {
 }
 
 export function snapshotFromState(state: EnclosureState): EnclosureSnapshot {
-  return { size: state.size, members: state.members };
+  return { members: state.members };
 }
 
 export function stateFromMemory(
@@ -159,7 +150,7 @@ export function stateFromMemory(
   memory: EnclosureMemory,
 ): EnclosureState {
   const snap = memory[type] ?? emptySnapshot();
-  return { type, size: snap.size, members: [...snap.members] };
+  return { type, members: [...snap.members] };
 }
 
 export function applyUrlToMemory(
@@ -180,8 +171,7 @@ export function mergeUrlType(
 ): EnclosureState {
   const type = isEnclosureType(urlState.type) ? urlState.type : "Land";
   const snap = memory[type] ?? emptySnapshot();
-  const size = isEnclosureSize(urlState.size) ? urlState.size : snap.size;
-  return { type, size, members: [...snap.members] };
+  return { type, members: [...snap.members] };
 }
 
 export function updateMemoryForType(

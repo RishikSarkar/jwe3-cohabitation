@@ -12,7 +12,6 @@ describe("sanitizeEnclosureState", () => {
   it("removes unknown roster ids from shared URLs", () => {
     const params = new URLSearchParams({
       type: "Land",
-      size: "Standard",
       roster: "not-a-dino:1m0f,triceratops:1m0f",
     });
     const raw = paramsToEnclosure(params);

@@ -13,7 +13,6 @@ describe("enclosure-storage", () => {
     const memory = defaultMemory();
     const land: EnclosureState = {
       type: "Land",
-      size: "Standard",
       members: [{ dinosaurId: "triceratops", males: 1, females: 2 }],
     };
     const withLand = updateMemoryForType(memory, land);
@@ -26,13 +25,11 @@ describe("enclosure-storage", () => {
     let memory = defaultMemory();
     const land: EnclosureState = {
       type: "Land",
-      size: "Spacious",
       members: [{ dinosaurId: "ankylosaurus", males: 0, females: 1 }],
     };
     memory = updateMemoryForType(memory, land);
     memory = updateMemoryForType(memory, stateFromMemory("Aviary", memory));
     const back = stateFromMemory("Land", memory);
-    expect(back.size).toBe("Spacious");
     expect(back.members[0]?.dinosaurId).toBe("ankylosaurus");
   });
 
@@ -40,7 +37,6 @@ describe("enclosure-storage", () => {
     const memory = defaultMemory();
     const urlState: EnclosureState = {
       type: "Lagoon",
-      size: "Compact",
       members: [{ dinosaurId: "mosasaurus", males: 0, females: 1 }],
     };
     const next = applyUrlToMemory(memory, urlState, true);
@@ -48,15 +44,23 @@ describe("enclosure-storage", () => {
     expect(next.Land.members).toHaveLength(0);
   });
 
-  it("parses stored session safely", () => {
+  it("parses stored session safely and migrates legacy showBlocked", () => {
     const parsed = parseStoredSession({
       enclosures: {
-        Land: { size: "Compact", members: [{ dinosaurId: "x", males: 1, females: 0 }] },
+        Land: {
+          size: "Compact",
+          members: [{ dinosaurId: "x", males: 1, females: 0 }],
+        },
       },
       ui: { sortMode: "appeal", showBlocked: true },
     });
-    expect(parsed.enclosures.Land.size).toBe("Compact");
+    expect(parsed.enclosures.Land.members).toHaveLength(1);
     expect(parsed.ui.sortMode).toBe("appeal");
-    expect(parsed.ui.showBlocked).toBe(true);
+    expect(parsed.ui.showIncompatible).toBe(true);
+
+    const modern = parseStoredSession({
+      ui: { sortMode: "name", showIncompatible: true },
+    });
+    expect(modern.ui.showIncompatible).toBe(true);
   });
 });

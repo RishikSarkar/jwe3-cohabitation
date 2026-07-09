@@ -188,28 +188,6 @@ body {
     color: rgb(var(--brand));
   }
 
-  .btn-jwe-ghost {
-    @apply inline-flex items-center justify-center font-bold uppercase transition;
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: var(--border-radius-inner);
-    color: rgba(var(--offwhite), 0.65);
-    font-size: 0.875rem;
-    letter-spacing: 0.05em;
-    line-height: 1;
-    padding: 10px 16px;
-  }
-
-  .btn-jwe-ghost:hover {
-    color: rgb(var(--offwhite));
-  }
-
-  .btn-jwe-ghost[data-active="true"] {
-    background-color: rgba(var(--brand), 0.12);
-    border-color: rgb(var(--brand));
-    color: rgb(var(--brand));
-  }
-
   .seg-control {
     display: inline-flex;
     gap: 4px;
@@ -393,7 +371,7 @@ body {
     transition: color 0.2s ease-in-out;
   }
 
-  .dino-delta li[data-blocked="true"] {
+  .dino-delta li[data-incompatible="true"] {
     color: rgb(var(--red));
   }
 
@@ -401,7 +379,7 @@ body {
     color: rgb(var(--amber));
   }
 
-  .dino-row:hover .dino-delta li[data-blocked="true"] {
+  .dino-row:hover .dino-delta li[data-incompatible="true"] {
     color: rgb(var(--orange));
   }
 
@@ -436,59 +414,145 @@ body {
 
   .enclosure-stats-bar {
     align-items: center;
-    display: grid;
-    gap: 1rem 2rem;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
+    justify-content: space-between;
     width: 100%;
   }
 
   .enclosure-stat-group {
     align-items: center;
     display: flex;
+    flex-shrink: 0;
     gap: 0.75rem;
   }
 
   .enclosure-stat-rating {
-    align-items: stretch;
+    align-items: center;
+    column-gap: 0.625rem;
+    display: grid;
+    flex-shrink: 0;
+    grid-template-columns: 0.35rem max-content;
+    grid-template-rows: auto auto;
+    min-width: max-content;
+    row-gap: 0.35rem;
+  }
+
+  .enclosure-stat-rating .enclosure-rating-bar {
     grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .enclosure-stat-rating .enclosure-stat-copy {
+    display: contents;
+  }
+
+  .enclosure-stat-score-slot {
+    display: grid;
+    grid-column: 2;
+    grid-row: 1;
+    justify-items: start;
+  }
+
+  .enclosure-stat-rating-width {
+    font-family: var(--font-chakra), system-ui, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    grid-area: 1 / 1;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    visibility: hidden;
+    white-space: nowrap;
+  }
+
+  .enclosure-stat-score-slot .compat-tooltip {
+    display: inline-flex;
+    grid-area: 1 / 1;
+  }
+
+  .enclosure-stat-rating .enclosure-stat-label {
+    grid-column: 2;
+    grid-row: 2;
     justify-self: start;
+    text-align: left;
   }
 
   .enclosure-stat-stack {
     align-items: flex-start;
     flex-direction: column;
+    flex-shrink: 0;
     gap: 0.2rem;
   }
 
   .enclosure-stat-center {
     align-items: center;
-    grid-column: 2;
-    justify-self: center;
     text-align: center;
+  }
+
+  .enclosure-stat-cluster {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    gap: 0.75rem;
+  }
+
+  .enclosure-stat-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 3.25rem;
+  }
+
+  .enclosure-stat-pair-end {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .enclosure-stat-pair-start {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .enclosure-stat-divider {
+    align-self: stretch;
+    background: rgba(var(--brand), 0.22);
+    flex-shrink: 0;
+    margin-block: 0.2rem;
+    width: 1px;
   }
 
   .enclosure-stat-end {
     align-items: flex-end;
-    grid-column: 3;
-    justify-self: end;
     text-align: right;
   }
 
   .enclosure-stat-copy {
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
-  }
-
-  .enclosure-stat-score-row {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 0.65rem;
+    min-width: 0;
   }
 
   .enclosure-stat-score {
     font-size: 1.75rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .enclosure-rating-trigger {
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: help;
+    display: inline-flex;
+    gap: 0.65rem;
+    padding: 0;
+  }
+
+  .enclosure-rating-trigger:focus-visible {
+    border-radius: 0.25rem;
+    outline: 2px solid rgb(var(--brand));
+    outline-offset: 3px;
   }
 
   .enclosure-stat-value {
@@ -579,6 +643,18 @@ body {
     width: 0.35rem;
   }
 
+  .enclosure-rating-bar-empty {
+    background: rgba(var(--offwhite), 0.12);
+  }
+
+  .enclosure-stat-empty {
+    color: rgba(var(--offwhite), 0.35);
+  }
+
+  .enclosure-stats-bar-empty .enclosure-stat-label {
+    color: rgba(var(--offwhite), 0.35);
+  }
+
   .dino-row:first-child {
     border-top: none;
     padding-top: 0;
@@ -596,6 +672,32 @@ body {
     font-weight: 700;
     line-height: 1.45;
     transition: color 0.2s ease-in-out;
+  }
+
+  .delta-note-more {
+    cursor: help;
+    text-decoration: underline dotted;
+    text-decoration-color: rgba(var(--offwhite), 0.35);
+    text-underline-offset: 0.15em;
+  }
+
+  .delta-note-more:hover,
+  .delta-note-more:focus-visible {
+    text-decoration-color: currentColor;
+  }
+
+  .delta-note-more-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.45;
+    color: rgba(var(--offwhite), 0.9);
+  }
+
+  .delta-note-more-list li + li {
+    margin-top: 0.2rem;
   }
 
   .species-list,
@@ -735,9 +837,9 @@ body {
   }
 
   .tier-score-poor,
-  .tier-score-blocked,
+  .tier-score-incompatible,
   .enclosure-stat-score.tier-score-poor,
-  .enclosure-stat-score.tier-score-blocked {
+  .enclosure-stat-score.tier-score-incompatible {
     color: rgb(var(--red));
   }
 
@@ -765,7 +867,7 @@ body {
     color: rgb(var(--red));
   }
 
-  .tier-blocked {
+  .tier-incompatible {
     background-color: rgba(var(--red), 0.15);
     border-color: rgb(var(--red));
     color: rgb(var(--red));
@@ -790,9 +892,8 @@ body {
   }
 
   .compat-tooltip-trigger:focus-visible {
-    border-radius: 0.25rem;
-    outline: 2px solid rgb(var(--brand));
-    outline-offset: 3px;
+    outline: 2px solid rgba(var(--brand), 0.65);
+    outline-offset: 2px;
   }
 
   .compat-tooltip-panel-floating {
@@ -805,6 +906,12 @@ body {
     overflow: hidden;
     padding: 0.5rem 0.65rem;
     pointer-events: none;
+  }
+
+  .compat-tooltip-panel-compact {
+    max-width: min(16rem, 92vw);
+    padding: 0.45rem;
+    white-space: nowrap;
   }
 
   .compat-tooltip-panel-floating::before {

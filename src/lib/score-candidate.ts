@@ -1,6 +1,4 @@
 import {
-  ENCLOSURE_CAPACITY,
-  SIZE_WEIGHT,
   type CompatibilityTier,
   type Dinosaur,
   type EnclosureState,
@@ -10,17 +8,23 @@ import {
 } from "@/types/dinosaur";
 import { HABITAT_LABELS } from "@/constants/canonical";
 import {
-  COHAB_SCORE,
+  ENVELOPE_WIDEN_SCALE,
   NEW_TERRAIN_KEY_PENALTY,
   SCORE_WEIGHTS,
   RECOMMENDED_SORT_WEIGHTS,
+  SOCIAL_BLEND,
 } from "@/constants/scoring";
-import { isBlockedPair, resolveCohabitation, describeCohabBlock } from "./compatibility";
+import {
+  describeCohabIncompatibility,
+  isIncompatiblePair,
+  pairCohabitationScore,
+  resolveCohabitation,
+} from "./compatibility";
+import { candidateFootprintNote } from "./area-need";
 import {
   buildEnclosureProfile,
   dietCompatibilityScore,
   envelopeWidenDelta,
-  spaceHeadroomScore,
   type HabitatEnvelope,
 } from "./enclosure";
 import {
@@ -28,16 +32,17 @@ import {
   habitatToVector,
   sharedKeyCoverage,
 } from "./vectors";
-import { buildFeederDelta, summarizeFeederDelta } from "./feeder-delta";
+import { buildFeederDelta } from "./feeder-delta";
+import { memberPopulationComfort } from "./population";
 import { matchesDinoSearch } from "./search";
 
 function tierFromScore(
   score: number | null,
-  blocked: boolean,
+  incompatible: boolean,
   inEnclosure: boolean,
 ): CompatibilityTier {
   if (inEnclosure) return "Excellent";
-  if (blocked || score === null) return "Blocked";
+  if (incompatible || score === null) return "Incompatible";
   if (score <= 0) return "Poor";
   if (score >= 80) return "Excellent";
   if (score >= 60) return "Good";
@@ -51,45 +56,59 @@ function envelopeTightnessScore(
 ): number {
   const { delta, newKeys } = envelopeWidenDelta(envelope, candidate);
   const penalty = delta + newKeys.length * NEW_TERRAIN_KEY_PENALTY;
-  return Math.max(0, 100 - penalty * 2);
+  return Math.max(0, 100 - penalty * ENVELOPE_WIDEN_SCALE);
 }
 
 function cohabitationAggregate(
   members: Dinosaur[],
   candidate: Dinosaur,
-): { score: number; notes: string[]; blocked: boolean } {
-  let total = COHAB_SCORE.baseline;
+  state: EnclosureState,
+): { score: number; notes: string[]; incompatible: boolean } {
   const notes: string[] = [];
-  let blocked = false;
+  let incompatible = false;
+  let scoreSum = 0;
 
   for (const member of members) {
-    if (isBlockedPair(member, candidate)) {
-      blocked = true;
-      notes.push(describeCohabBlock(member, candidate));
+    if (isIncompatiblePair(member, candidate)) {
+      incompatible = true;
+      notes.push(describeCohabIncompatibility(member, candidate));
       continue;
     }
+
+    const pair = pairCohabitationScore(member, candidate);
+    scoreSum += pair.score;
+
     const mr = resolveCohabitation(member, candidate);
     const cr = resolveCohabitation(candidate, member);
     if (mr === "liked") {
       notes.push(`${member.name} likes ${candidate.name}`);
-      total += COHAB_SCORE.memberLikesCandidate;
     }
     if (cr === "liked") {
       notes.push(`${candidate.name} likes ${member.name}`);
-      total += COHAB_SCORE.candidateLikesMember;
     }
-    if (mr !== "liked" && cr !== "liked") {
-      notes.push(`Neutral with ${member.name} (−comfort)`);
-      total -= COHAB_SCORE.neutralPenalty;
+    if (pair.score < 100) {
+      notes.push(`Cohabitation discomfort with ${member.name}`);
     }
   }
 
-  const norm =
-    members.length > 0
-      ? Math.max(0, Math.min(100, total / members.length))
-      : COHAB_SCORE.baseline;
+  const pairwiseScore =
+    members.length > 0 ? Math.round(scoreSum / members.length) : 100;
 
-  return { score: norm, notes, blocked };
+  const existingMember = state.members.find(
+    (member) => member.dinosaurId === candidate.id,
+  );
+  const population = memberPopulationComfort(candidate, existingMember, 0, 1);
+  notes.push(...population.notes);
+
+  const score =
+    members.length > 0
+      ? Math.round(
+          pairwiseScore * SOCIAL_BLEND.pairwise +
+            population.score * SOCIAL_BLEND.population,
+        )
+      : population.score;
+
+  return { score, notes, incompatible };
 }
 
 function scoreOne(
@@ -103,12 +122,11 @@ function scoreOne(
       dinosaur: candidate,
       score: null,
       tier: "Excellent",
-      blocked: false,
+      incompatible: false,
       inEnclosure: true,
       delta: {
         terrain: "Already in enclosure",
         newTerrainKeys: [],
-        diet: "Current feeder set",
         feederNotes: [],
         newFeedingTypes: [],
         socialNotes: [],
@@ -120,7 +138,7 @@ function scoreOne(
         envelopeTightness: 100,
         dietCompatibility: 100,
         cohabitation: 100,
-        spaceHeadroom: 100,
+        sizeHarmony: 100,
       },
     };
   }
@@ -128,8 +146,8 @@ function scoreOne(
   const weights = SCORE_WEIGHTS[state.type as EnclosureType];
   const isLagoon = state.type === "Lagoon";
 
-  const cohab = cohabitationAggregate(profile.members, candidate);
-  const blocked = cohab.blocked;
+  const cohab = cohabitationAggregate(profile.members, candidate, state);
+  const incompatible = cohab.incompatible;
 
   const compromiseVec = habitatToVector(profile.envelope.compromise);
   const candidateVec = habitatToVector(candidate.habitat);
@@ -156,11 +174,9 @@ function scoreOne(
         profile.members,
       );
 
-  const space = spaceHeadroomScore(profile, candidate, state);
-
-  let sizeHarmony = 50;
+  let sizeHarmonyScore = 50;
   if (isLagoon && "sizeHarmony" in weights) {
-    sizeHarmony = profile.members.some((m) => m.size === candidate.size)
+    sizeHarmonyScore = profile.members.some((m) => m.size === candidate.size)
       ? 80
       : 60;
   }
@@ -172,10 +188,9 @@ function scoreOne(
     envelopeTight * (w.envelopeTightness ?? 0) +
     diet * (w.diet ?? 0) +
     cohab.score * (w.cohabitation ?? 0) +
-    space * (w.space ?? 0) +
-    sizeHarmony * (w.sizeHarmony ?? 0);
+    sizeHarmonyScore * (w.sizeHarmony ?? 0);
 
-  const finalScore = blocked ? 0 : Math.round(composite);
+  const finalScore = incompatible ? 0 : Math.round(composite);
 
   const { newKeys } = envelopeWidenDelta(profile.envelope, candidate);
   const { notes: feederNotes, newFeedingTypes: newFeeding } = buildFeederDelta(
@@ -184,19 +199,13 @@ function scoreOne(
     newKeys,
   );
 
-  let spaceLabel = `Fits ${state.size} enclosure`;
-  const growth = 1 + (candidate.spaceGrowthPercent ?? 25) / 100;
-  const addedLoad = SIZE_WEIGHT[candidate.size] * growth;
-  const newPressure =
-    (profile.spaceLoad + addedLoad) / ENCLOSURE_CAPACITY[state.size];
-  if (newPressure > 1) spaceLabel = "May need larger enclosure";
-  else if (newPressure > 0.85) spaceLabel = `Tight fit for ${state.size}`;
+  const spaceLabel = candidateFootprintNote(profile.spaceLoad, candidate);
 
   return {
     dinosaur: candidate,
     score: finalScore,
-    tier: tierFromScore(finalScore, blocked, false),
-    blocked,
+    tier: tierFromScore(finalScore, incompatible, false),
+    incompatible,
     inEnclosure: false,
     delta: {
       terrain:
@@ -204,7 +213,6 @@ function scoreOne(
           ? "No new terrain types needed"
           : `+ ${newKeys.map((k) => HABITAT_LABELS[k]).join(", ")} required`,
       newTerrainKeys: newKeys,
-      diet: summarizeFeederDelta(feederNotes),
       feederNotes,
       newFeedingTypes: newFeeding,
       socialNotes: cohab.notes,
@@ -216,7 +224,7 @@ function scoreOne(
       envelopeTightness: envelopeTight,
       dietCompatibility: Math.round(diet),
       cohabitation: Math.round(cohab.score),
-      spaceHeadroom: Math.round(space),
+      sizeHarmony: Math.round(sizeHarmonyScore),
     },
   };
 }
@@ -224,9 +232,9 @@ function scoreOne(
 export function scoreAllDinosaurs(
   state: EnclosureState,
   allDinos: Dinosaur[],
-  options: { showBlocked?: boolean; searchQuery?: string } = {},
+  options: { showIncompatible?: boolean; searchQuery?: string } = {},
 ): ScoredCandidate[] {
-  const { showBlocked = false, searchQuery = "" } = options;
+  const { showIncompatible = false, searchQuery = "" } = options;
   const memberIds = new Set(
     state.members
       .filter((m) => m.males + m.females > 0)
@@ -243,12 +251,11 @@ export function scoreAllDinosaurs(
       dinosaur: d,
       score: null,
       tier: "Excellent" as CompatibilityTier,
-      blocked: false,
+      incompatible: false,
       inEnclosure: false,
       delta: {
         terrain: "-",
         newTerrainKeys: [],
-        diet: "-",
         feederNotes: [],
         newFeedingTypes: [],
         socialNotes: [],
@@ -260,7 +267,7 @@ export function scoreAllDinosaurs(
         envelopeTightness: 0,
         dietCompatibility: 0,
         cohabitation: 0,
-        spaceHeadroom: 0,
+        sizeHarmony: 0,
       },
     }));
   } else {
@@ -273,8 +280,8 @@ export function scoreAllDinosaurs(
     rows = rows.filter((r) => matchesDinoSearch(searchQuery, r.dinosaur));
   }
 
-  if (!showBlocked) {
-    rows = rows.filter((r) => r.inEnclosure || !r.blocked);
+  if (!showIncompatible) {
+    rows = rows.filter((r) => r.inEnclosure || !r.incompatible);
   }
 
   return rows;
@@ -285,20 +292,20 @@ export function scoreMemberAgainstRest(
   member: Dinosaur,
   state: EnclosureState,
   allDinos: Dinosaur[],
-): { score: number; blocked: boolean; tier: CompatibilityTier } {
+): { score: number; incompatible: boolean; tier: CompatibilityTier } {
   const restState: EnclosureState = {
     ...state,
     members: state.members.filter((m) => m.dinosaurId !== member.id),
   };
   const profile = buildEnclosureProfile(restState, allDinos);
   if (!profile) {
-    return { score: 100, blocked: false, tier: "Excellent" };
+    return { score: 100, incompatible: false, tier: "Excellent" };
   }
 
   const row = scoreOne(member, restState, profile, false);
   return {
     score: row.score ?? 0,
-    blocked: row.blocked,
+    incompatible: row.incompatible,
     tier: row.tier,
   };
 }
@@ -327,7 +334,7 @@ export function recommendedCandidateScore(
   appealMin: number,
   appealMax: number,
 ): number {
-  if (row.blocked) return 0;
+  if (row.incompatible) return 0;
   const compatibility = row.score ?? 0;
   const appeal = normalizedAppealScore(
     row.dinosaur.appeal,
@@ -386,12 +393,4 @@ export function sortScoredRows(
   });
 
   return sorted;
-}
-
-/** @deprecated Use scoreAllDinosaurs */
-export function scoreCandidates(
-  state: EnclosureState,
-  allDinos: Dinosaur[],
-): ScoredCandidate[] {
-  return scoreAllDinosaurs(state, allDinos).filter((r) => !r.inEnclosure);
 }

@@ -3,8 +3,12 @@ import {
   type Dinosaur,
   type EnclosureState,
 } from "@/types/dinosaur";
-import { COHAB_SCORE } from "@/constants/scoring";
-import { isBlockedPair, resolveCohabitation } from "./compatibility";
+import { SOCIAL_BLEND } from "@/constants/scoring";
+import { enclosureAreaNeedStat } from "./area-need";
+import {
+  pairCohabitationScore,
+} from "./compatibility";
+import { enclosurePopulationScore } from "./population";
 import { scoreMemberAgainstRest } from "./score-candidate";
 
 const SOCIAL_WEIGHT = 0.85;
@@ -16,9 +20,11 @@ export type EnclosureRating = {
   headcount: number;
   speciesCount: number;
   baseAppeal: number;
-  blocked: boolean;
+  areaNeed: { value: string; label: string } | null;
+  incompatible: boolean;
   breakdown: {
     social: number;
+    population: number;
     logistics: number;
     hasActiveDislike: boolean;
     worstMemberName: string;
@@ -28,10 +34,12 @@ export type EnclosureRating = {
 type MemberEntry = {
   dinosaur: Dinosaur;
   count: number;
+  males: number;
+  females: number;
 };
 
-function tierFromScore(score: number, blocked: boolean): CompatibilityTier {
-  if (blocked || score <= 0) return "Blocked";
+function tierFromScore(score: number, incompatible: boolean): CompatibilityTier {
+  if (incompatible || score <= 0) return "Incompatible";
   if (score >= 80) return "Excellent";
   if (score >= 60) return "Good";
   if (score >= 40) return "Risky";
@@ -51,7 +59,12 @@ function memberEntries(
     if (!dinosaur || dinosaur.enclosureType !== state.type || count <= 0) {
       continue;
     }
-    entries.push({ dinosaur, count });
+    entries.push({
+      dinosaur,
+      count,
+      males: member.males,
+      females: member.females,
+    });
   }
 
   return entries;
@@ -68,27 +81,11 @@ function pairSocialScore(
   a: Dinosaur,
   b: Dinosaur,
 ): { score: number; disliked: boolean } {
-  if (isBlockedPair(a, b)) {
-    return { score: 0, disliked: true };
-  }
-
-  const aToB = resolveCohabitation(a, b);
-  const bToA = resolveCohabitation(b, a);
-
-  let score = COHAB_SCORE.baseline;
-  if (aToB === "liked") score += COHAB_SCORE.memberLikesCandidate;
-  if (bToA === "liked") score += COHAB_SCORE.candidateLikesMember;
-  if (aToB !== "liked" && bToA !== "liked") {
-    score -= COHAB_SCORE.neutralPenalty;
-  }
-
-  return {
-    score: Math.max(0, Math.min(100, score)),
-    disliked: false,
-  };
+  const pair = pairCohabitationScore(a, b);
+  return { score: pair.score, disliked: pair.incompatible };
 }
 
-function enclosureSocialScore(entries: MemberEntry[]): {
+function enclosurePairwiseSocialScore(entries: MemberEntry[]): {
   score: number;
   hasActiveDislike: boolean;
 } {
@@ -146,10 +143,25 @@ function enclosureLogisticsScore(
   };
 }
 
+function blendSocialScore(
+  pairwise: { score: number; hasActiveDislike: boolean },
+  population: { score: number },
+  speciesCount: number,
+): number {
+  if (speciesCount < 2) {
+    return population.score;
+  }
+
+  return Math.round(
+    pairwise.score * SOCIAL_BLEND.pairwise +
+      population.score * SOCIAL_BLEND.population,
+  );
+}
+
 /**
- * Enclosure rating prioritizes social compatibility (likes / neutral / dislikes).
- * Active dislikes between stocked species force a blocked rating.
- * Terrain, feeders, and space only apply as a small secondary adjustment.
+ * Enclosure rating prioritizes social compatibility (likes / neutral / dislikes)
+ * and within-species population comfort. Active dislikes between stocked species
+ * force an incompatible rating. Terrain and feeders apply as a small secondary adjustment.
  */
 export function computeEnclosureRating(
   state: EnclosureState,
@@ -160,19 +172,24 @@ export function computeEnclosureRating(
 
   const headcount = entries.reduce((sum, e) => sum + e.count, 0);
   const baseAppeal = enclosureBaseAppeal(entries);
-  const social = enclosureSocialScore(entries);
+  const areaNeed = enclosureAreaNeedStat(entries);
+  const pairwise = enclosurePairwiseSocialScore(entries);
+  const population = enclosurePopulationScore(entries);
+  const social = blendSocialScore(pairwise, population, entries.length);
   const logistics = enclosureLogisticsScore(entries, state, allDinos);
 
-  if (social.hasActiveDislike) {
+  if (pairwise.hasActiveDislike) {
     return {
       score: 0,
-      tier: "Blocked",
+      tier: "Incompatible",
       headcount,
       speciesCount: entries.length,
       baseAppeal,
-      blocked: true,
+      areaNeed,
+      incompatible: true,
       breakdown: {
-        social: social.score,
+        social: pairwise.score,
+        population: population.score,
         logistics: logistics.score,
         hasActiveDislike: true,
         worstMemberName: logistics.worstMemberName,
@@ -181,7 +198,12 @@ export function computeEnclosureRating(
   }
 
   const score = Math.round(
-    social.score * SOCIAL_WEIGHT + logistics.score * LOGISTICS_WEIGHT,
+    entries.length < 2
+      ? population.score
+      : Math.min(
+          social * SOCIAL_WEIGHT + logistics.score * LOGISTICS_WEIGHT,
+          population.score,
+        ),
   );
 
   return {
@@ -190,9 +212,11 @@ export function computeEnclosureRating(
     headcount,
     speciesCount: entries.length,
     baseAppeal,
-    blocked: false,
+    areaNeed,
+    incompatible: false,
     breakdown: {
-      social: social.score,
+      social: pairwise.score,
+      population: population.score,
       logistics: logistics.score,
       hasActiveDislike: false,
       worstMemberName: logistics.worstMemberName,

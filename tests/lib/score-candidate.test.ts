@@ -10,7 +10,6 @@ describe("scoreAllDinosaurs", () => {
   it("sorts by name when enclosure is empty", () => {
     const state: EnclosureState = {
       type: "Land",
-      size: "Standard",
       members: [],
     };
     const rows = sortScoredRows(
@@ -27,7 +26,6 @@ describe("scoreAllDinosaurs", () => {
     if (!trike) throw new Error("missing triceratops");
     const state: EnclosureState = {
       type: "Land",
-      size: "Standard",
       members: [{ dinosaurId: trike.id, males: 1, females: 0 }],
     };
     const rows = scoreAllDinosaurs(state, all);
@@ -48,12 +46,11 @@ describe("scoreAllDinosaurs", () => {
       dinosaur: d,
       score,
       tier: "Good",
-      blocked: false,
+      incompatible: false,
       inEnclosure: false,
       delta: {
         terrain: "-",
         newTerrainKeys: [],
-        diet: "-",
         feederNotes: [],
         newFeedingTypes: [],
         socialNotes: [],
@@ -65,7 +62,7 @@ describe("scoreAllDinosaurs", () => {
         envelopeTightness: 0,
         dietCompatibility: 0,
         cohabitation: 0,
-        spaceHeadroom: 0,
+        sizeHarmony: 0,
       },
     });
 
@@ -80,7 +77,6 @@ describe("scoreAllDinosaurs", () => {
   it("sorts by base appeal descending", () => {
     const state: EnclosureState = {
       type: "Land",
-      size: "Standard",
       members: [],
     };
     const rows = sortScoredRows(scoreAllDinosaurs(state, all), "appeal", false);
@@ -100,12 +96,11 @@ describe("scoreAllDinosaurs", () => {
       dinosaur: d,
       score,
       tier: "Good",
-      blocked: false,
+      incompatible: false,
       inEnclosure: false,
       delta: {
         terrain: "-",
         newTerrainKeys: [],
-        diet: "-",
         feederNotes: [],
         newFeedingTypes: [],
         socialNotes: [],
@@ -117,7 +112,7 @@ describe("scoreAllDinosaurs", () => {
         envelopeTightness: 0,
         dietCompatibility: 0,
         cohabitation: 0,
-        spaceHeadroom: 0,
+        sizeHarmony: 0,
       },
     });
 
@@ -129,7 +124,6 @@ describe("scoreAllDinosaurs", () => {
   it("records mutual likes in both directions for ankylodocus and diplodocus", () => {
     const state: EnclosureState = {
       type: "Land",
-      size: "Standard",
       members: [{ dinosaurId: "ankylodocus", males: 0, females: 1 }],
     };
     const diplo = scoreAllDinosaurs(state, all).find(
@@ -155,16 +149,14 @@ describe("scoreAllDinosaurs", () => {
   it("penalizes carnivores in herbivore enclosures without a social block", () => {
     const state: EnclosureState = {
       type: "Land",
-      size: "Standard",
       members: [{ dinosaurId: "ankylodocus", males: 0, females: 1 }],
     };
-    const velo = scoreAllDinosaurs(state, all, { showBlocked: true }).find(
+    const velo = scoreAllDinosaurs(state, all, { showIncompatible: true }).find(
       (r) => r.dinosaur.id === "velociraptor",
     );
-    expect(velo?.blocked).toBe(false);
-    expect(velo?.tier).not.toBe("Blocked");
+    expect(velo?.incompatible).toBe(false);
+    expect(velo?.tier).not.toBe("Incompatible");
     expect(velo?.score).toBeGreaterThan(0);
-    expect(velo?.delta.diet).toBe("+ Carnivore feeder needed");
     expect(velo?.delta.feederNotes).toEqual([
       { text: "+ Carnivore feeder needed" },
     ]);

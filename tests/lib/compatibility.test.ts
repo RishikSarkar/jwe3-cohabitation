@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
-  describeCohabBlock,
-  isBlockedPair,
+  describeCohabIncompatibility,
+  isIncompatiblePair,
+  pairCohabitationScore,
   resolveCohabitation,
 } from "@/lib/compatibility";
 import { cosineSimilarity, habitatToVector } from "@/lib/vectors";
@@ -42,8 +43,8 @@ describe("resolveCohabitation", () => {
         dislikes: [{ kind: "species", id: "tapejara" }],
       },
     });
-    expect(isBlockedPair(tapejara, trope)).toBe(true);
-    expect(describeCohabBlock(tapejara, trope)).toBe(
+    expect(isIncompatiblePair(tapejara, trope)).toBe(true);
+    expect(describeCohabIncompatibility(tapejara, trope)).toBe(
       "Tapejara and Tropeognathus dislike each other",
     );
   });
@@ -76,11 +77,11 @@ describe("resolveCohabitation", () => {
       },
     });
     expect(resolveCohabitation(deino, acro)).toBe("disliked");
-    expect(isBlockedPair(deino, acro)).toBe(true);
-    expect(describeCohabBlock(deino, acro)).toBe(
+    expect(isIncompatiblePair(deino, acro)).toBe(true);
+    expect(describeCohabIncompatibility(deino, acro)).toBe(
       "Deinocheirus dislikes Acrocanthosaurus",
     );
-    expect(isBlockedPair(acro, herrera)).toBe(false);
+    expect(isIncompatiblePair(acro, herrera)).toBe(false);
   });
 
   it("allows carnivore pairs with an explicit like", () => {
@@ -98,7 +99,7 @@ describe("resolveCohabitation", () => {
       name: "Ceratosaurus",
       threatClass: "Carnivore",
     });
-    expect(isBlockedPair(allo, cerato)).toBe(false);
+    expect(isIncompatiblePair(allo, cerato)).toBe(false);
     expect(resolveCohabitation(allo, cerato)).toBe("liked");
   });
 
@@ -117,6 +118,56 @@ describe("resolveCohabitation", () => {
       family: "Ankylosaurid",
     });
     expect(resolveCohabitation(trike, ankyl)).toBe("liked");
+  });
+});
+
+describe("pairCohabitationScore", () => {
+  it("returns 100 for mutual likes with no discomfort", () => {
+    const a = dino({
+      id: "a",
+      name: "A",
+      cohabitation: {
+        likes: [{ kind: "species", id: "b" }],
+        dislikes: [],
+      },
+    });
+    const b = dino({
+      id: "b",
+      name: "B",
+      cohabitation: {
+        likes: [{ kind: "species", id: "a" }],
+        dislikes: [],
+      },
+    });
+    expect(pairCohabitationScore(a, b)).toEqual({
+      score: 100,
+      incompatible: false,
+    });
+  });
+
+  it("stacks neutral discomfort per direction", () => {
+    const a = dino({ id: "a", name: "A" });
+    const b = dino({ id: "b", name: "B" });
+    expect(pairCohabitationScore(a, b)).toEqual({
+      score: 76,
+      incompatible: false,
+    });
+  });
+
+  it("returns 0 and incompatible for any dislike", () => {
+    const a = dino({
+      id: "a",
+      name: "A",
+      cohabitation: {
+        likes: [],
+        dislikes: [{ kind: "species", id: "b" }],
+      },
+    });
+    const b = dino({ id: "b", name: "B" });
+    expect(pairCohabitationScore(a, b)).toEqual({
+      score: 0,
+      incompatible: true,
+    });
   });
 });
 

@@ -29,8 +29,8 @@ export function EnclosureOptimizer() {
     switchType,
     sortMode,
     setSortMode,
-    showBlocked,
-    setShowBlocked,
+    showIncompatible,
+    setShowIncompatible,
   } = useEnclosureSession(allDinosaurs);
 
   const profile = useMemo(
@@ -44,11 +44,11 @@ export function EnclosureOptimizer() {
     () =>
       ready
         ? scoreAllDinosaurs(state, allDinosaurs, {
-            showBlocked,
+            showIncompatible,
             searchQuery: listSearch,
           })
         : [],
-    [ready, state, showBlocked, listSearch],
+    [ready, state, showIncompatible, listSearch],
   );
 
   const memberRows = useMemo(
@@ -121,7 +121,7 @@ export function EnclosureOptimizer() {
                 <span>All {state.type} species</span>
               </h2>
               <p className="mt-2 text-sm text-jwe-offwhite/50">
-                {rows.length} species · sorted by {sortLabel}
+                {rows.length} species, sorted by {sortLabel}
               </p>
             </div>
             <SortSelect value={sortMode} onChange={setSortMode} />
@@ -139,11 +139,11 @@ export function EnclosureOptimizer() {
             <label className="flex shrink-0 cursor-pointer select-none items-center gap-2 text-xs font-semibold uppercase tracking-wide text-jwe-offwhite/45">
               <input
                 type="checkbox"
-                checked={showBlocked}
-                onChange={(e) => setShowBlocked(e.target.checked)}
+                checked={showIncompatible}
+                onChange={(e) => setShowIncompatible(e.target.checked)}
                 className="checkbox-jwe"
               />
-              Show blocked
+              Show incompatible
             </label>
           </div>
 
@@ -174,7 +174,7 @@ export function EnclosureOptimizer() {
       </div>
 
       <footer className="mt-16 border-t border-jwe-brand/10 pt-6 text-center text-xs text-jwe-offwhite/35 lg:mt-20">
-        Unofficial fan tool · Not affiliated with Frontier Developments
+        Unofficial fan tool. Not affiliated with Frontier Developments
       </footer>
     </div>
   );
