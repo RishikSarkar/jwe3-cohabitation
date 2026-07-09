@@ -25,7 +25,9 @@ Single canonical file for all JWE3 species data (101 species). The app loads thi
 
 The catalog layer derives `habitat`, `cohabitation` tags, `threatClass`, `social` population limits, and media paths for scoring and row display.
 
-Population limits are derived from `needs.adultPopulation`, sex count strings, `general.batchSize`, and traits such as Social/Antisocial. Over- or under-stocking a species lowers the enclosure social score.
+Population limits are derived from `needs.adultPopulation`, sex count strings, `general.batchSize`, and traits such as Social/Antisocial. Over- or under-stocking a species lowers the enclosure social score (UI notes: Lonely / Overcrowded).
+
+`attributes.areaNeed` (`LOW` / `MEDIUM` / `HIGH`) and `areaNeedGrowthPercent` feed the banner’s **XS–XL territory** recommendation via the catalog’s derived `spaceGrowthPercent`.
 
 ## Hybrids
 

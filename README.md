@@ -27,7 +27,11 @@ Not affiliated with Frontier Developments.
 
 Detail lines on each row show **what is new** (terrain types, feeder stations, paleobotany crops). The compatibility score also reflects **how much the current habitat mix must shift**, even when no new terrain type is required — hover the score for the breakdown.
 
-**Population:** each species has minimum adult counts and (when listed) sex-ratio caps from in-game social needs. Stocking too few or too many adults lowers the enclosure social score; overcrowding shows up in row details (e.g. `Overcrowded (6/4 adults)`).
+**Cohabitation:** pairwise comfort starts at **100**. Likes give no bonus (they only avoid discomfort from that direction). Each **neutral** direction applies modest stacked discomfort (`Cohabitation discomfort with …`). Any **dislike** either way scores **0** and marks the pair **Incompatible** (UI: Dislikes / Disliked by / Mutual dislike). Notes truncate long name lists to one species + `+N more` (hover for the rest).
+
+**Population:** each species has minimum adult counts and (when listed) sex-ratio caps from in-game social needs. Stocking too few or too many adults lowers the enclosure social score. Row details use wiki-style **Lonely** / **Overcrowded** notes (e.g. `Lonely: 1 adults (need 4+)`, `Overcrowded (6/5 adults)`).
+
+**Territory:** the banner shows a qualitative **XS → XL** recommendation from roster demand (headcount, size, growth %, species count, large-species floor) — not your actual map size. Elevated in-game area need (e.g. Indominus) floors or bumps the tier toward **XL**.
 
 Feeder notes distinguish:
 
