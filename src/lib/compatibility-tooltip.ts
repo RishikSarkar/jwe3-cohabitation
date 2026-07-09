@@ -32,18 +32,19 @@ export function compatibilityBreakdownLines(
   const weights = SCORE_WEIGHTS[enclosureType];
 
   if (enclosureType === "Lagoon") {
+    const lagoonWeights = SCORE_WEIGHTS.Lagoon;
     return sortByWeight([
       {
         label: "Social",
         value: breakdown.cohabitation,
-        weight: weights.cohabitation,
-        weightLabel: pct(weights.cohabitation),
+        weight: lagoonWeights.cohabitation,
+        weightLabel: pct(lagoonWeights.cohabitation),
       },
       {
         label: "Size match",
         value: breakdown.sizeHarmony,
-        weight: weights.sizeHarmony,
-        weightLabel: pct(weights.sizeHarmony),
+        weight: lagoonWeights.sizeHarmony,
+        weightLabel: pct(lagoonWeights.sizeHarmony),
       },
     ]);
   }
