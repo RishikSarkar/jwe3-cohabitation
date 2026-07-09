@@ -1,0 +1,3711 @@
+[
+  {
+    "id": "acrocanthosaurus",
+    "name": "Acrocanthosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Early Cretaceous",
+    "family": "Carnivore",
+    "size": "Large",
+    "habitat": {
+      "cover": 23,
+      "pasture": 67,
+      "wetland": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/acrocanthosaurus.png",
+    "video": "/dinosaurs/acrocanthosaurus.webm"
+  },
+  {
+    "id": "concavenator",
+    "name": "Concavenator",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Early Cretaceous",
+    "family": "Carnivore",
+    "size": "Medium",
+    "habitat": {
+      "cover": 16,
+      "pasture": 40,
+      "water": 43
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/concavenator.png",
+    "video": "/dinosaurs/concavenator.webm"
+  },
+  {
+    "id": "deinonychus",
+    "name": "Deinonychus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Early Cretaceous",
+    "family": "Carnivore",
+    "size": "Small",
+    "habitat": {
+      "cover": 13,
+      "wetland": 77,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/deinonychus.png",
+    "video": "/dinosaurs/deinonychus.webm"
+  },
+  {
+    "id": "utahraptor",
+    "name": "Utahraptor",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Early Cretaceous",
+    "family": "Carnivore",
+    "size": "Small",
+    "habitat": {
+      "cover": 22,
+      "pasture": 49,
+      "wetland": 19,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/utahraptor.png",
+    "video": "/dinosaurs/utahraptor.webm"
+  },
+  {
+    "id": "yutyrannus",
+    "name": "Yutyrannus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Early Cretaceous",
+    "family": "Carnivore",
+    "size": "Medium",
+    "habitat": {
+      "cover": 30,
+      "pasture": 51,
+      "water": 19
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/yutyrannus.png",
+    "video": "/dinosaurs/yutyrannus.webm"
+  },
+  {
+    "id": "sauropelta",
+    "name": "Sauropelta",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Early Cretaceous",
+    "family": "Ankylosaurid",
+    "size": "Small",
+    "habitat": {
+      "pasture": 30,
+      "water": 10,
+      "groundLeaf": 30,
+      "groundFruit": 30
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/sauropelta.png",
+    "video": "/dinosaurs/sauropelta.webm"
+  },
+  {
+    "id": "iguanodon",
+    "name": "Iguanodon",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Early Cretaceous",
+    "family": "Hadrosaurid",
+    "size": "Medium",
+    "habitat": {
+      "pasture": 7,
+      "wetland": 54,
+      "water": 10,
+      "groundFruit": 29
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/iguanodon.png",
+    "video": "/dinosaurs/iguanodon.webm"
+  },
+  {
+    "id": "muttaburrasaurus",
+    "name": "Muttaburrasaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Early Cretaceous",
+    "family": "Hadrosaurid",
+    "size": "Medium",
+    "habitat": {
+      "cover": 28,
+      "water": 18,
+      "groundFiber": 55
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/muttaburrasaurus.png",
+    "video": "/dinosaurs/muttaburrasaurus.webm"
+  },
+  {
+    "id": "psittacosaurus",
+    "name": "Psittacosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Early Cretaceous",
+    "family": "Ceratopsid",
+    "size": "Small",
+    "habitat": {
+      "cover": 25,
+      "water": 34,
+      "groundFruit": 34,
+      "groundNut": 31
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/psittacosaurus.png",
+    "video": "/dinosaurs/psittacosaurus.webm"
+  },
+  {
+    "id": "hypsilophodon",
+    "name": "Hypsilophodon",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Early Cretaceous",
+    "family": "Ornithomimosaurid",
+    "size": "Small",
+    "habitat": {
+      "cover": 10,
+      "wetland": 39,
+      "water": 11,
+      "groundLeaf": 39
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/hypsilophodon.png",
+    "video": "/dinosaurs/hypsilophodon.webm"
+  },
+  {
+    "id": "baryonyx",
+    "name": "Baryonyx",
+    "enclosureType": "Land",
+    "feedingType": "Piscivore / Carnivore",
+    "threatClass": "Piscivore",
+    "era": "Early Cretaceous",
+    "family": "Carnivore",
+    "size": "Medium",
+    "habitat": {
+      "barren": 26,
+      "cover": 22,
+      "wetland": 26,
+      "deepWater": 26
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "irritator"
+        },
+        {
+          "kind": "species",
+          "id": "suchomimus"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/baryonyx.png",
+    "video": "/dinosaurs/baryonyx.webm"
+  },
+  {
+    "id": "irritator",
+    "name": "Irritator",
+    "enclosureType": "Land",
+    "feedingType": "Piscivore / Carnivore",
+    "threatClass": "Piscivore",
+    "era": "Early Cretaceous",
+    "family": "Carnivore",
+    "size": "Medium",
+    "habitat": {
+      "barren": 12,
+      "cover": 22,
+      "wetland": 30,
+      "deepWater": 36
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "baryonyx"
+        },
+        {
+          "kind": "species",
+          "id": "suchomimus"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/irritator.png",
+    "video": "/dinosaurs/irritator.webm"
+  },
+  {
+    "id": "suchomimus",
+    "name": "Suchomimus",
+    "enclosureType": "Land",
+    "feedingType": "Piscivore / Carnivore",
+    "threatClass": "Piscivore",
+    "era": "Early Cretaceous",
+    "family": "Carnivore",
+    "size": "Medium",
+    "habitat": {
+      "arid": 16,
+      "cover": 22,
+      "deepWater": 62
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "irritator"
+        },
+        {
+          "kind": "species",
+          "id": "baryonyx"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/suchomimus.png",
+    "video": "/dinosaurs/suchomimus.webm"
+  },
+  {
+    "id": "patagotitan",
+    "name": "Patagotitan",
+    "enclosureType": "Land",
+    "feedingType": "Tall Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Early Cretaceous",
+    "family": "Sauropod",
+    "size": "Large",
+    "habitat": {
+      "cover": 17,
+      "pasture": 36,
+      "water": 10,
+      "tallFiber": 24,
+      "tallFruit": 12
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "ankylodocus"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        }
+      ]
+    },
+    "image": "/dinosaurs/patagotitan.png",
+    "video": "/dinosaurs/patagotitan.webm"
+  },
+  {
+    "id": "dilophosaurus",
+    "name": "Dilophosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Early Jurassic",
+    "family": "Carnivore",
+    "size": "Small",
+    "habitat": {
+      "cover": 23,
+      "pasture": 33,
+      "wetland": 33,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/dilophosaurus.png",
+    "video": "/dinosaurs/dilophosaurus.webm"
+  },
+  {
+    "id": "dimetrodon",
+    "name": "Dimetrodon",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Early Permian",
+    "family": "Dimetrodon",
+    "size": "Small",
+    "habitat": {
+      "arid": 42,
+      "cover": 5,
+      "deepWater": 53
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/dimetrodon.png",
+    "video": "/dinosaurs/dimetrodon.webm"
+  },
+  {
+    "id": "indominus-rex",
+    "name": "Indominus rex",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Holocene",
+    "family": "Hybrid Carnivore",
+    "size": "Large",
+    "habitat": {
+      "cover": 23,
+      "pasture": 67,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "velociraptor"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/indominus-rex.png",
+    "video": "/dinosaurs/indominus-rex.webm"
+  },
+  {
+    "id": "indoraptor",
+    "name": "Indoraptor",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Holocene",
+    "family": "Hybrid Carnivore",
+    "size": "Medium",
+    "habitat": {
+      "barren": 10,
+      "pasture": 72,
+      "water": 18
+    },
+    "cohabitation": {
+      "likes": [],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/indoraptor.png",
+    "video": "/dinosaurs/indoraptor.webm"
+  },
+  {
+    "id": "scorpios-rex",
+    "name": "Scorpios rex",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Holocene",
+    "family": "Hybrid Carnivore",
+    "size": "Medium",
+    "habitat": {
+      "cover": 20,
+      "pasture": 67,
+      "water": 13
+    },
+    "cohabitation": {
+      "likes": [],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/scorpios-rex.png",
+    "video": "/dinosaurs/scorpios-rex.webm"
+  },
+  {
+    "id": "stegoceratops",
+    "name": "Stegoceratops",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Holocene",
+    "family": "Hybrid",
+    "size": "Medium",
+    "habitat": {
+      "cover": 16,
+      "water": 10,
+      "groundFiber": 42,
+      "groundFruit": 32
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "stegoceratops"
+        },
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "nasutoceratops"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/stegoceratops.png",
+    "video": "/dinosaurs/stegoceratops.webm"
+  },
+  {
+    "id": "spinoceratops",
+    "name": "Spinoceratops",
+    "enclosureType": "Land",
+    "feedingType": "Omnivore",
+    "threatClass": "Omnivore",
+    "era": "Holocene",
+    "family": "Hybrid Ceratops",
+    "size": "Medium",
+    "habitat": {
+      "cover": 7,
+      "pasture": 26,
+      "water": 39,
+      "groundFiber": 28
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Scavenger"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "chasmosaurus"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/spinoceratops.png",
+    "video": "/dinosaurs/spinoceratops.webm"
+  },
+  {
+    "id": "spinoraptor",
+    "name": "Spinoraptor",
+    "enclosureType": "Land",
+    "feedingType": "Piscivore / Carnivore",
+    "threatClass": "Piscivore",
+    "era": "Holocene",
+    "family": "Hybrid Carnivore",
+    "size": "Medium",
+    "habitat": {
+      "cover": 14,
+      "pasture": 56,
+      "deepWater": 30
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "velociraptor"
+        },
+        {
+          "kind": "species",
+          "id": "indominus-rex"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/spinoraptor.png",
+    "video": "/dinosaurs/spinoraptor.webm"
+  },
+  {
+    "id": "ankylodocus",
+    "name": "Ankylodocus",
+    "enclosureType": "Land",
+    "feedingType": "Tall Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Holocene",
+    "family": "Hybrid Sauropod",
+    "size": "Large",
+    "habitat": {
+      "cover": 19,
+      "pasture": 24,
+      "water": 10,
+      "tallLeaf": 10,
+      "tallFruit": 37
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/ankylodocus.png",
+    "video": "/dinosaurs/ankylodocus.webm"
+  },
+  {
+    "id": "albertosaurus",
+    "name": "Albertosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Late Cretaceous",
+    "family": "Carnivore",
+    "size": "Medium",
+    "habitat": {
+      "arid": 6,
+      "barren": 11,
+      "wetland": 70,
+      "water": 13
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "canotaurus"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/albertosaurus.png",
+    "video": "/dinosaurs/albertosaurus.webm"
+  },
+  {
+    "id": "atrociraptor",
+    "name": "Atrociraptor",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Late Cretaceous",
+    "family": "Carnivore",
+    "size": "Small",
+    "habitat": {
+      "cover": 16,
+      "pasture": 74,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/atrociraptor.png",
+    "video": "/dinosaurs/atrociraptor.webm"
+  },
+  {
+    "id": "carnotaurus",
+    "name": "Carnotaurus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Late Cretaceous",
+    "family": "Carnivore",
+    "size": "Medium",
+    "habitat": {
+      "arid": 45,
+      "wetland": 45,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/carnotaurus.png",
+    "video": "/dinosaurs/carnotaurus.webm"
+  },
+  {
+    "id": "giganotosaurus",
+    "name": "Giganotosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Late Cretaceous",
+    "family": "Carnivore",
+    "size": "Large",
+    "habitat": {
+      "cover": 11,
+      "pasture": 60,
+      "wetland": 18,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/giganotosaurus.png",
+    "video": "/dinosaurs/giganotosaurus.webm"
+  },
+  {
+    "id": "pyroraptor",
+    "name": "Pyroraptor",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Late Cretaceous",
+    "family": "Carnivore",
+    "size": "Small",
+    "habitat": {
+      "cover": 10,
+      "pasture": 80,
+      "deepWater": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/pyroraptor.png",
+    "video": "/dinosaurs/pyroraptor.webm"
+  },
+  {
+    "id": "qianzhousaurus",
+    "name": "Qianzhousaurus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Late Cretaceous",
+    "family": "Carnivore",
+    "size": "Medium",
+    "habitat": {
+      "barren": 6,
+      "cover": 3,
+      "pasture": 74,
+      "water": 18
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/qianzhousaurus.png",
+    "video": "/dinosaurs/qianzhousaurus.webm"
+  },
+  {
+    "id": "spinosaurus",
+    "name": "Spinosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Late Cretaceous",
+    "family": "Carnivore",
+    "size": "Large",
+    "habitat": {
+      "pasture": 25,
+      "wetland": 25,
+      "deepWater": 50
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/spinosaurus.png",
+    "video": "/dinosaurs/spinosaurus.webm"
+  },
+  {
+    "id": "troodon",
+    "name": "Troodon",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Late Cretaceous",
+    "family": "Carnivore",
+    "size": "Small",
+    "habitat": {
+      "cover": 15,
+      "pasture": 75,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/troodon.png",
+    "video": "/dinosaurs/troodon.webm"
+  },
+  {
+    "id": "tyrannosaurus-rex",
+    "name": "Tyrannosaurus rex",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Late Cretaceous",
+    "family": "Carnivore",
+    "size": "Large",
+    "habitat": {
+      "arid": 15,
+      "cover": 13,
+      "pasture": 62,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/tyrannosaurus-rex.png",
+    "video": "/dinosaurs/tyrannosaurus-rex.webm"
+  },
+  {
+    "id": "velociraptor",
+    "name": "Velociraptor",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Late Cretaceous",
+    "family": "Carnivore",
+    "size": "Small",
+    "habitat": {
+      "cover": 16,
+      "pasture": 74,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "indominus-rex"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/velociraptor.png",
+    "video": "/dinosaurs/velociraptor.webm"
+  },
+  {
+    "id": "moros-intrepidus",
+    "name": "Moros Intrepidus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Scavenger",
+    "era": "Late Cretaceous",
+    "family": "Scavenger",
+    "size": "Small",
+    "habitat": {
+      "arid": 30,
+      "pasture": 60,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "indominus-rex"
+        },
+        {
+          "kind": "species",
+          "id": "indoraptor"
+        },
+        {
+          "kind": "species",
+          "id": "scorpios-rex"
+        }
+      ]
+    },
+    "image": "/dinosaurs/moros-intrepidus.png",
+    "video": "/dinosaurs/moros-intrepidus.webm"
+  },
+  {
+    "id": "ankylosaurus",
+    "name": "Ankylosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Ankylosaurid",
+    "size": "Medium",
+    "habitat": {
+      "pasture": 15,
+      "wetland": 19,
+      "water": 10,
+      "groundLeaf": 28,
+      "groundFruit": 28
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Scavenger"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/ankylosaurus.png",
+    "video": "/dinosaurs/ankylosaurus.webm"
+  },
+  {
+    "id": "nodosaurus",
+    "name": "Nodosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Ankylosaurid",
+    "size": "Small",
+    "habitat": {
+      "pasture": 45,
+      "water": 10,
+      "groundLeaf": 45
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/nodosaurus.png",
+    "video": "/dinosaurs/nodosaurus.webm"
+  },
+  {
+    "id": "chasmosaurus",
+    "name": "Chasmosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Ceratopsid",
+    "size": "Small",
+    "habitat": {
+      "cover": 9,
+      "pasture": 41,
+      "water": 10,
+      "groundLeaf": 41
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "microceratus"
+        },
+        {
+          "kind": "species",
+          "id": "styracosaurus"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "nasutoceratops"
+        },
+        {
+          "kind": "species",
+          "id": "spinoceratops"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/chasmosaurus.png",
+    "video": "/dinosaurs/chasmosaurus.webm"
+  },
+  {
+    "id": "lokiceratops",
+    "name": "Lokiceratops",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Ceratopsid",
+    "size": "Small",
+    "habitat": {
+      "cover": 14,
+      "wetland": 36,
+      "water": 10,
+      "groundFiber": 40
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "microceratus"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "stegoceratops"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/lokiceratops.png",
+    "video": "/dinosaurs/lokiceratops.webm"
+  },
+  {
+    "id": "microceratus",
+    "name": "Microceratus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Ceratopsid",
+    "size": "Small",
+    "habitat": {
+      "pasture": 55,
+      "water": 10,
+      "groundLeaf": 21,
+      "groundFiber": 14
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "lystrosaurus"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/microceratus.png",
+    "video": "/dinosaurs/microceratus.webm"
+  },
+  {
+    "id": "nasutoceratops",
+    "name": "Nasutoceratops",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Ceratopsid",
+    "size": "Medium",
+    "habitat": {
+      "cover": 31,
+      "water": 10,
+      "groundLeaf": 59
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "microceratus"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "stegoceratops"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/nasutoceratops.png",
+    "video": "/dinosaurs/nasutoceratops.webm"
+  },
+  {
+    "id": "protoceratops",
+    "name": "Protoceratops",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Ceratopsid",
+    "size": "Medium",
+    "habitat": {
+      "cover": 25,
+      "water": 10,
+      "groundLeaf": 19,
+      "groundFiber": 47
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "microceratus"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "stegoceratops"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/protoceratops.png",
+    "video": "/dinosaurs/protoceratops.webm"
+  },
+  {
+    "id": "sinoceratops",
+    "name": "Sinoceratops",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Ceratopsid",
+    "size": "Medium",
+    "habitat": {
+      "cover": 12,
+      "wetland": 6,
+      "water": 10,
+      "groundFiber": 71
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "microceratus"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "triceratops"
+        },
+        {
+          "kind": "species",
+          "id": "styracosaurus"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/sinoceratops.png",
+    "video": "/dinosaurs/sinoceratops.webm"
+  },
+  {
+    "id": "styracosaurus",
+    "name": "Styracosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Ceratopsid",
+    "size": "Small",
+    "habitat": {
+      "cover": 12,
+      "wetland": 25,
+      "water": 10,
+      "groundFiber": 53
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "microceratus"
+        },
+        {
+          "kind": "species",
+          "id": "chasmosaurus"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "triceratops"
+        },
+        {
+          "kind": "species",
+          "id": "sinoceratops"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/styracosaurus.png",
+    "video": "/dinosaurs/styracosaurus.webm"
+  },
+  {
+    "id": "triceratops",
+    "name": "Triceratops",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Ceratopsid",
+    "size": "Medium",
+    "habitat": {
+      "cover": 19,
+      "wetland": 20,
+      "water": 10,
+      "groundFiber": 51
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "stegoceratops"
+        },
+        {
+          "kind": "species",
+          "id": "microceratus"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "styracosaurus"
+        },
+        {
+          "kind": "species",
+          "id": "sinoceratops"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/triceratops.png",
+    "video": "/dinosaurs/triceratops.webm"
+  },
+  {
+    "id": "corythosaurus",
+    "name": "Corythosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Hadrosaurid",
+    "size": "Medium",
+    "habitat": {
+      "pasture": 59,
+      "water": 9,
+      "groundLeaf": 32
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/corythosaurus.png",
+    "video": "/dinosaurs/corythosaurus.webm"
+  },
+  {
+    "id": "edmontosaurus",
+    "name": "Edmontosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Hadrosaurid",
+    "size": "Medium",
+    "habitat": {
+      "pasture": 50,
+      "wetland": 31,
+      "water": 7,
+      "groundFiber": 12
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/edmontosaurus.png",
+    "video": "/dinosaurs/edmontosaurus.webm"
+  },
+  {
+    "id": "maiasaura",
+    "name": "Maiasaura",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Hadrosaurid",
+    "size": "Medium",
+    "habitat": {
+      "pasture": 60,
+      "water": 10,
+      "groundFiber": 15,
+      "groundNut": 15
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "parasaurolophus"
+        },
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/maiasaura.png",
+    "video": "/dinosaurs/maiasaura.webm"
+  },
+  {
+    "id": "olorotitan",
+    "name": "Olorotitan",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Hadrosaurid",
+    "size": "Medium",
+    "habitat": {
+      "wetland": 30,
+      "water": 10,
+      "groundFiber": 60
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/olorotitan.png",
+    "video": "/dinosaurs/olorotitan.webm"
+  },
+  {
+    "id": "parasaurolophus",
+    "name": "Parasaurolophus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Hadrosaurid",
+    "size": "Medium",
+    "habitat": {
+      "pasture": 31,
+      "wetland": 40,
+      "groundNut": 19
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "maiasaura"
+        },
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/parasaurolophus.png",
+    "video": "/dinosaurs/parasaurolophus.webm"
+  },
+  {
+    "id": "tsintaosaurus",
+    "name": "Tsintaosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Hadrosaurid",
+    "size": "Medium",
+    "habitat": {
+      "pasture": 60,
+      "water": 10,
+      "groundFiber": 30
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/tsintaosaurus.png",
+    "video": "/dinosaurs/tsintaosaurus.webm"
+  },
+  {
+    "id": "archaeornithomimus",
+    "name": "Archaeornithomimus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Ornithomimosaurid",
+    "size": "Small",
+    "habitat": {
+      "cover": 19,
+      "water": 22,
+      "groundFruit": 60
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/archaeornithomimus.png",
+    "video": "/dinosaurs/archaeornithomimus.webm"
+  },
+  {
+    "id": "gallimimus",
+    "name": "Gallimimus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Ornithomimosaurid",
+    "size": "Small",
+    "habitat": {
+      "cover": 8,
+      "wetland": 16,
+      "water": 10,
+      "groundLeaf": 66
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/gallimimus.png",
+    "video": "/dinosaurs/gallimimus.webm"
+  },
+  {
+    "id": "ornithomimus",
+    "name": "Ornithomimus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Ornithomimosaurid",
+    "size": "Small",
+    "habitat": {
+      "cover": 7,
+      "wetland": 14,
+      "water": 9,
+      "groundLeaf": 53,
+      "groundFruit": 18
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/ornithomimus.png",
+    "video": "/dinosaurs/ornithomimus.webm"
+  },
+  {
+    "id": "struthiomimus",
+    "name": "Struthiomimus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Ornithomimosaurid",
+    "size": "Small",
+    "habitat": {
+      "cover": 15,
+      "water": 10,
+      "groundLeaf": 75
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/struthiomimus.png",
+    "video": "/dinosaurs/struthiomimus.webm"
+  },
+  {
+    "id": "homalocephale",
+    "name": "Homalocephale",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Pachycephalosaurid",
+    "size": "Small",
+    "habitat": {
+      "pasture": 34,
+      "water": 34,
+      "groundLeaf": 16,
+      "groundFiber": 16
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/homalocephale.png",
+    "video": "/dinosaurs/homalocephale.webm"
+  },
+  {
+    "id": "pachycephalosaurus",
+    "name": "Pachycephalosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Pachycephalosaurid",
+    "size": "Small",
+    "habitat": {
+      "wetland": 60,
+      "water": 10,
+      "groundLeaf": 30
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/pachycephalosaurus.png",
+    "video": "/dinosaurs/pachycephalosaurus.webm"
+  },
+  {
+    "id": "stygimoloch",
+    "name": "Stygimoloch",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Pachycephalosaurid",
+    "size": "Small",
+    "habitat": {
+      "cover": 15,
+      "water": 10,
+      "groundLeaf": 75
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/stygimoloch.png",
+    "video": "/dinosaurs/stygimoloch.webm"
+  },
+  {
+    "id": "therizinosaurus",
+    "name": "Therizinosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Therizinosaurid",
+    "size": "Large",
+    "habitat": {
+      "cover": 15,
+      "water": 10,
+      "groundLeaf": 75
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
+    },
+    "image": "/dinosaurs/therizinosaurus.png",
+    "video": "/dinosaurs/therizinosaurus.webm"
+  },
+  {
+    "id": "oviraptor",
+    "name": "Oviraptor",
+    "enclosureType": "Land",
+    "feedingType": "Omnivore",
+    "threatClass": "Scavenger",
+    "era": "Late Cretaceous",
+    "family": "Scavenger",
+    "size": "Small",
+    "habitat": {
+      "cover": 15,
+      "water": 10,
+      "groundLeaf": 75
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        },
+        {
+          "kind": "family",
+          "id": "Scavenger"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "indominus-rex"
+        },
+        {
+          "kind": "species",
+          "id": "indoraptor"
+        },
+        {
+          "kind": "species",
+          "id": "scorpios-rex"
+        },
+        {
+          "kind": "species",
+          "id": "lystrosaurus"
+        }
+      ]
+    },
+    "image": "/dinosaurs/oviraptor.png",
+    "video": "/dinosaurs/oviraptor.webm"
+  },
+  {
+    "id": "deinocheirus",
+    "name": "Deinocheirus",
+    "enclosureType": "Land",
+    "feedingType": "piscivore /\nGround Palaeobotany",
+    "threatClass": "Piscivore",
+    "era": "Late Cretaceous",
+    "family": "Deinocheirus",
+    "size": "Large",
+    "habitat": {
+      "wetland": 10,
+      "groundLeaf": 38
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/deinocheirus.png",
+    "video": "/dinosaurs/deinocheirus.webm"
+  },
+  {
+    "id": "austroraptor",
+    "name": "Austroraptor",
+    "enclosureType": "Land",
+    "feedingType": "Piscivore / Carnivore",
+    "threatClass": "Piscivore",
+    "era": "Late Cretaceous",
+    "family": "Carnivore",
+    "size": "Small",
+    "habitat": {
+      "cover": 16,
+      "pasture": 16,
+      "wetland": 51,
+      "water": 17
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/austroraptor.png",
+    "video": "/dinosaurs/austroraptor.webm"
+  },
+  {
+    "id": "dreadnoughtus",
+    "name": "Dreadnoughtus",
+    "enclosureType": "Land",
+    "feedingType": "Tall Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Sauropod",
+    "size": "Large",
+    "habitat": {
+      "cover": 13,
+      "wetland": 29,
+      "water": 10,
+      "tallFiber": 32,
+      "tallFruit": 16
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "ankylodocus"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        }
+      ]
+    },
+    "image": "/dinosaurs/dreadnoughtus.png",
+    "video": "/dinosaurs/dreadnoughtus.webm"
+  },
+  {
+    "id": "proceratosaurus",
+    "name": "Proceratosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Middle Jurassic",
+    "family": "Carnivore",
+    "size": "Small",
+    "habitat": {
+      "cover": 17,
+      "pasture": 73,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/proceratosaurus.png",
+    "video": "/dinosaurs/proceratosaurus.webm"
+  },
+  {
+    "id": "allosaurus",
+    "name": "Allosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Late Jurassic",
+    "family": "Carnivore",
+    "size": "Medium",
+    "habitat": {
+      "cover": 15,
+      "pasture": 75,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "ceratosaurus"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/allosaurus.png",
+    "video": "/dinosaurs/allosaurus.webm"
+  },
+  {
+    "id": "guanlong",
+    "name": "Guanlong",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Late Jurassic",
+    "family": "Carnivore",
+    "size": "Small",
+    "habitat": {
+      "cover": 17,
+      "pasture": 73,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/guanlong.png",
+    "video": "/dinosaurs/guanlong.webm"
+  },
+  {
+    "id": "metriacanthosaurus",
+    "name": "Metriacanthosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Late Jurassic",
+    "family": "Carnivore",
+    "size": "Medium",
+    "habitat": {
+      "cover": 8,
+      "pasture": 82,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "allosaurus"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/metriacanthosaurus.png",
+    "video": "/dinosaurs/metriacanthosaurus.webm"
+  },
+  {
+    "id": "compsognathus",
+    "name": "Compsognathus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Scavenger",
+    "era": "Late Jurassic",
+    "family": "Scavenger",
+    "size": "Small",
+    "habitat": {
+      "arid": 45,
+      "pasture": 45,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "indominus-rex"
+        },
+        {
+          "kind": "species",
+          "id": "indoraptor"
+        },
+        {
+          "kind": "species",
+          "id": "scorpios-rex"
+        }
+      ]
+    },
+    "image": "/dinosaurs/compsognathus.png",
+    "video": "/dinosaurs/compsognathus.webm"
+  },
+  {
+    "id": "ceratosaurus",
+    "name": "Ceratosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Late Jurassic",
+    "family": "Carnivore",
+    "size": "Medium",
+    "habitat": {
+      "cover": 15,
+      "pasture": 37,
+      "wetland": 37,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "allosaurus"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/ceratosaurus.png",
+    "video": "/dinosaurs/ceratosaurus.webm"
+  },
+  {
+    "id": "dryosaurus",
+    "name": "Dryosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Jurassic",
+    "family": "Ornithomimosaurid",
+    "size": "Small",
+    "habitat": {
+      "pasture": 46,
+      "water": 10,
+      "groundLeaf": 22,
+      "groundFiber": 22
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/dryosaurus.png",
+    "video": "/dinosaurs/dryosaurus.webm"
+  },
+  {
+    "id": "chungkingosaurus",
+    "name": "Chungkingosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Jurassic",
+    "family": "Stegosaurid",
+    "size": "Small",
+    "habitat": {
+      "pasture": 69,
+      "water": 10,
+      "groundFruit": 21
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "gigantspinosaurus"
+        },
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/chungkingosaurus.png",
+    "video": "/dinosaurs/chungkingosaurus.webm"
+  },
+  {
+    "id": "gigantspinosaurus",
+    "name": "Gigantspinosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Jurassic",
+    "family": "Stegosaurid",
+    "size": "Small",
+    "habitat": {
+      "cover": 15,
+      "water": 10,
+      "groundLeaf": 75
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "chungkingosaurus"
+        },
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/gigantspinosaurus.png",
+    "video": "/dinosaurs/gigantspinosaurus.webm"
+  },
+  {
+    "id": "kentrosaurus",
+    "name": "Kentrosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Jurassic",
+    "family": "Stegosaurid",
+    "size": "Small",
+    "habitat": {
+      "cover": 12,
+      "water": 10,
+      "groundFiber": 78
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "species",
+          "id": "hardrosaur"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/kentrosaurus.png",
+    "video": "/dinosaurs/kentrosaurus.webm"
+  },
+  {
+    "id": "stegosaurus",
+    "name": "Stegosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Jurassic",
+    "family": "Stegosaurid",
+    "size": "Medium",
+    "habitat": {
+      "cover": 14,
+      "water": 10,
+      "groundFiber": 41,
+      "groundFruit": 35
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "stegoceratops"
+        },
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ]
+    },
+    "image": "/dinosaurs/stegosaurus.png",
+    "video": "/dinosaurs/stegosaurus.webm"
+  },
+  {
+    "id": "apatosaurus",
+    "name": "Apatosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Tall Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Jurassic",
+    "family": "Sauropod",
+    "size": "Large",
+    "habitat": {
+      "cover": 18,
+      "pasture": 32,
+      "water": 10,
+      "tallLeaf": 40
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "brachiosaurus"
+        },
+        {
+          "kind": "species",
+          "id": "ankylodocus"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        }
+      ]
+    },
+    "image": "/dinosaurs/apatosaurus.png",
+    "video": "/dinosaurs/apatosaurus.webm"
+  },
+  {
+    "id": "brachiosaurus",
+    "name": "Brachiosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Tall Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Jurassic",
+    "family": "Sauropod",
+    "size": "Large",
+    "habitat": {
+      "cover": 14,
+      "wetland": 19,
+      "water": 10,
+      "tallFruit": 57
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "apatosaurus"
+        },
+        {
+          "kind": "species",
+          "id": "ankylodocus"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        }
+      ]
+    },
+    "image": "/dinosaurs/brachiosaurus.png",
+    "video": "/dinosaurs/brachiosaurus.webm"
+  },
+  {
+    "id": "diplodocus",
+    "name": "Diplodocus",
+    "enclosureType": "Land",
+    "feedingType": "Tall Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Jurassic",
+    "family": "Sauropod",
+    "size": "Large",
+    "habitat": {
+      "cover": 10,
+      "pasture": 20,
+      "wetland": 28,
+      "water": 10,
+      "tallFruit": 32
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "ankylodocus"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        }
+      ]
+    },
+    "image": "/dinosaurs/diplodocus.png",
+    "video": "/dinosaurs/diplodocus.webm"
+  },
+  {
+    "id": "mamenchisaurus",
+    "name": "Mamenchisaurus",
+    "enclosureType": "Land",
+    "feedingType": "Tall Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Jurassic",
+    "family": "Sauropod",
+    "size": "Large",
+    "habitat": {
+      "cover": 16,
+      "pasture": 33,
+      "water": 10,
+      "tallLeaf": 41
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "ankylodocus"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        }
+      ]
+    },
+    "image": "/dinosaurs/mamenchisaurus.png",
+    "video": "/dinosaurs/mamenchisaurus.webm"
+  },
+  {
+    "id": "lystrosaurus",
+    "name": "Lystrosaurus",
+    "enclosureType": "Land",
+    "feedingType": "Ground Palaeobotany",
+    "threatClass": "Herbivore",
+    "era": "Late Permian",
+    "family": "Therapsid",
+    "size": "Small",
+    "habitat": {
+      "pasture": 57,
+      "water": 11,
+      "groundLeaf": 17,
+      "groundFiber": 17
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "microceratus"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "oviraptor"
+        }
+      ]
+    },
+    "image": "/dinosaurs/lystrosaurus.png",
+    "video": "/dinosaurs/lystrosaurus.webm"
+  },
+  {
+    "id": "herrerasaurus",
+    "name": "Herrerasaurus",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Carnivore",
+    "era": "Late Triassic",
+    "family": "Carnivore",
+    "size": "Small",
+    "habitat": {
+      "cover": 17,
+      "pasture": 73,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/herrerasaurus.png",
+    "video": "/dinosaurs/herrerasaurus.webm"
+  },
+  {
+    "id": "coelophysis",
+    "name": "Coelophysis",
+    "enclosureType": "Land",
+    "feedingType": "Carnivore",
+    "threatClass": "Scavenger",
+    "era": "Late Triassic",
+    "family": "Scavenger",
+    "size": "Small",
+    "habitat": {
+      "cover": 8,
+      "pasture": 82,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "family",
+          "id": "Sauropod"
+        },
+        {
+          "kind": "family",
+          "id": "Ornithomimosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Ceratopsid"
+        },
+        {
+          "kind": "family",
+          "id": "Ankylosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Hadrosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Pachycephalosaurid"
+        },
+        {
+          "kind": "family",
+          "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        },
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/coelophysis.png",
+    "video": "/dinosaurs/coelophysis.webm"
+  },
+  {
+    "id": "dimorphodon",
+    "name": "Dimorphodon",
+    "enclosureType": "Aviary",
+    "feedingType": "Unknown",
+    "threatClass": "Herbivore",
+    "era": "Early Jurassic",
+    "family": "Unknown",
+    "size": "Small",
+    "habitat": {
+      "arid": 20,
+      "pasture": 40,
+      "water": 40
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "quetzalcoatlus"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/dimorphodon.png",
+    "video": "/dinosaurs/dimorphodon.webm"
+  },
+  {
+    "id": "tapejara",
+    "name": "Tapejara",
+    "enclosureType": "Aviary",
+    "feedingType": "Unknown",
+    "threatClass": "Herbivore",
+    "era": "Early Cretaceous",
+    "family": "Unknown",
+    "size": "Small",
+    "habitat": {
+      "cover": 13,
+      "pasture": 77,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "quetzalcoatlus"
+        },
+        {
+          "kind": "species",
+          "id": "caiuajara"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "tropeognathus"
+        }
+      ]
+    },
+    "image": "/dinosaurs/tapejara.png",
+    "video": "/dinosaurs/tapejara.webm"
+  },
+  {
+    "id": "tropeognathus",
+    "name": "Tropeognathus",
+    "enclosureType": "Aviary",
+    "feedingType": "Unknown",
+    "threatClass": "Herbivore",
+    "era": "Early Cretaceous",
+    "family": "Unknown",
+    "size": "Medium",
+    "habitat": {
+      "cover": 4,
+      "pasture": 86,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "tapejara"
+        }
+      ]
+    },
+    "image": "/dinosaurs/tropeognathus.png",
+    "video": "/dinosaurs/tropeognathus.webm"
+  },
+  {
+    "id": "geosternbergia",
+    "name": "Geosternbergia",
+    "enclosureType": "Aviary",
+    "feedingType": "Unknown",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Unknown",
+    "size": "Medium",
+    "habitat": {
+      "cover": 11,
+      "pasture": 52,
+      "wetland": 27,
+      "water": 10
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "tropeognathus"
+        },
+        {
+          "kind": "species",
+          "id": "pteranodon"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/geosternbergia.png",
+    "video": "/dinosaurs/geosternbergia.webm"
+  },
+  {
+    "id": "pteranodon",
+    "name": "Pteranodon",
+    "enclosureType": "Aviary",
+    "feedingType": "Unknown",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Unknown",
+    "size": "Medium",
+    "habitat": {
+      "barren": 12,
+      "pasture": 60,
+      "water": 28
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "geosternbergia"
+        },
+        {
+          "kind": "species",
+          "id": "thanatosdrakon"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/pteranodon.png",
+    "video": "/dinosaurs/pteranodon.webm"
+  },
+  {
+    "id": "thanatosdrakon",
+    "name": "Thanatosdrakon",
+    "enclosureType": "Aviary",
+    "feedingType": "Unknown",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Unknown",
+    "size": "Medium",
+    "habitat": {
+      "barren": 10,
+      "pasture": 59,
+      "wetland": 8,
+      "water": 23
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "pteranodon"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/thanatosdrakon.png",
+    "video": "/dinosaurs/thanatosdrakon.webm"
+  },
+  {
+    "id": "caiuajara",
+    "name": "Caiuajara",
+    "enclosureType": "Aviary",
+    "feedingType": "Unknown",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Unknown",
+    "size": "Small",
+    "habitat": {
+      "arid": 60,
+      "barren": 15,
+      "cover": 18,
+      "water": 8
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "quetzalcoatlus"
+        },
+        {
+          "kind": "species",
+          "id": "tapejara"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/caiuajara.png",
+    "video": "/dinosaurs/caiuajara.webm"
+  },
+  {
+    "id": "quetzalcoatlus",
+    "name": "Quetzalcoatlus",
+    "enclosureType": "Aviary",
+    "feedingType": "Unknown",
+    "threatClass": "Herbivore",
+    "era": "Late Cretaceous",
+    "family": "Unknown",
+    "size": "Large",
+    "habitat": {
+      "arid": 26,
+      "barren": 39,
+      "wetland": 7,
+      "water": 28
+    },
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "species",
+          "id": "dimorphodon"
+        },
+        {
+          "kind": "species",
+          "id": "tapejara"
+        },
+        {
+          "kind": "species",
+          "id": "caiuajara"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/quetzalcoatlus.png",
+    "video": "/dinosaurs/quetzalcoatlus.webm"
+  },
+  {
+    "id": "dunkleosteus",
+    "name": "Dunkleosteus",
+    "enclosureType": "Lagoon",
+    "feedingType": "Shoal",
+    "threatClass": "Marine",
+    "era": "Devonian",
+    "family": "Unknown",
+    "size": "Medium",
+    "habitat": {},
+    "cohabitation": {
+      "likes": [],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "megalodon"
+        }
+      ]
+    },
+    "image": "/dinosaurs/dunkleosteus.png",
+    "video": "/dinosaurs/dunkleosteus.webm"
+  },
+  {
+    "id": "ichthyosaurus",
+    "name": "Ichthyosaurus",
+    "enclosureType": "Lagoon",
+    "feedingType": "Shoal",
+    "threatClass": "Marine",
+    "era": "Late Triassic",
+    "family": "Unknown",
+    "size": "Small",
+    "habitat": {},
+    "cohabitation": {
+      "likes": [],
+      "dislikes": [
+        {
+          "kind": "size",
+          "size": "Large"
+        }
+      ]
+    },
+    "image": "/dinosaurs/ichthyosaurus.png",
+    "video": "/dinosaurs/ichthyosaurus.webm"
+  },
+  {
+    "id": "attenborosaurus",
+    "name": "Attenborosaurus",
+    "enclosureType": "Lagoon",
+    "feedingType": "Shoal",
+    "threatClass": "Marine",
+    "era": "Early Jurassic",
+    "family": "Unknown",
+    "size": "Medium",
+    "habitat": {},
+    "cohabitation": {
+      "likes": [
+        {
+          "kind": "size",
+          "size": "Small"
+        },
+        {
+          "kind": "size",
+          "size": "Medium"
+        }
+      ],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/attenborosaurus.png",
+    "video": "/dinosaurs/attenborosaurus.webm"
+  },
+  {
+    "id": "plesiosaurus",
+    "name": "Plesiosaurus",
+    "enclosureType": "Lagoon",
+    "feedingType": "Shoal",
+    "threatClass": "Marine",
+    "era": "Early Jurassic",
+    "family": "Unknown",
+    "size": "Small",
+    "habitat": {},
+    "cohabitation": {
+      "likes": [],
+      "dislikes": []
+    },
+    "image": "/dinosaurs/plesiosaurus.png",
+    "video": "/dinosaurs/plesiosaurus.webm"
+  },
+  {
+    "id": "kronosaurus",
+    "name": "Kronosaurus",
+    "enclosureType": "Lagoon",
+    "feedingType": "Shoal",
+    "threatClass": "Marine",
+    "era": "Early Cretaceous",
+    "family": "Unknown",
+    "size": "Large",
+    "habitat": {},
+    "cohabitation": {
+      "likes": [],
+      "dislikes": [
+        {
+          "kind": "size",
+          "size": "Large"
+        }
+      ]
+    },
+    "image": "/dinosaurs/kronosaurus.png",
+    "video": "/dinosaurs/kronosaurus.webm"
+  },
+  {
+    "id": "mosasaurus",
+    "name": "Mosasaurus",
+    "enclosureType": "Lagoon",
+    "feedingType": "Shark, Shoal",
+    "threatClass": "Marine",
+    "era": "Late Cretaceous",
+    "family": "Unknown",
+    "size": "Large",
+    "habitat": {},
+    "cohabitation": {
+      "likes": [],
+      "dislikes": [
+        {
+          "kind": "size",
+          "size": "Large"
+        }
+      ]
+    },
+    "image": "/dinosaurs/mosasaurus.png",
+    "video": "/dinosaurs/mosasaurus.webm"
+  },
+  {
+    "id": "megalodon",
+    "name": "Megalodon",
+    "enclosureType": "Lagoon",
+    "feedingType": "Shark, Shoal",
+    "threatClass": "Marine",
+    "era": "Miocene",
+    "family": "Unknown",
+    "size": "Large",
+    "habitat": {},
+    "cohabitation": {
+      "likes": [],
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "dunkleosteus"
+        }
+      ]
+    },
+    "image": "/dinosaurs/megalodon.png",
+    "video": "/dinosaurs/megalodon.webm"
+  }
+]

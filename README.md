@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JWE3 Enclosure Optimizer
 
-## Getting Started
+Fan-made tool for **Jurassic World Evolution 3** that helps you find compatible dinosaurs for an enclosure with minimal terrain and feeder changes.
 
-First, run the development server:
+Not affiliated with Frontier Developments.
+
+## Features
+
+- **Enclosure box** — add species with male/female counts; Land, Aviary, or Lagoon
+- **Ranked species list** — compatibility scoring when the enclosure has members; name sort always available
+- **Official-style UI** — topo background, Chakra Petch, JWE3 green accents
+- **Official portraits & hover videos** — pulled from the JWE3 CDN (`npm run fetch-images`)
+- **Row links** — click a species row to open its page on [jurassicworldevolution.com](https://www.jurassicworldevolution.com/en-US/3/dinosaurs) in a new tab
+- **Shareable URLs** — full enclosure state encoded in query params
+- **Deterministic scoring** — habitat cosine similarity, shared terrain coverage, explicit cohabitation rules
+
+## Quick start
 
 ```bash
+npm install
+npm run import-data   # raw CSVs → clean CSVs + dinosaurs.json
+npm run fetch-images  # optional: official portraits + hover .webm loops
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Data pipeline
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Stage | Location | Purpose |
+|-------|----------|---------|
+| Raw (editable) | `data/raw/*.csv` | Spreadsheet exports |
+| Clean (generated) | `data/clean/*.csv` | Normalized headers and families |
+| Runtime | `src/data/dinosaurs.json` | Typed app data |
 
-## Learn More
+Re-run after CSV edits:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run import-data
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Dev server (runs `import-data` first) |
+| `npm run build` | Production build |
+| `npm run start` | Serve production build |
+| `npm test` | Vitest unit tests |
+| `npm run lint` | ESLint |
+| `npm run format` | Prettier write |
+| `npm run import-data` | CSV → JSON pipeline |
+| `npm run fetch-images` | Download official images/videos; wiki fallback |
 
-## Deploy on Vercel
+## Images & videos
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run fetch-images
+# npm run fetch-images -- --refresh   # re-download everything
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Assets are saved under `public/dinosaurs/`. Species without an official listing entry show a letter fallback.
+
+## URL format
+
+```
+/?type=Land&size=Standard&roster=triceratops:1m2f,ankylosaurus:0m1f
+```
+
+## Tech stack
+
+- Next.js 14 (App Router), TypeScript, Tailwind CSS
+- Vitest for scoring/compatibility tests
+- Static-friendly deploy (e.g. Vercel)
+
+## Attribution
+
+Dinosaur data from community habitat planners. Images and hover videos from the official JWE3 website CDN where available.

@@ -1,0 +1,9 @@
+DINO,Diet,Era,Size,Likes,Dislikes
+Dunkleosteus,Shoal,Devonian,Medium,,Megalodon
+Ichthyosaurus,Shoal,Late Triassic,Small,,Large
+Attenborosaurus,Shoal,Early Jurassic,Medium,"Small
+Medium",
+Plesiosaurus,Shoal,Early Jurassic,Small,,
+Kronosaurus,Shoal,Early Cretaceous,Large,,Large
+Mosasaurus,"Shark, Shoal",Late Cretaceous,Large,,Large
+Megalodon,"Shark, Shoal",Miocene,Large,,Dunkleosteus
