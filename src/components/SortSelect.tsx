@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import type { SortMode } from "@/types/dinosaur";
 
 const OPTIONS: { value: SortMode; label: string }[] = [
-  { value: "compatibility", label: "Sort: Compatibility" },
-  { value: "recommended", label: "Sort: Recommended" },
-  { value: "appeal", label: "Sort: Appeal" },
-  { value: "name", label: "Sort: Name" },
+  { value: "compatibility", label: "Compatibility" },
+  { value: "recommended", label: "Recommended" },
+  { value: "appeal", label: "Appeal" },
+  { value: "name", label: "Name" },
 ];
 
 type Props = {
@@ -35,12 +35,13 @@ export function SortSelect({ value, onChange }: Props) {
     <div className="sort-picker" ref={ref}>
       <button
         type="button"
-        className="input-jwe select-jwe sort-picker-trigger w-full text-left sm:w-auto sm:min-w-[200px]"
+        className="input-jwe select-jwe sort-picker-trigger w-full text-left sm:w-auto sm:min-w-[11rem]"
         onClick={() => setOpen((prev) => !prev)}
         aria-expanded={open}
         aria-haspopup="listbox"
+        aria-label={`Sort by ${current.label}`}
       >
-        {current.label}
+        <span className="sort-picker-prefix">Sort:</span> {current.label}
       </button>
       {open && (
         <ul className="dropdown-jwe sort-dropdown" role="listbox">

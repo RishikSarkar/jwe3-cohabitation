@@ -29,6 +29,7 @@ body {
   background-color: rgb(var(--richblue));
   font-family: var(--font-chakra), system-ui, sans-serif;
   font-size: 16px;
+  font-weight: 600;
   line-height: 1.5;
   min-height: 100vh;
 }
@@ -73,6 +74,7 @@ body {
     border: 1px solid rgba(var(--brand), 0.4);
     border-radius: calc(var(--border-radius-inner) / 2);
     color: rgb(var(--offwhite));
+    font-weight: 400;
     min-height: 44px;
     padding: 10px 14px;
   }
@@ -104,6 +106,14 @@ body {
 
   .sort-picker-trigger {
     cursor: pointer;
+    font-size: 0.875rem;
+    letter-spacing: normal;
+    text-transform: none;
+  }
+
+  .sort-picker-prefix {
+    color: rgba(var(--offwhite), 0.45);
+    font-weight: 500;
   }
 
   .sort-dropdown {
@@ -113,9 +123,12 @@ body {
   }
 
   .sort-dropdown-option {
-    @apply w-full text-left text-sm font-semibold uppercase tracking-wide;
+    @apply w-full text-left text-xs font-semibold;
     color: rgba(var(--offwhite), 0.85);
-    padding: 10px 14px;
+    font-weight: 600;
+    letter-spacing: normal;
+    padding: 8px 12px;
+    text-transform: none;
     transition:
       background-color 0.15s ease,
       color 0.15s ease;
@@ -483,7 +496,7 @@ body {
   .dino-row-appeal-line {
     color: rgba(var(--offwhite), 0.52);
     font-size: 0.72rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.05em;
     line-height: 1.2;
     margin: 0;
@@ -544,6 +557,7 @@ body {
   .dino-delta li {
     color: rgba(var(--offwhite), 0.65);
     font-size: 0.875rem;
+    font-weight: 700;
     line-height: 1.45;
     transition: color 0.2s ease-in-out;
   }
@@ -591,6 +605,10 @@ body {
     z-index: var(--z-dropdown);
   }
 
+  .dropdown-jwe button {
+    font-weight: 500;
+  }
+
   .search-picker {
     position: relative;
     z-index: var(--z-dropdown);
@@ -602,6 +620,7 @@ body {
     border: 1px solid rgba(var(--brand), 0.3);
     border-radius: 4px;
     color: rgb(var(--offwhite));
+    font-weight: 500;
     width: 3rem;
     padding: 6px 4px;
   }
