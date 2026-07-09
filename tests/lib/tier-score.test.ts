@@ -3,7 +3,7 @@ import {
   compatibilityTierFromScore,
   scoreTierClassForValue,
   tooltipPanelChrome,
-} from "./tier-score";
+} from "@/lib/tier-score";
 
 describe("tier-score", () => {
   it("maps values to the same bands as overall compatibility", () => {

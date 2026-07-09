@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { allDinosaurs } from "@/lib/dinosaur-catalog";
-import { jwe3DinosaurUrl } from "./jwe3-url";
+import { jwe3DinosaurUrl } from "@/lib/jwe3-url";
 
 describe("jwe3DinosaurUrl", () => {
   it("builds official species URLs from dinosaur id", () => {

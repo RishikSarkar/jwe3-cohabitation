@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { compatibilityBreakdownLines } from "./compatibility-tooltip";
+import { compatibilityBreakdownLines } from "@/lib/compatibility-tooltip";
 
 describe("compatibilityBreakdownLines", () => {
   const sample = {

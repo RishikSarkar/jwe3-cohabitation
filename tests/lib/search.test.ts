@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { matchesDinoSearch } from "./search";
-import type { DinoSearchFields } from "./search";
+import { matchesDinoSearch } from "@/lib/search";
+import type { DinoSearchFields } from "@/lib/search";
 
 function dino(partial: Partial<DinoSearchFields> & Pick<DinoSearchFields, "name" | "id">) {
   return {

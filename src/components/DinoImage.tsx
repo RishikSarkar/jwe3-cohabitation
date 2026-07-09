@@ -66,6 +66,8 @@ export function DinoImage({ src, video, name, variant = "row" }: Props) {
           src={src}
           alt={name}
           className={video ? "dino-media-static" : undefined}
+          loading="lazy"
+          decoding="async"
           onError={() => setFailed(true)}
         />
         {video && (

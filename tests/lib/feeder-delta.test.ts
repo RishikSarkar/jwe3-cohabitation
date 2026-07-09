@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { allDinosaurs } from "@/lib/dinosaur-catalog";
-import { buildEnclosureProfile, envelopeWidenDelta } from "./enclosure";
-import { buildFeederDelta } from "./feeder-delta";
+import { buildEnclosureProfile, envelopeWidenDelta } from "@/lib/enclosure";
+import { buildFeederDelta } from "@/lib/feeder-delta";
 import type { EnclosureState } from "@/types/dinosaur";
 
 const all = allDinosaurs;

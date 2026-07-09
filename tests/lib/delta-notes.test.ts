@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { meaningfulDeltaNotes } from "./delta-notes";
+import { meaningfulDeltaNotes } from "@/lib/delta-notes";
 import type { CandidateDelta } from "@/types/dinosaur";
 
 const base: CandidateDelta = {

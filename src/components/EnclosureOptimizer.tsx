@@ -1,23 +1,15 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
 import { EnclosureBox } from "@/components/EnclosureBox";
 import { DinosaurListRow } from "@/components/DinosaurListRow";
 import { SortSelect } from "@/components/SortSelect";
 import { TerrainMixPanel } from "@/components/TerrainMixPanel";
+import { useEnclosureSession } from "@/hooks/use-enclosure-session";
 import { allDinosaurs } from "@/lib/dinosaur-catalog";
 import { buildEnclosureProfile } from "@/lib/enclosure";
 import { scoreAllDinosaurs, sortScoredRows } from "@/lib/score-candidate";
-import {
-  enclosureStatesEqual,
-  enclosureToUrl,
-  paramsToEnclosure,
-  sanitizeEnclosureState,
-} from "@/lib/url-state";
-import type { EnclosureState, SortMode } from "@/types/dinosaur";
-
-const allDinos = allDinosaurs;
+import type { SortMode } from "@/types/dinosaur";
+import { useMemo, useState } from "react";
 
 function sortLabelFor(mode: SortMode, hasEnclosure: boolean): string {
   if (mode === "name") return "name";
@@ -29,51 +21,34 @@ function sortLabelFor(mode: SortMode, hasEnclosure: boolean): string {
 }
 
 export function EnclosureOptimizer() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
   const [listSearch, setListSearch] = useState("");
-  const [showBlocked, setShowBlocked] = useState(false);
-  const [sortMode, setSortMode] = useState<SortMode>("compatibility");
-
-  const rawState = useMemo(
-    () => paramsToEnclosure(searchParams),
-    [searchParams],
-  );
-
-  const state = useMemo(
-    () => sanitizeEnclosureState(rawState, allDinos),
-    [rawState],
-  );
-
-  useEffect(() => {
-    if (!enclosureStatesEqual(rawState, state)) {
-      router.replace(enclosureToUrl(state), { scroll: false });
-    }
-  }, [rawState, state, router]);
-
-  const onChange = useCallback(
-    (next: EnclosureState) => {
-      router.replace(enclosureToUrl(sanitizeEnclosureState(next, allDinos)), {
-        scroll: false,
-      });
-    },
-    [router],
-  );
+  const {
+    ready,
+    state,
+    setState,
+    switchType,
+    sortMode,
+    setSortMode,
+    showBlocked,
+    setShowBlocked,
+  } = useEnclosureSession(allDinosaurs);
 
   const profile = useMemo(
-    () => buildEnclosureProfile(state, allDinos),
-    [state],
+    () => (ready ? buildEnclosureProfile(state, allDinosaurs) : null),
+    [ready, state],
   );
 
   const hasEnclosure = (profile?.members.length ?? 0) > 0;
 
   const allScored = useMemo(
     () =>
-      scoreAllDinosaurs(state, allDinos, {
-        showBlocked,
-        searchQuery: listSearch,
-      }),
-    [state, showBlocked, listSearch],
+      ready
+        ? scoreAllDinosaurs(state, allDinosaurs, {
+            showBlocked,
+            searchQuery: listSearch,
+          })
+        : [],
+    [ready, state, showBlocked, listSearch],
   );
 
   const memberRows = useMemo(
@@ -90,7 +65,7 @@ export function EnclosureOptimizer() {
 
   function addFromList(dinoId: string) {
     if (state.members.some((m) => m.dinosaurId === dinoId)) return;
-    onChange({
+    setState({
       ...state,
       members: [
         ...state.members,
@@ -104,6 +79,14 @@ export function EnclosureOptimizer() {
       <TerrainMixPanel profile={profile} />
     </div>
   ) : null;
+
+  if (!ready) {
+    return (
+      <div className="mx-auto max-w-7xl px-4 py-24 text-center text-jwe-offwhite/50">
+        Loading enclosure…
+      </div>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
@@ -123,9 +106,10 @@ export function EnclosureOptimizer() {
       <div className="space-y-8">
         <EnclosureBox
           state={state}
-          allDinos={allDinos}
+          allDinos={allDinosaurs}
           memberRows={memberRows}
-          onChange={onChange}
+          onChange={setState}
+          onTypeChange={switchType}
         />
 
         {terrainAside}

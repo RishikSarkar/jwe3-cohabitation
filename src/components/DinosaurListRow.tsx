@@ -37,6 +37,58 @@ function SexCountIcon({ sex }: { sex: "m" | "f" }) {
   );
 }
 
+function CountField({
+  id,
+  label,
+  value,
+  onChange,
+}: {
+  id: string;
+  label: string;
+  value: number;
+  onChange: (value: number) => void;
+}) {
+  const clamp = (n: number) => Math.min(99, Math.max(0, n));
+
+  return (
+    <div className="count-field" role="group" aria-label={label}>
+      <button
+        type="button"
+        className="count-step"
+        aria-label={`Decrease ${label}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          onChange(clamp(value - 1));
+        }}
+      >
+        −
+      </button>
+      <input
+        id={id}
+        type="number"
+        min={0}
+        max={99}
+        value={value}
+        aria-label={label}
+        onClick={(e) => e.stopPropagation()}
+        onChange={(e) => onChange(clamp(parseInt(e.target.value, 10) || 0))}
+        className="count-input"
+      />
+      <button
+        type="button"
+        className="count-step"
+        aria-label={`Increase ${label}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          onChange(clamp(value + 1));
+        }}
+      >
+        +
+      </button>
+    </div>
+  );
+}
+
 type Props = {
   row: ScoredCandidate;
   mode?: "candidate" | "member";
@@ -121,45 +173,27 @@ export function DinosaurListRow({
 
         <div className="dino-row-actions">
           {isMember && member ? (
-            <div className="flex flex-wrap items-center gap-4">
-              <label
-                className="flex items-center gap-2"
-                aria-label="Males"
-              >
-                <SexCountIcon sex="m" />
-                <input
-                  type="number"
-                  min={0}
-                  max={99}
-                  value={member.males}
-                  aria-label="Male count"
-                  onChange={(e) =>
-                    onUpdateMember?.({
-                      males: Math.max(0, parseInt(e.target.value, 10) || 0),
-                    })
-                  }
-                  className="count-input"
-                />
-              </label>
-              <label
-                className="flex items-center gap-2"
-                aria-label="Females"
-              >
-                <SexCountIcon sex="f" />
-                <input
-                  type="number"
-                  min={0}
-                  max={99}
-                  value={member.females}
-                  aria-label="Female count"
-                  onChange={(e) =>
-                    onUpdateMember?.({
-                      females: Math.max(0, parseInt(e.target.value, 10) || 0),
-                    })
-                  }
-                  className="count-input"
-                />
-              </label>
+            <div className="dino-row-metrics">
+              <div className="member-sex-controls">
+                <label className="member-sex-row" aria-label="Males">
+                  <SexCountIcon sex="m" />
+                  <CountField
+                    id={`${dinosaur.id}-males`}
+                    label="Male count"
+                    value={member.males}
+                    onChange={(males) => onUpdateMember?.({ males })}
+                  />
+                </label>
+                <label className="member-sex-row" aria-label="Females">
+                  <SexCountIcon sex="f" />
+                  <CountField
+                    id={`${dinosaur.id}-females`}
+                    label="Female count"
+                    value={member.females}
+                    onChange={(females) => onUpdateMember?.({ females })}
+                  />
+                </label>
+              </div>
               <button
                 type="button"
                 onClick={onRemove}

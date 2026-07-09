@@ -20,6 +20,7 @@ type Props = {
   allDinos: Dinosaur[];
   memberRows: ScoredCandidate[];
   onChange: (state: EnclosureState) => void;
+  onTypeChange: (type: EnclosureType) => void;
 };
 
 function SegmentedControl<T extends string>({
@@ -58,6 +59,7 @@ export function EnclosureBox({
   allDinos,
   memberRows,
   onChange,
+  onTypeChange,
 }: Props) {
   const [query, setQuery] = useState("");
   const [showPicker, setShowPicker] = useState(false);
@@ -72,7 +74,7 @@ export function EnclosureBox({
   }, [allDinos, state.type, state.members, query]);
 
   function setType(type: EnclosureType) {
-    onChange({ ...state, type, members: [] });
+    onTypeChange(type);
   }
 
   function setSize(size: EnclosureSize) {

@@ -7,7 +7,9 @@ Not affiliated with Frontier Developments.
 ## Features
 
 - **Enclosure box**: add species with male/female counts; Land, Aviary, or Lagoon
-- **Enclosure stats banner**: compatibility score and tier, headcount, and total base appeal when stocked
+- **Per-type memory**: each enclosure type keeps its own roster in the browser; sort mode and “show blocked” persist across visits
+- **Enclosure stats banner**: compatibility score and tier (left), centered headcount (middle), and total base appeal (right) when stocked
+- **Member row controls**: Mars/Venus icons with ± stepper buttons for male/female counts; Remove aligned with the same spacing as Add on candidate rows
 - **Ranked species list**: compatibility, recommended (80% compat + 20% appeal), appeal, or name sort
 - **Candidate row details**: consolidated social notes (liked by, mutual likes, dislikes), terrain requirements, and feeder/paleobotany deltas without duplicate lines
 - **Compatibility breakdown tooltip**: hover a candidate score to see weighted factor subscores (habitat match, feeders, envelope fit, etc.), color-coded like the main tier
@@ -48,12 +50,18 @@ Open [http://localhost:3000](http://localhost:3000).
 |------|------|
 | `data/dinosaurs.json` | **Source of truth** — in-game stats for all 101 species |
 | `src/lib/dinosaur-catalog.ts` | Loads source JSON and derives optimizer fields (habitat, cohab tags, threat class, media) |
+| `src/hooks/use-enclosure-session.ts` | URL + `localStorage` session (per-type rosters, sort, show blocked) |
+| `src/lib/enclosure-storage.ts` | Browser persistence for enclosure rosters and UI prefs |
 | `src/data/image-manifest.json` | Local image paths (`npm run fetch-images`) |
 | `src/data/video-manifest.json` | Hover video paths |
 
 Edit `data/dinosaurs.json` and refresh the dev server — no import/build step for stat changes.
 
+**Browser persistence:** Land, Aviary, and Lagoon rosters are saved separately in `localStorage` (plus sort mode and “show blocked”). Switching enclosure type restores each list; shared `?roster=` URLs still override the matching type on load.
+
 Trait chances are stored per species but **not shown in the UI yet** (optimizer uses habitat, feeders, and cohabitation only).
+
+**Assets:** Dinosaur portraits and hover videos under `/dinosaurs/*` are served with long-lived cache headers; images lazy-load in the species list.
 
 See `data/SCHEMA.md` for the full field reference.
 
@@ -65,7 +73,7 @@ See `data/SCHEMA.md` for the full field reference.
 | `npm run dev` | Start dev server |
 | `npm run build` | Production build (used by Vercel) |
 | `npm run start` | Serve production build |
-| `npm run test` | Vitest unit tests |
+| `npm run test` | Vitest unit tests (`tests/lib/`) |
 | `npm run test:coverage` | Vitest with coverage report |
 | `npm run lint` | ESLint |
 | `npm run format` | Prettier write |

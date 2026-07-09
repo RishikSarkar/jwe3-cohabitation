@@ -4,7 +4,7 @@ import {
   enclosureStatesEqual,
   paramsToEnclosure,
   sanitizeEnclosureState,
-} from "./url-state";
+} from "@/lib/url-state";
 
 const all = allDinosaurs;
 

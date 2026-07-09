@@ -72,7 +72,7 @@ export function EnclosureRatingBadge({ rating }: Props) {
         </div>
       </div>
 
-      <div className="enclosure-stat-group enclosure-stat-stack">
+      <div className="enclosure-stat-group enclosure-stat-stack enclosure-stat-center">
         <span className="enclosure-stat-value">{rating.headcount}</span>
         <span className="enclosure-stat-label">
           {rating.headcount === 1 ? "animal" : "animals"} · {rating.speciesCount}{" "}

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { allDinosaurs } from "@/lib/dinosaur-catalog";
-import { computeEnclosureRating } from "./enclosure-rating";
+import { computeEnclosureRating } from "@/lib/enclosure-rating";
 import type { EnclosureState } from "@/types/dinosaur";
 
 const all = allDinosaurs;
