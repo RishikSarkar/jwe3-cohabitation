@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
-import dinosaurs from "@/data/dinosaurs.json";
+import { allDinosaurs } from "@/lib/dinosaur-catalog";
 import { computeEnclosureRating } from "./enclosure-rating";
-import type { Dinosaur, EnclosureState } from "@/types/dinosaur";
+import type { EnclosureState } from "@/types/dinosaur";
 
-const all = dinosaurs as Dinosaur[];
+const all = allDinosaurs;
 
 describe("computeEnclosureRating", () => {
   it("returns null for an empty enclosure", () => {

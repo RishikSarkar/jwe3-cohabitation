@@ -38,42 +38,37 @@ npm run setup
 npm run dev
 ```
 
-`npm run setup` imports spreadsheet data and downloads official images/videos. On Vercel, `npm run build` runs the data import automatically; assets in `public/dinosaurs/` are already in the repo.
+`npm run setup` fetches official images/videos if needed. Species portraits for all 101 dinosaurs are committed under `public/dinosaurs/`; re-run setup only when adding species or refreshing CDN assets.
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Data pipeline
+## Data
 
-| Stage | Location | Purpose |
-|-------|----------|---------|
-| Cohab reference | `data/dinodex-cohab.json` | Likes/dislikes from the [Steam DINODEX guide](https://steamcommunity.com/sharedfiles/filedetails/?id=3643162109) |
-| Appeal reference | `data/dinodex-appeal.json` | Base appeal per species from the same DINODEX guide |
-| Raw (editable) | `data/raw/*.csv` | Spreadsheet exports (habitat percentages; cohab synced from DINODEX) |
-| Clean (generated) | `data/clean/*.csv` | Normalized headers and families |
-| Runtime | `src/data/dinosaurs.json` | Typed app data |
+| Path | Role |
+|------|------|
+| `data/dinosaurs.json` | **Source of truth** — in-game stats for all 101 species |
+| `src/lib/dinosaur-catalog.ts` | Loads source JSON and derives optimizer fields (habitat, cohab tags, threat class, media) |
+| `src/data/image-manifest.json` | Local image paths (`npm run fetch-images`) |
+| `src/data/video-manifest.json` | Hover video paths |
 
-`npm run import-data` runs `sync-dinodex` first, which patches raw CSV likes/dislikes from `dinodex-cohab.json`, then builds clean CSVs and `dinosaurs.json`.
+Edit `data/dinosaurs.json` and refresh the dev server — no import/build step for stat changes.
 
-To update cohabitation rules, edit `data/dinodex-cohab.json` and run `npm run import-data` (or `npm run setup`).
+Trait chances are stored per species but **not shown in the UI yet** (optimizer uses habitat, feeders, and cohabitation only).
 
-To refresh base appeal values, edit `data/dinodex-appeal.json` (or run `scripts/extract-dinodex-appeal.ts`) and run `npm run import-data`.
-
-Habitat percentages still come from the raw CSVs. Cohabitation likes and dislikes are owned by the DINODEX cohab file. Base appeal is imported from `dinodex-appeal.json`, shown on candidate rows and as total enclosure base appeal in the banner.
+See `data/SCHEMA.md` for the full field reference.
 
 ## Scripts
 
 | Command | Description |
 |---------|-------------|
-| `npm run setup` | Import data and fetch images/videos (one command) |
-| `npm run dev` | Import data, then start dev server |
-| `npm run build` | Import data, then production build (used by Vercel) |
+| `npm run setup` | Fetch images/videos (one command) |
+| `npm run dev` | Start dev server |
+| `npm run build` | Production build (used by Vercel) |
 | `npm run start` | Serve production build |
 | `npm run test` | Vitest unit tests |
 | `npm run test:coverage` | Vitest with coverage report |
 | `npm run lint` | ESLint |
 | `npm run format` | Prettier write |
-| `npm run sync-dinodex` | Patch raw CSV cohab columns from `dinodex-cohab.json` |
-| `npm run import-data` | Sync DINODEX, then CSV to JSON |
 | `npm run fetch-images` | Download images/videos only |
 
 Refresh assets: `npm run fetch-images -- --refresh`
@@ -92,6 +87,5 @@ Refresh assets: `npm run fetch-images -- --refresh`
 
 ## Attribution
 
-- Habitat percentages from community spreadsheet exports
-- Cohabitation likes/dislikes and base appeal from [DINODEX // Jurassic World Evolution 3 Full Dino Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=3643162109) by Kitxunei
+- Species stats from in-game JWE3 INFO panels (base game)
 - Images and hover videos from the official JWE3 website CDN where available

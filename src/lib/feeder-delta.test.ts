@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
-import dinosaurs from "@/data/dinosaurs.json";
+import { allDinosaurs } from "@/lib/dinosaur-catalog";
 import { buildEnclosureProfile, envelopeWidenDelta } from "./enclosure";
 import { buildFeederDelta } from "./feeder-delta";
-import type { Dinosaur, EnclosureState } from "@/types/dinosaur";
+import type { EnclosureState } from "@/types/dinosaur";
 
-const all = dinosaurs as Dinosaur[];
+const all = allDinosaurs;
 
 function profileFor(memberId: string) {
   const state: EnclosureState = {

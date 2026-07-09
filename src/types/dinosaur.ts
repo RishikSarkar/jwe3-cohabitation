@@ -42,6 +42,76 @@ export type CohabTag =
   | { kind: "meta"; tag: MetaTag }
   | { kind: "size"; size: SizeClass };
 
+export type SpeciesTrait = {
+  name: string;
+  percent: number;
+  polarity?: string;
+};
+
+export type SpeciesGeneral = {
+  appeal?: number;
+  batchSize?: { min?: number; max?: number };
+  modificationsMax?: number;
+  securityRating?: number;
+  hybrid?: boolean;
+  activeTime?: string[];
+  sex?: string[];
+};
+
+export type SpeciesNeeds = {
+  habitat?: Record<string, number>;
+  openWater?: number;
+  prey?: number;
+  fish?: number;
+  shark?: number;
+  adultPopulation?: { min?: number; note?: string };
+  adultMales?: string;
+  adultFemales?: string;
+  juvenilePopulation?: string;
+  canBreed?: boolean;
+  singleSex?: "female" | "male";
+};
+
+export type SpeciesAttributes = {
+  maxStamina?: string;
+  resilience?: string;
+  appetite?: string;
+  thirst?: string;
+  lifespan?: { min?: number; max?: number };
+  areaNeed?: string;
+  areaNeedGrowthPercent?: number;
+};
+
+export type SpeciesPreferences = {
+  likes?: string[];
+  dislikes?: string[];
+};
+
+export type SourceSpecies = {
+  id: string;
+  name: string;
+  enclosureType?: EnclosureType;
+  feedingType?: string;
+  era?: string;
+  family?: string;
+  size?: SizeClass;
+  general?: SpeciesGeneral;
+  needs?: SpeciesNeeds;
+  attributes?: SpeciesAttributes;
+  preferences?: SpeciesPreferences;
+  traits?: SpeciesTrait[];
+};
+
+export type DinosaurSourceFile = {
+  meta: {
+    version: number;
+    speciesCount: number;
+    rosterCount?: number;
+    hybridCount?: number;
+  };
+  species: SourceSpecies[];
+};
+
 export type DinosaurSocial = {
   minPop?: number;
   maxPop?: number;
@@ -71,6 +141,11 @@ export type Dinosaur = {
   social?: DinosaurSocial;
   image: string;
   video?: string;
+  general?: SpeciesGeneral;
+  needs?: SpeciesNeeds;
+  attributes?: SpeciesAttributes;
+  preferences?: SpeciesPreferences;
+  traits?: SpeciesTrait[];
 };
 
 export type EnclosureMember = {

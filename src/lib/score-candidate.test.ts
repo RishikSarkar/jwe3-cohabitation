@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
-import dinosaurs from "@/data/dinosaurs.json";
+import { allDinosaurs } from "@/lib/dinosaur-catalog";
 import { meaningfulDeltaNotes } from "@/lib/delta-notes";
 import { scoreAllDinosaurs, sortScoredRows } from "@/lib/score-candidate";
 import type { Dinosaur, EnclosureState, ScoredCandidate } from "@/types/dinosaur";
 
-const all = dinosaurs as Dinosaur[];
+const all = allDinosaurs;
 
 describe("scoreAllDinosaurs", () => {
   it("sorts by name when enclosure is empty", () => {

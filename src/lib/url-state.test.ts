@@ -1,13 +1,12 @@
 import { describe, expect, it } from "vitest";
-import dinosaurs from "@/data/dinosaurs.json";
-import type { Dinosaur } from "@/types/dinosaur";
+import { allDinosaurs } from "@/lib/dinosaur-catalog";
 import {
   enclosureStatesEqual,
   paramsToEnclosure,
   sanitizeEnclosureState,
 } from "./url-state";
 
-const all = dinosaurs as Dinosaur[];
+const all = allDinosaurs;
 
 describe("sanitizeEnclosureState", () => {
   it("removes unknown roster ids from shared URLs", () => {

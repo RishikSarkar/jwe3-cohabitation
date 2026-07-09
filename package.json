@@ -3,12 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "sync-dinodex": "tsx scripts/sync-csv-from-dinodex.ts",
-    "import-data": "npm run sync-dinodex && tsx scripts/import-spreadsheet.ts",
     "fetch-images": "tsx scripts/fetch-images.ts",
-    "setup": "npm run import-data && npm run fetch-images",
-    "dev": "npm run import-data && next dev",
-    "build": "npm run import-data && next build",
+    "setup": "npm run fetch-images",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
@@ -18,11 +16,10 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "csv-parse": "^7.0.1",
-    "csv-stringify": "^6.8.1",
     "next": "14.2.35",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^5.7.0"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -2,11 +2,11 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import dinosaursData from "@/data/dinosaurs.json";
 import { EnclosureBox } from "@/components/EnclosureBox";
 import { DinosaurListRow } from "@/components/DinosaurListRow";
 import { SortSelect } from "@/components/SortSelect";
 import { TerrainMixPanel } from "@/components/TerrainMixPanel";
+import { allDinosaurs } from "@/lib/dinosaur-catalog";
 import { buildEnclosureProfile } from "@/lib/enclosure";
 import { scoreAllDinosaurs, sortScoredRows } from "@/lib/score-candidate";
 import {
@@ -15,9 +15,9 @@ import {
   paramsToEnclosure,
   sanitizeEnclosureState,
 } from "@/lib/url-state";
-import type { Dinosaur, EnclosureState, SortMode } from "@/types/dinosaur";
+import type { EnclosureState, SortMode } from "@/types/dinosaur";
 
-const allDinos = dinosaursData as Dinosaur[];
+const allDinos = allDinosaurs;
 
 function sortLabelFor(mode: SortMode, hasEnclosure: boolean): string {
   if (mode === "name") return "name";

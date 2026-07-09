@@ -637,30 +637,6 @@ body {
     padding: 6px 4px;
   }
 
-  .sex-count-badge {
-    align-items: center;
-    background: rgba(var(--brand), 0.12);
-    border: 1px solid rgba(var(--brand), 0.3);
-    border-radius: 9999px;
-    color: rgb(var(--brand));
-    display: inline-flex;
-    flex-shrink: 0;
-    font-family: var(--font-chakra), system-ui, sans-serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    height: 1.35rem;
-    justify-content: center;
-    line-height: 1;
-    text-transform: lowercase;
-    width: 1.35rem;
-  }
-
-  .sex-count-badge-f {
-    background: rgba(var(--sky), 0.12);
-    border-color: rgba(var(--sky), 0.35);
-    color: rgb(var(--sky));
-  }
-
   .count-input::-webkit-inner-spin-button,
   .count-input::-webkit-outer-spin-button {
     height: 1.35rem;

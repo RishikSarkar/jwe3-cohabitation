@@ -7,6 +7,7 @@ import {
   jwe3DinosaurUrl,
   openJwe3Dinosaur,
 } from "@/lib/jwe3-url";
+import { FaMars, FaVenus } from "react-icons/fa6";
 import { CompatibilityTooltip } from "./CompatibilityTooltip";
 import { DinoImage } from "./DinoImage";
 
@@ -26,11 +27,13 @@ const scoreTierClass: Record<string, string> = {
   Blocked: "tier-score-blocked",
 };
 
-function SexCountBadge({ sex }: { sex: "m" | "f" }) {
+function SexCountIcon({ sex }: { sex: "m" | "f" }) {
+  const Icon = sex === "m" ? FaMars : FaVenus;
   return (
-    <span className={`sex-count-badge sex-count-badge-${sex}`} aria-hidden>
-      {sex}
-    </span>
+    <Icon
+      className="size-4 shrink-0 text-jwe-offwhite/70"
+      aria-hidden
+    />
   );
 }
 
@@ -123,7 +126,7 @@ export function DinosaurListRow({
                 className="flex items-center gap-2"
                 aria-label="Males"
               >
-                <SexCountBadge sex="m" />
+                <SexCountIcon sex="m" />
                 <input
                   type="number"
                   min={0}
@@ -142,7 +145,7 @@ export function DinosaurListRow({
                 className="flex items-center gap-2"
                 aria-label="Females"
               >
-                <SexCountBadge sex="f" />
+                <SexCountIcon sex="f" />
                 <input
                   type="number"
                   min={0}

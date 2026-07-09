@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import dinosaurs from "@/data/dinosaurs.json";
+import { allDinosaurs } from "@/lib/dinosaur-catalog";
 import { jwe3DinosaurUrl } from "./jwe3-url";
 
 describe("jwe3DinosaurUrl", () => {
@@ -13,7 +13,7 @@ describe("jwe3DinosaurUrl", () => {
   });
 
   it("covers every species id in the dataset", () => {
-    for (const dino of dinosaurs) {
+    for (const dino of allDinosaurs) {
       expect(jwe3DinosaurUrl(dino.id)).toMatch(
         /^https:\/\/www\.jurassicworldevolution\.com\/en-US\/3\/dinosaurs\/[a-z0-9-]+$/,
       );

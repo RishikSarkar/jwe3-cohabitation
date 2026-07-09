@@ -1,0 +1,8219 @@
+{
+  "meta": {
+    "version": 2,
+    "speciesCount": 101,
+    "rosterCount": 101,
+    "hybridCount": 7
+  },
+  "species": [
+    {
+      "id": "acrocanthosaurus",
+      "name": "Acrocanthosaurus",
+      "general": {
+        "appeal": 1001,
+        "batchSize": {
+          "min": 1,
+          "max": 1
+        },
+        "modificationsMax": 13,
+        "securityRating": 6
+      },
+      "needs": {
+        "habitat": {
+          "cover": 23,
+          "pasture": 67,
+          "water": 10
+        },
+        "prey": 1,
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "0 - 2",
+        "adultFemales": "0 - 2",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 34,
+          "max": 68
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 65
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Large Appetite",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Needy",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Early Cretaceous",
+      "family": "Carnivore",
+      "size": "Large"
+    },
+    {
+      "id": "albertosaurus",
+      "name": "Albertosaurus",
+      "general": {
+        "appeal": 470,
+        "batchSize": {
+          "min": 1,
+          "max": 2
+        },
+        "modificationsMax": 13
+      },
+      "needs": {
+        "habitat": {
+          "arid": 6,
+          "barren": 11,
+          "wetland": 70,
+          "water": 13
+        },
+        "prey": 0.5,
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 33,
+          "max": 66
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Carnotaurus",
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Small Carnivore",
+          "Large Carnivore",
+          "Medium Carnivore",
+          "Indoraptor",
+          "Indominus rex",
+          "Therizinosaurus",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Thirsty",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Needy",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Cretaceous",
+      "family": "Carnivore",
+      "size": "Medium"
+    },
+    {
+      "id": "allosaurus",
+      "name": "Allosaurus",
+      "general": {
+        "appeal": 652,
+        "batchSize": {
+          "min": 1,
+          "max": 3
+        },
+        "modificationsMax": 13,
+        "securityRating": 5,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female",
+          "male"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 15,
+          "pasture": 75,
+          "water": 10
+        },
+        "prey": 0.5,
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 36,
+          "max": 72
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Ceratosaurus",
+          "Metriacanthosaurus",
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Large Appetite",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Short Lived",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Jurassic",
+      "family": "Carnivore",
+      "size": "Medium"
+    },
+    {
+      "id": "amargasaurus",
+      "name": "Amargasaurus",
+      "general": {
+        "appeal": 80,
+        "batchSize": {
+          "min": 1,
+          "max": 2
+        },
+        "modificationsMax": 8,
+        "securityRating": 2,
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 45,
+          "wetland": 10,
+          "water": 10,
+          "groundFiber": 35
+        },
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "1+",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 55,
+          "max": 110
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 20
+      },
+      "preferences": {
+        "likes": [
+          "Ankylodocus",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Sauropod",
+          "Indominus rex",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Early Cretaceous",
+      "family": "Sauropod",
+      "size": "Medium"
+    },
+    {
+      "id": "ankylodocus",
+      "name": "Ankylodocus",
+      "general": {
+        "appeal": 278,
+        "batchSize": {
+          "min": 1,
+          "max": 2
+        },
+        "modificationsMax": 16,
+        "securityRating": 4,
+        "hybrid": true
+      },
+      "needs": {
+        "habitat": {
+          "cover": 19,
+          "pasture": 24,
+          "water": 10,
+          "tallLeaf": 10,
+          "tallFruit": 37
+        },
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultFemales": "ANY",
+        "canBreed": false,
+        "juvenilePopulation": "N/A",
+        "singleSex": "female",
+        "adultMales": "N/A"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 52,
+          "max": 91
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 35
+      },
+      "preferences": {
+        "likes": [
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Scavenger",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Indominus rex",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Quenched",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Small Appetite",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Short Lived",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Sickly",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Antisocial",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Unfit",
+          "percent": 25,
+          "polarity": "negative"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Tall Palaeobotany",
+      "era": "Holocene",
+      "family": "Hybrid Sauropod",
+      "size": "Large"
+    },
+    {
+      "id": "ankylosaurus",
+      "name": "Ankylosaurus",
+      "general": {
+        "appeal": 213,
+        "batchSize": {
+          "min": 1,
+          "max": 2
+        },
+        "modificationsMax": 10,
+        "securityRating": 6,
+        "activeTime": [
+          "day",
+          "night"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "pasture": 15,
+          "wetland": 19,
+          "water": 10,
+          "groundLeaf": 28,
+          "groundFruit": 28
+        },
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "0 - 4",
+        "adultFemales": "0 - 4",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 32,
+          "max": 64
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Scavenger",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Ankylosaurid",
+          "Stegosaurid",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Needy",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Ankylosaurid",
+      "size": "Medium"
+    },
+    {
+      "id": "apatosaurus",
+      "name": "Apatosaurus",
+      "general": {
+        "appeal": 152,
+        "batchSize": {
+          "min": 1,
+          "max": 2
+        },
+        "modificationsMax": 8,
+        "securityRating": 3,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female",
+          "male"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 18,
+          "pasture": 32,
+          "water": 10,
+          "tallLeaf": 40
+        },
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "1+",
+        "adultFemales": "1+",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 57,
+          "max": 113
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Brachiosaurus",
+          "Ankylodocus",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Sauropod",
+          "Indominus rex",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Small Appetite",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Humble",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Tall Palaeobotany",
+      "era": "Late Jurassic",
+      "family": "Sauropod",
+      "size": "Large"
+    },
+    {
+      "id": "archaeornithomimus",
+      "name": "Archaeornithomimus",
+      "general": {
+        "appeal": 25,
+        "batchSize": {
+          "min": 3,
+          "max": 6
+        },
+        "modificationsMax": 8,
+        "securityRating": 1,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 19,
+          "water": 22,
+          "groundFruit": 60
+        },
+        "adultPopulation": {
+          "min": 6,
+          "note": "6+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 30,
+          "max": 60
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 11
+      },
+      "preferences": {
+        "likes": [
+          "Iguanodon",
+          "Sauropod",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Social",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Ornithomimosaurid",
+      "size": "Small"
+    },
+    {
+      "id": "atrociraptor",
+      "name": "Atrociraptor",
+      "general": {
+        "appeal": 126,
+        "batchSize": {
+          "min": 3,
+          "max": 4
+        },
+        "modificationsMax": 10,
+        "securityRating": 5,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 16,
+          "pasture": 74,
+          "water": 10
+        },
+        "prey": 0.5,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 35,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Social",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Fit",
+          "percent": 50,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Cretaceous",
+      "family": "Carnivore",
+      "size": "Small"
+    },
+    {
+      "id": "attenborosaurus",
+      "name": "Attenborosaurus",
+      "general": {
+        "appeal": 197,
+        "batchSize": {
+          "min": 3,
+          "max": 5
+        },
+        "modificationsMax": 9,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female",
+          "male"
+        ]
+      },
+      "needs": {
+        "openWater": 100,
+        "fish": 0.4,
+        "adultPopulation": {
+          "min": 3,
+          "note": "3+"
+        },
+        "adultMales": "1+",
+        "adultFemales": "2+",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "lifespan": {
+          "min": 43,
+          "max": 85
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 30
+      },
+      "preferences": {
+        "likes": [
+          "Marine (Medium)",
+          "Marine (Small)"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Long Lived",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Humble",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Unfit",
+          "percent": 25,
+          "polarity": "negative"
+        }
+      ],
+      "enclosureType": "Lagoon",
+      "feedingType": "Shoal",
+      "era": "Early Jurassic",
+      "family": "Unknown",
+      "size": "Medium"
+    },
+    {
+      "id": "austroraptor",
+      "name": "Austroraptor",
+      "general": {
+        "appeal": 200,
+        "batchSize": {
+          "min": 1,
+          "max": 3
+        },
+        "modificationsMax": 11,
+        "securityRating": 5,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 16,
+          "pasture": 16,
+          "wetland": 51,
+          "water": 17
+        },
+        "prey": 0.4,
+        "adultPopulation": {
+          "min": 3,
+          "note": "3+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "0 - 8",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 53,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 30
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Spinoraptor",
+          "Small Carnivore",
+          "Large Carnivore",
+          "Medium Carnivore",
+          "Indoraptor",
+          "Indominus rex",
+          "Therizinosaurus",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Intolerant",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Piscivore / Carnivore",
+      "era": "Late Cretaceous",
+      "family": "Carnivore",
+      "size": "Small"
+    },
+    {
+      "id": "baryonyx",
+      "name": "Baryonyx",
+      "general": {
+        "appeal": 340,
+        "batchSize": {
+          "min": 1,
+          "max": 3
+        },
+        "modificationsMax": 11,
+        "securityRating": 4,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "barren": 26,
+          "cover": 22,
+          "wetland": 26,
+          "deepWater": 26
+        },
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 28,
+          "max": 56
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Suchomimus",
+          "Irritator",
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Thirsty",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Large Appetite",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Piscivore / Carnivore",
+      "era": "Early Cretaceous",
+      "family": "Carnivore",
+      "size": "Medium"
+    },
+    {
+      "id": "brachiosaurus",
+      "name": "Brachiosaurus",
+      "general": {
+        "appeal": 298,
+        "batchSize": {
+          "min": 1,
+          "max": 2
+        },
+        "modificationsMax": 10,
+        "securityRating": 4,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 14,
+          "wetland": 19,
+          "water": 10,
+          "tallNut": 57
+        },
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 54,
+          "max": 107
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Apatosaurus",
+          "Ankylodocus",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Sauropod",
+          "Indominus rex",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Large Appetite",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Social",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Tall Palaeobotany",
+      "era": "Late Jurassic",
+      "family": "Sauropod",
+      "size": "Large"
+    },
+    {
+      "id": "caiuajara",
+      "name": "Caiuajara",
+      "general": {
+        "appeal": 125,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 8,
+        "securityRating": 2,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "arid": 60,
+          "barren": 15,
+          "cover": 18,
+          "water": 8
+        },
+        "fish": 0.5,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 30,
+          "max": 50
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Tapejara",
+          "Quetzalcoatlus"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Social",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 50,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Aviary",
+      "feedingType": "Unknown",
+      "era": "Late Cretaceous",
+      "family": "Unknown",
+      "size": "Small"
+    },
+    {
+      "id": "carnotaurus",
+      "name": "Carnotaurus",
+      "general": {
+        "appeal": 251,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 10,
+        "securityRating": 5,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "arid": 45,
+          "wetland": 45,
+          "water": 10
+        },
+        "prey": 0.5,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "0 - 1",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 35,
+          "max": 69
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Albertosaurus",
+          "Majungasaurus",
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Short Lived",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Cretaceous",
+      "family": "Carnivore",
+      "size": "Medium"
+    },
+    {
+      "id": "cearadactylus",
+      "name": "Cearadactylus",
+      "general": {
+        "appeal": 103,
+        "batchSize": {
+          "min": 1,
+          "max": 4
+        },
+        "modificationsMax": 9,
+        "securityRating": 4,
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "arid": 15,
+          "pasture": 28,
+          "wetland": 48,
+          "water": 10
+        },
+        "fish": 0.5,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 35,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Quetzalcoatlus"
+        ],
+        "dislikes": [
+          "Indoraptor",
+          "Indominus rex",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Quenched",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Small Appetite",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Vulnerable",
+          "percent": 25,
+          "polarity": "negative"
+        }
+      ],
+      "enclosureType": "Aviary",
+      "feedingType": "Piscivore",
+      "era": "Early Cretaceous",
+      "family": "Unknown",
+      "size": "Small"
+    },
+    {
+      "id": "ceratosaurus",
+      "name": "Ceratosaurus",
+      "general": {
+        "appeal": 213,
+        "batchSize": {
+          "min": 1,
+          "max": 3
+        },
+        "modificationsMax": 9,
+        "securityRating": 5,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 15,
+          "pasture": 37,
+          "wetland": 37,
+          "water": 10
+        },
+        "prey": 0.5,
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "0 - 3",
+        "adultFemales": "0 - 3",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 36,
+          "max": 72
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Allosaurus",
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Sickly",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Jurassic",
+      "family": "Carnivore",
+      "size": "Medium"
+    },
+    {
+      "id": "chasmosaurus",
+      "name": "Chasmosaurus",
+      "general": {
+        "appeal": 89,
+        "batchSize": {
+          "min": 2,
+          "max": 5
+        },
+        "modificationsMax": 8,
+        "securityRating": 3,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 9,
+          "pasture": 41,
+          "water": 10,
+          "groundLeaf": 41
+        },
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "0 - 5",
+        "adultFemales": "0 - 5",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 37,
+          "max": 74
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Microceratus",
+          "Styracosaurus",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Nasutoceratops",
+          "Spinoceratops",
+          "Hybrid Carnivores",
+          "Stegosaurid",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Social",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Strong",
+          "percent": 50,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Ceratopsid",
+      "size": "Small"
+    },
+    {
+      "id": "chungkingosaurus",
+      "name": "Chungkingosaurus",
+      "general": {
+        "appeal": 164,
+        "batchSize": {
+          "min": 1,
+          "max": 3
+        },
+        "modificationsMax": 8,
+        "securityRating": 2,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "pasture": 69,
+          "water": 10,
+          "groundFruit": 21
+        },
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 40,
+          "max": 80
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Gigantspinosaurus",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Stegosaurid",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Social",
+          "percent": 75,
+          "polarity": "positive"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 50,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Jurassic",
+      "family": "Stegosaurid",
+      "size": "Small"
+    },
+    {
+      "id": "coelophysis",
+      "name": "Coelophysis",
+      "general": {
+        "appeal": 18,
+        "batchSize": {
+          "min": 4,
+          "max": 6
+        },
+        "modificationsMax": 8,
+        "securityRating": 1,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female",
+          "male"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 8,
+          "pasture": 82,
+          "water": 10
+        },
+        "prey": 0.2,
+        "adultPopulation": {
+          "min": 4,
+          "note": "4+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 45,
+          "max": 89
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 14
+      },
+      "preferences": {
+        "likes": [
+          "Carnivores",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Therizinosaurus",
+          "Scavenger",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Indominus rex",
+          "Indoraptor",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Small Appetite",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Resilient",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Social",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Triassic",
+      "family": "Scavenger",
+      "size": "Small"
+    },
+    {
+      "id": "compsognathus",
+      "name": "Compsognathus",
+      "general": {
+        "appeal": 19,
+        "batchSize": {
+          "min": 4,
+          "max": 6
+        },
+        "modificationsMax": 8,
+        "securityRating": 1,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "arid": 45,
+          "pasture": 45,
+          "water": 10
+        },
+        "prey": 0.1,
+        "adultPopulation": {
+          "min": 5,
+          "note": "5+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 41,
+          "max": 82
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 11
+      },
+      "preferences": {
+        "likes": [
+          "Carnivores",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Therizinosaurus",
+          "Scavenger",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Indominus rex",
+          "Indoraptor",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Social",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Jurassic",
+      "family": "Scavenger",
+      "size": "Small"
+    },
+    {
+      "id": "concavenator",
+      "name": "Concavenator",
+      "general": {
+        "appeal": 279,
+        "batchSize": {
+          "min": 1,
+          "max": 2
+        },
+        "modificationsMax": 10,
+        "securityRating": 4,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 16,
+          "pasture": 40,
+          "water": 43
+        },
+        "prey": 0.5,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "1+",
+        "adultFemales": "1+",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 35,
+          "max": 78
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Early Cretaceous",
+      "family": "Carnivore",
+      "size": "Medium"
+    },
+    {
+      "id": "corythosaurus",
+      "name": "Corythosaurus",
+      "general": {
+        "appeal": 39,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 8,
+        "securityRating": 2,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "pasture": 59,
+          "water": 9,
+          "groundLeaf": 32
+        },
+        "adultPopulation": {
+          "min": 4,
+          "note": "4+"
+        },
+        "adultMales": "1+",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 51,
+          "max": 101
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 20
+      },
+      "preferences": {
+        "likes": [
+          "Dryosaurus",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Quenched",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Resilient",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Social",
+          "percent": 75,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Hadrosaurid",
+      "size": "Medium"
+    },
+    {
+      "id": "cryolophosaurus",
+      "name": "Cryolophosaurus",
+      "general": {
+        "appeal": 350,
+        "batchSize": {
+          "min": 1,
+          "max": 3
+        },
+        "modificationsMax": 13,
+        "securityRating": 5,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 11,
+          "pasture": 79,
+          "water": 10
+        },
+        "prey": 0.5,
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 35,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 40
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Small Carnivore",
+          "Large Carnivore",
+          "Medium Carnivore",
+          "Indoraptor",
+          "Indominus rex",
+          "Therizinosaurus",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Large Appetite",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Short Lived",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Early Jurassic",
+      "family": "Carnivore",
+      "size": "Medium"
+    },
+    {
+      "id": "deinocheirus",
+      "name": "Deinocheirus",
+      "general": {
+        "appeal": 864,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 15,
+        "securityRating": 5,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "wetland": 10,
+          "water": 52,
+          "groundLeaf": 38
+        },
+        "prey": 0.3,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "1+",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY",
+        "fish": 0.3
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 40,
+          "max": 80
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 60
+      },
+      "preferences": {
+        "likes": [
+          "Iguanodon",
+          "Sauropod",
+          "Hadrosaurid"
+        ],
+        "dislikes": [
+          "Large Carnivore",
+          "Medium Carnivore",
+          "Indoraptor",
+          "Indominus rex",
+          "Therizinosaurus",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Large Appetite",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Short Lived",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Antisocial",
+          "percent": 25,
+          "polarity": "negative"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "piscivore /\nGround Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Deinocheirus",
+      "size": "Large"
+    },
+    {
+      "id": "deinonychus",
+      "name": "Deinonychus",
+      "general": {
+        "appeal": 123,
+        "batchSize": {
+          "min": 3,
+          "max": 5
+        },
+        "modificationsMax": 10,
+        "securityRating": 5,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 13,
+          "wetland": 77,
+          "water": 10
+        },
+        "prey": 0.3,
+        "adultPopulation": {
+          "min": 3,
+          "note": "3+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 39,
+          "max": 78
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Small Carnivore",
+          "Large Carnivore",
+          "Medium Carnivore",
+          "Indoraptor",
+          "Indominus rex",
+          "Therizinosaurus",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Early Cretaceous",
+      "family": "Carnivore",
+      "size": "Small"
+    },
+    {
+      "id": "dilophosaurus",
+      "name": "Dilophosaurus",
+      "general": {
+        "appeal": 93,
+        "batchSize": {
+          "min": 3,
+          "max": 6
+        },
+        "modificationsMax": 8,
+        "securityRating": 5,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 23,
+          "pasture": 33,
+          "wetland": 33,
+          "water": 10
+        },
+        "prey": 0.4,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "1+",
+        "adultFemales": "1+",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 37,
+          "max": 74
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Social",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 50,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Early Jurassic",
+      "family": "Carnivore",
+      "size": "Small"
+    },
+    {
+      "id": "dimetrodon",
+      "name": "Dimetrodon",
+      "general": {
+        "appeal": 83,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 8,
+        "securityRating": 2,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "arid": 42,
+          "cover": 5,
+          "deepWater": 53
+        },
+        "prey": 0.3,
+        "adultPopulation": {
+          "min": 3,
+          "note": "3+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 39,
+          "max": 78
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Strong",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Early Permian",
+      "family": "Dimetrodon",
+      "size": "Small"
+    },
+    {
+      "id": "dimorphodon",
+      "name": "Dimorphodon",
+      "general": {
+        "appeal": 54,
+        "batchSize": {
+          "min": 3,
+          "max": 6
+        },
+        "modificationsMax": 8,
+        "securityRating": 2
+      },
+      "needs": {
+        "habitat": {
+          "arid": 20,
+          "pasture": 40,
+          "water": 40
+        },
+        "fish": 0.3,
+        "adultPopulation": {
+          "min": 3,
+          "note": "3+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 35,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Quetzalcoatlus"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Aviary",
+      "feedingType": "Unknown",
+      "era": "Early Jurassic",
+      "family": "Unknown",
+      "size": "Small"
+    },
+    {
+      "id": "diplodocus",
+      "name": "Diplodocus",
+      "general": {
+        "appeal": 208,
+        "batchSize": {
+          "min": 1,
+          "max": 2
+        },
+        "modificationsMax": 8,
+        "securityRating": 3,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 10,
+          "pasture": 20,
+          "wetland": 28,
+          "water": 10,
+          "tallFruit": 32
+        },
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 57,
+          "max": 114
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Ankylodocus",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Sauropod",
+          "Indominus rex",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Quenched",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Resilient",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Social",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Tall Palaeobotany",
+      "era": "Late Jurassic",
+      "family": "Sauropod",
+      "size": "Large"
+    },
+    {
+      "id": "dracorex",
+      "name": "Dracorex",
+      "general": {
+        "appeal": 51,
+        "batchSize": {
+          "min": 3,
+          "max": 8
+        },
+        "modificationsMax": 8,
+        "securityRating": 3,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "wetland": 9,
+          "water": 10,
+          "groundLeaf": 54,
+          "groundNut": 27
+        },
+        "adultPopulation": {
+          "min": 4,
+          "note": "4+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 42,
+          "max": 84
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 10
+      },
+      "preferences": {
+        "likes": [
+          "Sauropod",
+          "Ankylosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Indoraptor",
+          "Indominus rex",
+          "Therizinosaurus",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Social",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Pachycephalosaurid",
+      "size": "Small"
+    },
+    {
+      "id": "dreadnoughtus",
+      "name": "Dreadnoughtus",
+      "general": {
+        "appeal": 464,
+        "batchSize": {
+          "min": 1,
+          "max": 1
+        },
+        "modificationsMax": 12,
+        "securityRating": 5,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 13,
+          "wetland": 29,
+          "water": 10,
+          "tallFiber": 32,
+          "tallFruit": 16
+        },
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "0 - 3",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 55,
+          "max": 110
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Ankylodocus",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Sauropod",
+          "Indominus rex",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Large Appetite",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Short Lived",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Needy",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 50,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Tall Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Sauropod",
+      "size": "Large"
+    },
+    {
+      "id": "dryosaurus",
+      "name": "Dryosaurus",
+      "general": {
+        "appeal": 16,
+        "batchSize": {
+          "min": 3,
+          "max": 6
+        },
+        "modificationsMax": 8,
+        "securityRating": 1,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "pasture": 46,
+          "water": 10,
+          "groundLeaf": 22,
+          "groundFiber": 22
+        },
+        "adultPopulation": {
+          "min": 3,
+          "note": "3+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 31,
+          "max": 61
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Sauropod",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Stegosaurid",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Small Appetite",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Humble",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Jurassic",
+      "family": "Ornithomimosaurid",
+      "size": "Small"
+    },
+    {
+      "id": "dunkleosteus",
+      "name": "Dunkleosteus",
+      "general": {
+        "appeal": 154,
+        "batchSize": {
+          "min": 1,
+          "max": 3
+        },
+        "modificationsMax": 9,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "openWater": 100,
+        "fish": 0.4,
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "lifespan": {
+          "min": 41,
+          "max": 80
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "dislikes": [
+          "Megalodon"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Small Appetite",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Short Lived",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Lagoon",
+      "feedingType": "Shoal",
+      "era": "Devonian",
+      "family": "Unknown",
+      "size": "Medium"
+    },
+    {
+      "id": "edmontosaurus",
+      "name": "Edmontosaurus",
+      "general": {
+        "appeal": 40,
+        "batchSize": {
+          "min": 2,
+          "max": 5
+        },
+        "modificationsMax": 8,
+        "securityRating": 3,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "pasture": 50,
+          "wetland": 31,
+          "water": 7,
+          "groundFiber": 12
+        },
+        "adultPopulation": {
+          "min": 4,
+          "note": "4+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 49,
+          "max": 98
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 20
+      },
+      "preferences": {
+        "likes": [
+          "Dryosaurus",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Hadrosaurid",
+      "size": "Medium"
+    },
+    {
+      "id": "gallimimus",
+      "name": "Gallimimus",
+      "general": {
+        "appeal": 21,
+        "batchSize": {
+          "min": 4,
+          "max": 6
+        },
+        "modificationsMax": 8,
+        "securityRating": 1,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 8,
+          "wetland": 16,
+          "water": 10,
+          "groundLeaf": 66
+        },
+        "adultPopulation": {
+          "min": 4,
+          "note": "4+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 32,
+          "max": 64
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 14
+      },
+      "preferences": {
+        "likes": [
+          "Iguanodon",
+          "Sauropod",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Quenched",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Humble",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Ornithomimosaurid",
+      "size": "Small"
+    },
+    {
+      "id": "geosternbergia",
+      "name": "Geosternbergia",
+      "general": {
+        "appeal": 137,
+        "batchSize": {
+          "min": 1,
+          "max": 3
+        },
+        "modificationsMax": 8,
+        "securityRating": 4,
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 11,
+          "pasture": 52,
+          "wetland": 27,
+          "water": 10
+        },
+        "fish": 0.5,
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 35,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Pteranodon",
+          "Tropeognathus"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Strong",
+          "percent": 75,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Aviary",
+      "feedingType": "Unknown",
+      "era": "Late Cretaceous",
+      "family": "Unknown",
+      "size": "Medium"
+    },
+    {
+      "id": "giganotosaurus",
+      "name": "Giganotosaurus",
+      "general": {
+        "appeal": 586,
+        "batchSize": {
+          "min": 1,
+          "max": 2
+        },
+        "modificationsMax": 12,
+        "securityRating": 6,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 11,
+          "pasture": 60,
+          "wetland": 18,
+          "water": 10
+        },
+        "prey": 1,
+        "adultPopulation": {
+          "min": 2
+        },
+        "adultMales": "ANY",
+        "adultFemales": "2+",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 33,
+          "max": 65
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 65
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Large Appetite",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Resilient",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Cretaceous",
+      "family": "Carnivore",
+      "size": "Large"
+    },
+    {
+      "id": "gigantspinosaurus",
+      "name": "Gigantspinosaurus",
+      "general": {
+        "appeal": 68,
+        "batchSize": {
+          "min": 2,
+          "max": 6
+        },
+        "modificationsMax": 8,
+        "securityRating": 2,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 15,
+          "water": 10,
+          "groundLeaf": 75
+        },
+        "adultPopulation": {
+          "min": 2
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 41,
+          "max": 82
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Chungkingosaurus",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Stegosaurid",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Social",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Jurassic",
+      "family": "Stegosaurid",
+      "size": "Small"
+    },
+    {
+      "id": "guanlong",
+      "name": "Guanlong",
+      "general": {
+        "appeal": 68,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 8,
+        "securityRating": 1,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 13,
+          "pasture": 72,
+          "water": 15
+        },
+        "prey": 0.4,
+        "adultPopulation": {
+          "min": 3
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 30,
+          "max": 50
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 100
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Quenched",
+          "percent": 75,
+          "polarity": "positive"
+        },
+        {
+          "name": "Small Appetite",
+          "percent": 75,
+          "polarity": "positive"
+        },
+        {
+          "name": "Resilient",
+          "percent": 50,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Jurassic",
+      "family": "Carnivore",
+      "size": "Small"
+    },
+    {
+      "id": "herrerasaurus",
+      "name": "Herrerasaurus",
+      "general": {
+        "appeal": 82,
+        "batchSize": {
+          "min": 3,
+          "max": 4
+        },
+        "modificationsMax": 8,
+        "securityRating": 5,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 17,
+          "pasture": 73,
+          "water": 10
+        },
+        "prey": 0.4,
+        "adultPopulation": {
+          "min": 3
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 32,
+          "max": 64
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Triassic",
+      "family": "Carnivore",
+      "size": "Small"
+    },
+    {
+      "id": "homalocephale",
+      "name": "Homalocephale",
+      "general": {
+        "appeal": 38,
+        "batchSize": {
+          "min": 4,
+          "max": 6
+        },
+        "modificationsMax": 8,
+        "securityRating": 1,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "pasture": 34,
+          "water": 34,
+          "groundLeaf": 16,
+          "groundFiber": 16
+        },
+        "adultPopulation": {
+          "min": 5
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 41,
+          "max": 82
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 12
+      },
+      "preferences": {
+        "likes": [
+          "Psittacosaurus",
+          "Sauropod",
+          "Ankylosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 75,
+          "polarity": "positive"
+        },
+        {
+          "name": "Social",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Pachycephalosaurid",
+      "size": "Small"
+    },
+    {
+      "id": "hypsilophodon",
+      "name": "Hypsilophodon",
+      "general": {
+        "appeal": 25,
+        "batchSize": {
+          "min": 1,
+          "max": 4
+        },
+        "modificationsMax": 8,
+        "securityRating": 1,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 10,
+          "wetland": 39,
+          "water": 11,
+          "groundLeaf": 39
+        },
+        "adultPopulation": {
+          "min": 4
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 31,
+          "max": 61
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 12
+      },
+      "preferences": {
+        "likes": [
+          "Iguanodon",
+          "Sauropod",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Small Appetite",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Early Cretaceous",
+      "family": "Ornithomimosaurid",
+      "size": "Small"
+    },
+    {
+      "id": "ichthyosaurus",
+      "name": "Ichthyosaurus",
+      "general": {
+        "appeal": 54,
+        "batchSize": {
+          "min": 2,
+          "max": 5
+        },
+        "modificationsMax": 8
+      },
+      "needs": {
+        "openWater": 100,
+        "fish": 0.2,
+        "adultPopulation": {
+          "min": 4,
+          "note": "4+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "lifespan": {
+          "min": 40,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 14
+      },
+      "traits": [
+        {
+          "name": "Small Appetite",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Lagoon",
+      "feedingType": "Shoal",
+      "era": "Late Triassic",
+      "family": "Unknown",
+      "size": "Small"
+    },
+    {
+      "id": "iguanodon",
+      "name": "Iguanodon",
+      "general": {
+        "appeal": 155,
+        "batchSize": {
+          "min": 1,
+          "max": 4
+        },
+        "modificationsMax": 11,
+        "securityRating": 4,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "pasture": 7,
+          "wetland": 54,
+          "water": 10,
+          "groundFruit": 29
+        },
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 49,
+          "max": 98
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Stegosaurid",
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Social",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Unfit",
+          "percent": 75,
+          "polarity": "negative"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Early Cretaceous",
+      "family": "Hadrosaurid",
+      "size": "Medium"
+    },
+    {
+      "id": "indominus-rex",
+      "name": "Indominus rex",
+      "general": {
+        "appeal": 1514,
+        "batchSize": {
+          "min": 1,
+          "max": 1
+        },
+        "modificationsMax": 17,
+        "securityRating": 6,
+        "hybrid": true,
+        "activeTime": [
+          "day"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 23,
+          "pasture": 67,
+          "water": 10
+        },
+        "prey": 1,
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultFemales": "ANY",
+        "canBreed": false,
+        "juvenilePopulation": "N/A",
+        "singleSex": "female",
+        "adultMales": "N/A"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 37,
+          "max": 66
+        },
+        "areaNeed": "MEDIUM",
+        "areaNeedGrowthPercent": 75
+      },
+      "preferences": {
+        "likes": [
+          "Velociraptor"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Flying Reptile",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Marine (Large)",
+          "Marine (Medium)",
+          "Marine (Small)",
+          "Therizinosaurus",
+          "Marine Animal",
+          "Scavenger",
+          "Iguanodontian"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Short Lived",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Sickly",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Needy",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Holocene",
+      "family": "Hybrid Carnivore",
+      "size": "Large"
+    },
+    {
+      "id": "indoraptor",
+      "name": "Indoraptor",
+      "general": {
+        "appeal": 1592,
+        "batchSize": {
+          "min": 1,
+          "max": 1
+        },
+        "modificationsMax": 18,
+        "securityRating": 6,
+        "hybrid": true,
+        "activeTime": [
+          "day"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "barren": 10,
+          "pasture": 72,
+          "water": 18
+        },
+        "prey": 1,
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "canBreed": false,
+        "juvenilePopulation": "N/A",
+        "singleSex": "male",
+        "adultFemales": "N/A"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 25,
+          "max": 44
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 70
+      },
+      "preferences": {
+        "dislikes": [
+          "Carnivores",
+          "Flying Reptile",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Marine (Large)",
+          "Marine (Medium)",
+          "Marine (Small)",
+          "Therizinosaurus",
+          "Marine Animal",
+          "Scavenger",
+          "Iguanodontian"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Short Lived",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Sickly",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Needy",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 75,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Holocene",
+      "family": "Hybrid Carnivore",
+      "size": "Medium"
+    },
+    {
+      "id": "irritator",
+      "name": "Irritator",
+      "general": {
+        "appeal": 485,
+        "batchSize": {
+          "min": 1,
+          "max": 2
+        },
+        "modificationsMax": 12,
+        "securityRating": 3,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "barren": 12,
+          "cover": 22,
+          "wetland": 30,
+          "deepWater": 36
+        },
+        "adultPopulation": {
+          "min": 2
+        },
+        "adultMales": "0 - 2",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 55,
+          "max": 71
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Baryonyx",
+          "Suchomimus",
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Small Carnivore",
+          "Large Carnivore",
+          "Medium Carnivore",
+          "Indoraptor",
+          "Indominus rex",
+          "Therizinosaurus",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Thirsty",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Large Appetite",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Piscivore / Carnivore",
+      "era": "Early Cretaceous",
+      "family": "Carnivore",
+      "size": "Medium"
+    },
+    {
+      "id": "kentrosaurus",
+      "name": "Kentrosaurus",
+      "general": {
+        "appeal": 57,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 9,
+        "securityRating": 2,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 12,
+          "water": 10,
+          "groundFiber": 78
+        },
+        "adultPopulation": {
+          "min": 2
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 43,
+          "max": 85
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Indoraptor",
+          "Stegosaurid",
+          "Indominus rex",
+          "Therizinosaurus",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Intolerant",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Jurassic",
+      "family": "Stegosaurid",
+      "size": "Small"
+    },
+    {
+      "id": "kronosaurus",
+      "name": "Kronosaurus",
+      "general": {
+        "appeal": 618,
+        "batchSize": {
+          "min": 1,
+          "max": 2
+        },
+        "modificationsMax": 13,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female",
+          "male"
+        ]
+      },
+      "needs": {
+        "openWater": 100,
+        "fish": 0.5,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "1+",
+        "adultFemales": "1+",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "lifespan": {
+          "min": 40,
+          "max": 80
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "dislikes": [
+          "Marine (Large)"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Needy",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Lagoon",
+      "feedingType": "Shoal",
+      "era": "Early Cretaceous",
+      "family": "Unknown",
+      "size": "Large"
+    },
+    {
+      "id": "liopleurodon",
+      "name": "Liopleurodon",
+      "general": {
+        "appeal": 390,
+        "batchSize": {
+          "min": 1,
+          "max": 3
+        },
+        "modificationsMax": 13,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "openWater": 100,
+        "fish": 0.5,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "lifespan": {
+          "min": 41,
+          "max": 82
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 30
+      },
+      "traits": [
+        {
+          "name": "Large Appetite",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Short Lived",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Vulnerable",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Lagoon",
+      "feedingType": "Shoal",
+      "era": "Middle Jurassic",
+      "family": "Unknown",
+      "size": "Large"
+    },
+    {
+      "id": "lokiceratops",
+      "name": "Lokiceratops",
+      "general": {
+        "appeal": 63,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 8,
+        "securityRating": 3,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 14,
+          "wetland": 36,
+          "water": 10,
+          "groundFiber": 40
+        },
+        "adultPopulation": {
+          "min": 4
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 51,
+          "max": 100
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 20
+      },
+      "preferences": {
+        "likes": [
+          "Microceratus",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Scavenger",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Stegoceratops",
+          "Carnivores",
+          "Stegosaurid",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 50,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Ceratopsid",
+      "size": "Small"
+    },
+    {
+      "id": "lystrosaurus",
+      "name": "Lystrosaurus",
+      "general": {
+        "appeal": 37,
+        "batchSize": {
+          "min": 3,
+          "max": 4
+        },
+        "modificationsMax": 8,
+        "securityRating": 1,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "pasture": 56,
+          "water": 11,
+          "groundLeaf": 17,
+          "groundFiber": 17
+        },
+        "adultPopulation": {
+          "min": 3,
+          "note": "3+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 30,
+          "max": 61
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 20
+      },
+      "preferences": {
+        "likes": [
+          "Microceratus",
+          "Therizinosaurus"
+        ],
+        "dislikes": [
+          "Oviraptor",
+          "Carnivores"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Social",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Permian",
+      "family": "Therapsid",
+      "size": "Small"
+    },
+    {
+      "id": "maiasaura",
+      "name": "Maiasaura",
+      "general": {
+        "appeal": 43,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 8,
+        "securityRating": 2,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "pasture": 60,
+          "water": 10,
+          "groundFiber": 15,
+          "groundNut": 15
+        },
+        "adultPopulation": {
+          "min": 4
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 53,
+          "max": 105
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 20
+      },
+      "preferences": {
+        "likes": [
+          "Parasaurolophus",
+          "Dryosaurus",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Social",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 50,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Hadrosaurid",
+      "size": "Medium"
+    },
+    {
+      "id": "majungasaurus",
+      "name": "Majungasaurus",
+      "general": {
+        "appeal": 308,
+        "batchSize": {
+          "min": 1,
+          "max": 3
+        },
+        "modificationsMax": 10,
+        "securityRating": 4,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "barren": 7,
+          "cover": 28,
+          "pasture": 59,
+          "water": 6
+        },
+        "prey": 0.5,
+        "adultPopulation": {
+          "min": 2
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 37,
+          "max": 74
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Qianzhousaurus",
+          "Carnotaurus",
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Small Carnivore",
+          "Large Carnivore",
+          "Medium Carnivore",
+          "Indoraptor",
+          "Indominus rex",
+          "Therizinosaurus",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 75,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Cretaceous",
+      "family": "Carnivore",
+      "size": "Large"
+    },
+    {
+      "id": "mamenchisaurus",
+      "name": "Mamenchisaurus",
+      "general": {
+        "appeal": 373,
+        "batchSize": {
+          "min": 1,
+          "max": 1
+        },
+        "modificationsMax": 12,
+        "securityRating": 4,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 16,
+          "pasture": 33,
+          "water": 10,
+          "tallLeaf": 41
+        },
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 51,
+          "max": 101
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Ankylodocus",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Sauropod",
+          "Indominus rex",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Thirsty",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Large Appetite",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Humble",
+          "percent": 50,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Tall Palaeobotany",
+      "era": "Late Jurassic",
+      "family": "Sauropod",
+      "size": "Large"
+    },
+    {
+      "id": "megalodon",
+      "name": "Megalodon",
+      "general": {
+        "appeal": 1678,
+        "batchSize": {
+          "min": 1,
+          "max": 1
+        },
+        "modificationsMax": 16,
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "openWater": 100,
+        "shark": 0.8,
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "0 - 2",
+        "adultFemales": "0 - 2",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "lifespan": {
+          "min": 53,
+          "max": 105
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 70
+      },
+      "preferences": {
+        "dislikes": [
+          "Dunkleosteus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Large Appetite",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Short Lived",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Sickly",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Needy",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 75,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 50,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Lagoon",
+      "feedingType": "Shark, Shoal",
+      "era": "Miocene",
+      "family": "Unknown",
+      "size": "Large"
+    },
+    {
+      "id": "metriacanthosaurus",
+      "name": "Metriacanthosaurus",
+      "general": {
+        "appeal": 510,
+        "batchSize": {
+          "min": 1,
+          "max": 3
+        },
+        "modificationsMax": 13
+      },
+      "needs": {
+        "habitat": {
+          "cover": 8,
+          "pasture": 82,
+          "water": 10
+        },
+        "prey": 0.5,
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 40,
+          "max": 80
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Allosaurus",
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Small Carnivore",
+          "Large Carnivore",
+          "Medium Carnivore",
+          "Indoraptor",
+          "Indominus rex",
+          "Therizinosaurus",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Thirsty",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Small Appetite",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Needy",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 50,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Jurassic",
+      "family": "Carnivore",
+      "size": "Medium"
+    },
+    {
+      "id": "microceratus",
+      "name": "Microceratus",
+      "general": {
+        "appeal": 70,
+        "batchSize": {
+          "min": 2,
+          "max": 3
+        },
+        "modificationsMax": 8,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "pasture": 55,
+          "water": 10,
+          "groundLeaf": 21,
+          "groundFiber": 14
+        },
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 29,
+          "max": 58
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Lystrosaurus",
+          "Ceratopsid"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Quenched",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Small Appetite",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Social",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Ceratopsid",
+      "size": "Small"
+    },
+    {
+      "id": "moros-intrepidus",
+      "name": "Moros intrepidus",
+      "general": {
+        "appeal": 33,
+        "batchSize": {
+          "min": 3,
+          "max": 4
+        },
+        "modificationsMax": 8,
+        "securityRating": 1
+      },
+      "needs": {
+        "habitat": {
+          "arid": 30,
+          "pasture": 60,
+          "water": 10
+        },
+        "prey": 0.1,
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 35,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Carnivores",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Therizinosaurus",
+          "Scavenger",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Indominus rex",
+          "Indoraptor",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Strong",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Cretaceous",
+      "family": "Scavenger",
+      "size": "Small"
+    },
+    {
+      "id": "mosasaurus",
+      "name": "Mosasaurus",
+      "general": {
+        "appeal": 1379,
+        "batchSize": {
+          "min": 1,
+          "max": 1
+        },
+        "modificationsMax": 14,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "openWater": 100,
+        "shark": 1,
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "0 - 1",
+        "adultFemales": "0 - 1",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "lifespan": {
+          "min": 50,
+          "max": 100
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 35
+      },
+      "preferences": {
+        "dislikes": [
+          "Marine (Large)"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Large Appetite",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Short Lived",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Sickly",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 75,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 75,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Lagoon",
+      "feedingType": "Shark, Shoal",
+      "era": "Late Cretaceous",
+      "family": "Unknown",
+      "size": "Large"
+    },
+    {
+      "id": "muttaburrasaurus",
+      "name": "Muttaburrasaurus",
+      "general": {
+        "appeal": 35,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 8,
+        "securityRating": 2,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 28,
+          "water": 18,
+          "groundFiber": 55
+        },
+        "adultPopulation": {
+          "min": 4,
+          "note": "4+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 57,
+          "max": 113
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 20
+      },
+      "preferences": {
+        "likes": [
+          "Dryosaurus",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Social",
+          "percent": 25
+        },
+        {
+          "name": "Tolerant",
+          "percent": 25
+        },
+        {
+          "name": "Defensive",
+          "percent": 50
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Early Cretaceous",
+      "family": "Hadrosaurid",
+      "size": "Medium"
+    },
+    {
+      "id": "nasutoceratops",
+      "name": "Nasutoceratops",
+      "general": {
+        "appeal": 68,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 8
+      },
+      "needs": {
+        "habitat": {
+          "cover": 31,
+          "water": 10,
+          "groundLeaf": 59
+        },
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 37,
+          "max": 73
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Microceratus",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Scavenger",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Stegoceratops",
+          "Carnivores",
+          "Stegosaurid",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Small Appetite",
+          "percent": 25
+        },
+        {
+          "name": "Resilient",
+          "percent": 25
+        },
+        {
+          "name": "Social",
+          "percent": 25
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Ceratopsid",
+      "size": "Medium"
+    },
+    {
+      "id": "nodosaurus",
+      "name": "Nodosaurus",
+      "general": {
+        "appeal": 152,
+        "batchSize": {
+          "min": 1,
+          "max": 2
+        },
+        "modificationsMax": 8,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "pasture": 45,
+          "water": 10,
+          "groundLeaf": 45
+        },
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 36,
+          "max": 71
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Ankylosaurid",
+          "Stegosaurid",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Social",
+          "percent": 25
+        },
+        {
+          "name": "Defensive",
+          "percent": 75
+        },
+        {
+          "name": "Fit",
+          "percent": 25
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Ankylosaurid",
+      "size": "Small"
+    },
+    {
+      "id": "olorotitan",
+      "name": "Olorotitan",
+      "general": {
+        "appeal": 56,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 8,
+        "securityRating": 3,
+        "activeTime": [
+          "day",
+          "night"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "wetland": 30,
+          "water": 10,
+          "groundFiber": 60
+        },
+        "adultPopulation": {
+          "min": 3,
+          "note": "3+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 49,
+          "max": 98
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 20
+      },
+      "preferences": {
+        "likes": [
+          "Dryosaurus",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Social",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Hadrosaurid",
+      "size": "Medium"
+    },
+    {
+      "id": "ornithomimus",
+      "name": "Ornithomimus",
+      "general": {
+        "appeal": 27,
+        "batchSize": {
+          "min": 4,
+          "max": 6
+        },
+        "modificationsMax": 8
+      },
+      "needs": {
+        "habitat": {
+          "cover": 7,
+          "wetland": 14,
+          "water": 9,
+          "groundLeaf": 53,
+          "groundFruit": 18
+        },
+        "adultPopulation": {
+          "min": 6,
+          "note": "6+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 37,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 14
+      },
+      "preferences": {
+        "likes": [
+          "Iguanodon",
+          "Sauropod",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 25
+        },
+        {
+          "name": "Humble",
+          "percent": 25
+        },
+        {
+          "name": "Social",
+          "percent": 25
+        },
+        {
+          "name": "Fit",
+          "percent": 25
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Ornithomimosaurid",
+      "size": "Small"
+    },
+    {
+      "id": "oviraptor",
+      "name": "Oviraptor",
+      "general": {
+        "appeal": 30,
+        "batchSize": {
+          "min": 3,
+          "max": 6
+        },
+        "modificationsMax": 8,
+        "securityRating": 1,
+        "activeTime": [
+          "day",
+          "night"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 15,
+          "water": 10,
+          "groundLeaf": 75
+        },
+        "prey": 0.1,
+        "adultPopulation": {
+          "min": 4,
+          "note": "4+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "2+",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 32,
+          "max": 64
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 14
+      },
+      "preferences": {
+        "likes": [
+          "Carnivores",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Therizinosaurus",
+          "Scavenger",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Indominus rex",
+          "Indoraptor",
+          "Lystrosaurus",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Quenched",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Strong",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Omnivore",
+      "era": "Late Cretaceous",
+      "family": "Scavenger",
+      "size": "Small"
+    },
+    {
+      "id": "pachycephalosaurus",
+      "name": "Pachycephalosaurus",
+      "general": {
+        "appeal": 36,
+        "batchSize": {
+          "min": 2,
+          "max": 6
+        },
+        "modificationsMax": 8,
+        "securityRating": 3
+      },
+      "needs": {
+        "habitat": {
+          "wetland": 60,
+          "water": 10,
+          "groundLeaf": 30
+        },
+        "adultPopulation": {
+          "min": 4,
+          "note": "4+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 41,
+          "max": 82
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Psittacosaurus",
+          "Sauropod",
+          "Ankylosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Humble",
+          "percent": 50
+        },
+        {
+          "name": "Strong",
+          "percent": 25
+        },
+        {
+          "name": "Defensive",
+          "percent": 25
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Pachycephalosaurid",
+      "size": "Small"
+    },
+    {
+      "id": "parasaurolophus",
+      "name": "Parasaurolophus",
+      "general": {
+        "appeal": 38,
+        "batchSize": {
+          "min": 2,
+          "max": 5
+        },
+        "modificationsMax": 8,
+        "securityRating": 3,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female",
+          "male"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "pasture": 31,
+          "wetland": 40,
+          "water": 10,
+          "groundNut": 19
+        },
+        "adultPopulation": {
+          "min": 4,
+          "note": "4+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 51,
+          "max": 102
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 20
+      },
+      "preferences": {
+        "likes": [
+          "Maiasaura",
+          "Dryosaurus",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Small Appetite",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Social",
+          "percent": 75,
+          "polarity": "positive"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Hadrosaurid",
+      "size": "Medium"
+    },
+    {
+      "id": "patagotitan",
+      "name": "Patagotitan",
+      "general": {
+        "appeal": 363,
+        "batchSize": {
+          "min": 1,
+          "max": 1
+        },
+        "modificationsMax": 12,
+        "securityRating": 4,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 17,
+          "pasture": 36,
+          "water": 10,
+          "tallFiber": 24,
+          "tallFruit": 12
+        },
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 40,
+          "max": 100
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Ankylodocus",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Sauropod",
+          "Indominus rex",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Large Appetite",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Short Lived",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Sickly",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Tall Palaeobotany",
+      "era": "Early Cretaceous",
+      "family": "Sauropod",
+      "size": "Large"
+    },
+    {
+      "id": "plesiosaurus",
+      "name": "Plesiosaurus",
+      "general": {
+        "appeal": 125,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 9,
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "openWater": 100,
+        "fish": 0.4,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "lifespan": {
+          "min": 35,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "traits": [
+        {
+          "name": "Small Appetite",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Social",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Unfit",
+          "percent": 25,
+          "polarity": "negative"
+        }
+      ],
+      "enclosureType": "Lagoon",
+      "feedingType": "Shoal",
+      "era": "Early Jurassic",
+      "family": "Unknown",
+      "size": "Small"
+    },
+    {
+      "id": "proceratosaurus",
+      "name": "Proceratosaurus",
+      "general": {
+        "appeal": 117,
+        "batchSize": {
+          "min": 2,
+          "max": 6
+        },
+        "modificationsMax": 10,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 17,
+          "pasture": 73,
+          "water": 10
+        },
+        "prey": 0.4,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 32,
+          "max": 64
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 25
+        },
+        {
+          "name": "Fit",
+          "percent": 50
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Middle Jurassic",
+      "family": "Carnivore",
+      "size": "Small"
+    },
+    {
+      "id": "protoceratops",
+      "name": "Protoceratops",
+      "general": {
+        "appeal": 54,
+        "batchSize": {
+          "min": 1,
+          "max": 4
+        },
+        "modificationsMax": 8,
+        "securityRating": 3,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female",
+          "male"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 25,
+          "water": 10,
+          "groundLeaf": 19,
+          "groundFiber": 47
+        },
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 35,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Microceratus",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Scavenger",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Stegoceratops",
+          "Carnivores",
+          "Stegosaurid",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Small Appetite",
+          "percent": 25
+        },
+        {
+          "name": "Social",
+          "percent": 25
+        },
+        {
+          "name": "Strong",
+          "percent": 50
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Ceratopsid",
+      "size": "Medium"
+    },
+    {
+      "id": "psittacosaurus",
+      "name": "Psittacosaurus",
+      "general": {
+        "appeal": 16,
+        "batchSize": {
+          "min": 3,
+          "max": 6
+        },
+        "modificationsMax": 8
+      },
+      "needs": {
+        "habitat": {
+          "cover": 25,
+          "water": 10,
+          "groundFruit": 34,
+          "groundNut": 31
+        },
+        "adultPopulation": {
+          "min": 4,
+          "note": "4+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 30,
+          "max": 61
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 100
+      },
+      "preferences": {
+        "likes": [
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Quenched",
+          "percent": 25
+        },
+        {
+          "name": "Small Appetite",
+          "percent": 25
+        },
+        {
+          "name": "Humble",
+          "percent": 75
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Early Cretaceous",
+      "family": "Ceratopsid",
+      "size": "Small"
+    },
+    {
+      "id": "pteranodon",
+      "name": "Pteranodon",
+      "general": {
+        "appeal": 147,
+        "batchSize": {
+          "min": 1,
+          "max": 3
+        },
+        "modificationsMax": 8,
+        "securityRating": 4,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female",
+          "male"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "barren": 12,
+          "pasture": 60,
+          "water": 28
+        },
+        "fish": 0.5,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "1+",
+        "adultFemales": "1+",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 35,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Geosternbergia",
+          "Thanatosdrakon"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Social",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Aviary",
+      "feedingType": "Unknown",
+      "era": "Late Cretaceous",
+      "family": "Unknown",
+      "size": "Medium"
+    },
+    {
+      "id": "pyroraptor",
+      "name": "Pyroraptor",
+      "general": {
+        "appeal": 113,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 11
+      },
+      "needs": {
+        "habitat": {
+          "cover": 10,
+          "pasture": 80,
+          "deepWater": 10
+        },
+        "prey": 0.3,
+        "adultPopulation": {
+          "min": 3,
+          "note": "3+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 32,
+          "max": 64
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Social",
+          "percent": 25
+        },
+        {
+          "name": "Intolerant",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Fit",
+          "percent": 50
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Cretaceous",
+      "family": "Carnivore",
+      "size": "Small"
+    },
+    {
+      "id": "qianzhousaurus",
+      "name": "Qianzhousaurus",
+      "general": {
+        "appeal": 223,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 11,
+        "securityRating": 5
+      },
+      "needs": {
+        "habitat": {
+          "barren": 6,
+          "cover": 3,
+          "pasture": 74,
+          "water": 18
+        },
+        "prey": 0.5,
+        "adultPopulation": {
+          "min": 3,
+          "note": "3+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 33,
+          "max": 65
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Majungasaurus",
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Intolerant",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 75
+        },
+        {
+          "name": "Fit",
+          "percent": 50
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Cretaceous",
+      "family": "Carnivore",
+      "size": "Medium"
+    },
+    {
+      "id": "quetzalcoatlus",
+      "name": "Quetzalcoatlus",
+      "general": {
+        "appeal": 984,
+        "batchSize": {
+          "min": 1,
+          "max": 1
+        },
+        "modificationsMax": 14,
+        "securityRating": 4
+      },
+      "needs": {
+        "habitat": {
+          "arid": 26,
+          "barren": 39,
+          "wetland": 7,
+          "water": 28
+        },
+        "fish": 0.5,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "1+",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 35,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Dimorphodon",
+          "Tapejara",
+          "Caiuajara",
+          "Cearadactylus"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Short Lived",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Needy",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Vulnerable",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Fit",
+          "percent": 50,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Aviary",
+      "feedingType": "Unknown",
+      "era": "Late Cretaceous",
+      "family": "Unknown",
+      "size": "Large"
+    },
+    {
+      "id": "sauropelta",
+      "name": "Sauropelta",
+      "general": {
+        "appeal": 110,
+        "batchSize": {
+          "min": 1,
+          "max": 3
+        },
+        "modificationsMax": 10
+      },
+      "needs": {
+        "habitat": {
+          "pasture": 30,
+          "water": 10,
+          "groundLeaf": 30,
+          "groundFruit": 30
+        },
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 33,
+          "max": 66
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Ankylosaurid",
+          "Stegosaurid",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Tolerant",
+          "percent": 25
+        },
+        {
+          "name": "Weak",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Early Cretaceous",
+      "family": "Ankylosaurid",
+      "size": "Small"
+    },
+    {
+      "id": "scorpios-rex",
+      "name": "Scorpios rex",
+      "general": {
+        "appeal": 1268,
+        "batchSize": {
+          "min": 1,
+          "max": 1
+        },
+        "modificationsMax": 18,
+        "securityRating": 5,
+        "hybrid": true
+      },
+      "needs": {
+        "habitat": {
+          "cover": 20,
+          "pasture": 67,
+          "water": 13
+        },
+        "prey": 0.3,
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultFemales": "ANY",
+        "canBreed": false,
+        "juvenilePopulation": "N/A",
+        "singleSex": "female",
+        "adultMales": "N/A"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 44,
+          "max": 80
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 75
+      },
+      "preferences": {
+        "dislikes": [
+          "Carnivores",
+          "Flying Reptile",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Marine (Large)",
+          "Marine (Medium)",
+          "Marine (Small)",
+          "Therizinosaurus",
+          "Marine Animal",
+          "Scavenger",
+          "Iguanodontian"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Short Lived",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Sickly",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Needy",
+          "percent": 50,
+          "polarity": "negative"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Holocene",
+      "family": "Hybrid Carnivore",
+      "size": "Medium"
+    },
+    {
+      "id": "sinoceratops",
+      "name": "Sinoceratops",
+      "general": {
+        "appeal": 95,
+        "batchSize": {
+          "min": 1,
+          "max": 3
+        },
+        "modificationsMax": 8
+      },
+      "needs": {
+        "habitat": {
+          "cover": 12,
+          "wetland": 6,
+          "water": 10,
+          "groundFiber": 71
+        },
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 38,
+          "max": 75
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Microceratus",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Scavenger",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Triceratops",
+          "Styracosaurus",
+          "Carnivores",
+          "Stegosaurid",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 75
+        },
+        {
+          "name": "Social",
+          "percent": 25
+        },
+        {
+          "name": "Fit",
+          "percent": 50
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Ceratopsid",
+      "size": "Medium"
+    },
+    {
+      "id": "spinoceratops",
+      "name": "Spinoceratops",
+      "general": {
+        "appeal": 108,
+        "batchSize": {
+          "min": 2,
+          "max": 3
+        },
+        "modificationsMax": 18,
+        "hybrid": true
+      },
+      "needs": {
+        "habitat": {
+          "cover": 7,
+          "pasture": 26,
+          "water": 39,
+          "groundFiber": 28
+        },
+        "fish": 0.2,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultFemales": "ANY",
+        "canBreed": false,
+        "juvenilePopulation": "N/A",
+        "singleSex": "female",
+        "adultMales": "N/A"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 42,
+          "max": 76
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Scavenger",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Chasmosaurus",
+          "Carnivores",
+          "Stegosaurid",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Thirsty",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Large Appetite",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Short Lived",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Resilient",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Needy",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 75,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Omnivore",
+      "era": "Holocene",
+      "family": "Hybrid Ceratops",
+      "size": "Medium"
+    },
+    {
+      "id": "spinoraptor",
+      "name": "Spinoraptor",
+      "general": {
+        "appeal": 184,
+        "batchSize": {
+          "min": 1,
+          "max": 3
+        },
+        "modificationsMax": 16,
+        "securityRating": 5,
+        "hybrid": true
+      },
+      "needs": {
+        "habitat": {
+          "cover": 14,
+          "pasture": 56,
+          "deepWater": 30
+        },
+        "prey": 0.3,
+        "fish": 0.4,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultFemales": "ANY",
+        "canBreed": false,
+        "juvenilePopulation": "N/A",
+        "singleSex": "female",
+        "adultMales": "N/A"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 40,
+          "max": 72
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Velociraptor",
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Small Carnivore",
+          "Large Carnivore",
+          "Medium Carnivore",
+          "Indoraptor",
+          "Indominus rex",
+          "Therizinosaurus",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Thirsty",
+          "percent": 25
+        },
+        {
+          "name": "Large Appetite",
+          "percent": 25
+        },
+        {
+          "name": "Short Lived",
+          "percent": 75
+        },
+        {
+          "name": "Sickly",
+          "percent": 50
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50
+        },
+        {
+          "name": "Strong",
+          "percent": 75
+        },
+        {
+          "name": "Defensive",
+          "percent": 25
+        },
+        {
+          "name": "Fit",
+          "percent": 25
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Piscivore / Carnivore",
+      "era": "Holocene",
+      "family": "Hybrid Carnivore",
+      "size": "Medium"
+    },
+    {
+      "id": "spinosaurus",
+      "name": "Spinosaurus",
+      "general": {
+        "appeal": 1159,
+        "batchSize": {
+          "min": 1,
+          "max": 1
+        },
+        "modificationsMax": 14,
+        "securityRating": 6,
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "pasture": 25,
+          "wetland": 25,
+          "deepWater": 50
+        },
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 30,
+          "max": 59
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 65
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Large Appetite",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Sickly",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Needy",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Cretaceous",
+      "family": "Carnivore",
+      "size": "Large"
+    },
+    {
+      "id": "stegoceratops",
+      "name": "Stegoceratops",
+      "general": {
+        "appeal": 116,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 16,
+        "securityRating": 4,
+        "hybrid": true
+      },
+      "needs": {
+        "habitat": {
+          "cover": 16,
+          "water": 10,
+          "groundFiber": 42,
+          "groundFruit": 32
+        },
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultFemales": "ANY",
+        "canBreed": false,
+        "juvenilePopulation": "N/A",
+        "singleSex": "female",
+        "adultMales": "N/A"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 45,
+          "max": 83
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Stegosaurus",
+          "Microceratus",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Scavenger",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Nasutoceratops",
+          "Carnivores",
+          "Ankylosaurid",
+          "Stegosaurid",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Thirsty",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Large Appetite",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Short Lived",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Resilient",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Needy",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 75,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Holocene",
+      "family": "Hybrid",
+      "size": "Medium"
+    },
+    {
+      "id": "stegosaurus",
+      "name": "Stegosaurus",
+      "general": {
+        "appeal": 110,
+        "batchSize": {
+          "min": 2,
+          "max": 3
+        },
+        "modificationsMax": 10,
+        "securityRating": 5
+      },
+      "needs": {
+        "habitat": {
+          "cover": 14,
+          "water": 10,
+          "groundFiber": 41,
+          "groundFruit": 35
+        },
+        "adultPopulation": {
+          "min": 3,
+          "note": "3+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 37,
+          "max": 73
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 20
+      },
+      "preferences": {
+        "likes": [
+          "Stegoceratops",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Scavenger",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Stegosaurid",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Social",
+          "percent": 25
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Fit",
+          "percent": 25
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Jurassic",
+      "family": "Stegosaurid",
+      "size": "Medium"
+    },
+    {
+      "id": "struthiomimus",
+      "name": "Struthiomimus",
+      "general": {
+        "appeal": 43,
+        "batchSize": {
+          "min": 3,
+          "max": 5
+        },
+        "modificationsMax": 8
+      },
+      "needs": {
+        "habitat": {
+          "cover": 15,
+          "water": 10,
+          "groundLeaf": 75
+        },
+        "adultPopulation": {
+          "min": 3,
+          "note": "3+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 31,
+          "max": 61
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Iguanodon",
+          "Sauropod",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 25
+        },
+        {
+          "name": "Social",
+          "percent": 50
+        },
+        {
+          "name": "Fit",
+          "percent": 25
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Ornithomimosaurid",
+      "size": "Small"
+    },
+    {
+      "id": "stygimoloch",
+      "name": "Stygimoloch",
+      "general": {
+        "appeal": 108,
+        "batchSize": {
+          "min": 2,
+          "max": 6
+        },
+        "modificationsMax": 8,
+        "securityRating": 4,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 15,
+          "water": 10,
+          "groundLeaf": 75
+        },
+        "adultPopulation": {
+          "min": 3,
+          "note": "3+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 44,
+          "max": 88
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Psittacosaurus",
+          "Sauropod",
+          "Ankylosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Quenched",
+          "percent": 25
+        },
+        {
+          "name": "Tolerant",
+          "percent": 25
+        },
+        {
+          "name": "Defensive",
+          "percent": 50
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Pachycephalosaurid",
+      "size": "Small"
+    },
+    {
+      "id": "styracosaurus",
+      "name": "Styracosaurus",
+      "general": {
+        "appeal": 152,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 8,
+        "securityRating": 3,
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 12,
+          "wetland": 25,
+          "water": 10,
+          "groundFiber": 53
+        },
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 36,
+          "max": 72
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Microceratus",
+          "Chasmosaurus",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Triceratops",
+          "Sinoceratops",
+          "Hybrid Carnivores",
+          "Stegosaurid",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Social",
+          "percent": 75
+        },
+        {
+          "name": "Strong",
+          "percent": 25
+        },
+        {
+          "name": "Defensive",
+          "percent": 25
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Ceratopsid",
+      "size": "Small"
+    },
+    {
+      "id": "suchomimus",
+      "name": "Suchomimus",
+      "general": {
+        "appeal": 639,
+        "batchSize": {
+          "min": 1,
+          "max": 4
+        },
+        "modificationsMax": 13
+      },
+      "needs": {
+        "habitat": {
+          "arid": 16,
+          "cover": 22,
+          "deepWater": 62
+        },
+        "adultPopulation": {
+          "min": 3,
+          "note": "3+"
+        },
+        "adultMales": "1+",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 31,
+          "max": 62
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Baryonyx",
+          "Irritator",
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Small Carnivore",
+          "Large Carnivore",
+          "Medium Carnivore",
+          "Indoraptor",
+          "Indominus rex",
+          "Therizinosaurus",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Thirsty",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Large Appetite",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Sickly",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Antisocial",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Piscivore / Carnivore",
+      "era": "Early Cretaceous",
+      "family": "Carnivore",
+      "size": "Medium"
+    },
+    {
+      "id": "tapejara",
+      "name": "Tapejara",
+      "general": {
+        "appeal": 92,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 8,
+        "securityRating": 2
+      },
+      "needs": {
+        "habitat": {
+          "cover": 13,
+          "pasture": 77,
+          "water": 10
+        },
+        "fish": 0.5,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 35,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Quetzalcoatlus",
+          "Caiuajara"
+        ],
+        "dislikes": [
+          "Tropeognathus",
+          "Hybrid Carnivores"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Resilient",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Social",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Tolerant",
+          "percent": 50,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Aviary",
+      "feedingType": "Unknown",
+      "era": "Early Cretaceous",
+      "family": "Unknown",
+      "size": "Small"
+    },
+    {
+      "id": "thanatosdrakon",
+      "name": "Thanatosdrakon",
+      "general": {
+        "appeal": 148,
+        "batchSize": {
+          "min": 1,
+          "max": 2
+        },
+        "modificationsMax": 10,
+        "securityRating": 4
+      },
+      "needs": {
+        "habitat": {
+          "barren": 10,
+          "pasture": 59,
+          "wetland": 8,
+          "water": 23
+        },
+        "fish": 0.5,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 38,
+          "max": 76
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Pteranodon"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Small Appetite",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Needy",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Aviary",
+      "feedingType": "Unknown",
+      "era": "Late Cretaceous",
+      "family": "Unknown",
+      "size": "Medium"
+    },
+    {
+      "id": "therizinosaurus",
+      "name": "Therizinosaurus",
+      "general": {
+        "appeal": 1135,
+        "batchSize": {
+          "min": 1,
+          "max": 1
+        },
+        "modificationsMax": 14,
+        "securityRating": 5
+      },
+      "needs": {
+        "habitat": {
+          "cover": 15,
+          "water": 10,
+          "groundLeaf": 75
+        },
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "0 - 1",
+        "adultFemales": "0 - 1",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 40,
+          "max": 80
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "likes": [
+          "Lystrosaurus",
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Flying Reptile",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Pachycephalosaurid",
+          "Stegosaurid",
+          "Therizinosaurus",
+          "Iguanodontian"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Large Appetite",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Needy",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Defensive",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Therizinosaurid",
+      "size": "Large"
+    },
+    {
+      "id": "triceratops",
+      "name": "Triceratops",
+      "general": {
+        "appeal": 109,
+        "batchSize": {
+          "min": 1,
+          "max": 4
+        },
+        "modificationsMax": 12,
+        "securityRating": 4,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 19,
+          "wetland": 20,
+          "water": 10,
+          "groundFiber": 51
+        },
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 37,
+          "max": 73
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Stegoceratops",
+          "Microceratus",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Hadrosaurid",
+          "Scavenger",
+          "Iguanodontian"
+        ],
+        "dislikes": [
+          "Styracosaurus",
+          "Sinoceratops",
+          "Carnivores",
+          "Stegosaurid",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Intolerant",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Ceratopsid",
+      "size": "Medium"
+    },
+    {
+      "id": "troodon",
+      "name": "Troodon",
+      "general": {
+        "appeal": 56,
+        "batchSize": {
+          "min": 2,
+          "max": 6
+        },
+        "modificationsMax": 8
+      },
+      "needs": {
+        "habitat": {
+          "cover": 15,
+          "pasture": 75,
+          "water": 10
+        },
+        "prey": 0.4,
+        "adultPopulation": {
+          "min": 4,
+          "note": "4+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 35,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 20
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Humble",
+          "percent": 50
+        },
+        {
+          "name": "Fit",
+          "percent": 25
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Cretaceous",
+      "family": "Carnivore",
+      "size": "Small"
+    },
+    {
+      "id": "tropeognathus",
+      "name": "Tropeognathus",
+      "general": {
+        "appeal": 155,
+        "batchSize": {
+          "min": 1,
+          "max": 2
+        },
+        "modificationsMax": 11,
+        "securityRating": 4,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female",
+          "male"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 4,
+          "pasture": 86,
+          "water": 10
+        },
+        "fish": 0.5,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "1+",
+        "adultFemales": "1+",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "HIGH",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "MEDIUM",
+        "lifespan": {
+          "min": 35,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 50
+      },
+      "preferences": {
+        "dislikes": [
+          "Tapejara",
+          "Hybrid Carnivores"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Quenched",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Humble",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Vulnerable",
+          "percent": 75,
+          "polarity": "negative"
+        }
+      ],
+      "enclosureType": "Aviary",
+      "feedingType": "Unknown",
+      "era": "Early Cretaceous",
+      "family": "Unknown",
+      "size": "Medium"
+    },
+    {
+      "id": "tsintaosaurus",
+      "name": "Tsintaosaurus",
+      "general": {
+        "appeal": 46,
+        "batchSize": {
+          "min": 3,
+          "max": 6
+        },
+        "modificationsMax": 8,
+        "securityRating": 3,
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "pasture": 60,
+          "water": 10,
+          "groundFiber": 30
+        },
+        "adultPopulation": {
+          "min": 4,
+          "note": "4+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 51,
+          "max": 101
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 20
+      },
+      "preferences": {
+        "likes": [
+          "Dryosaurus",
+          "Sauropod",
+          "Ornithomimosaurid",
+          "Ceratopsid",
+          "Ankylosaurid",
+          "Stegosaurid"
+        ],
+        "dislikes": [
+          "Hybrid Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Strong",
+          "percent": 75,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 50,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Ground Palaeobotany",
+      "era": "Late Cretaceous",
+      "family": "Hadrosaurid",
+      "size": "Medium"
+    },
+    {
+      "id": "tyrannosaurus-rex",
+      "name": "Tyrannosaurus rex",
+      "general": {
+        "appeal": 1135,
+        "batchSize": {
+          "min": 1,
+          "max": 2
+        },
+        "modificationsMax": 14,
+        "securityRating": 6,
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "arid": 15,
+          "cover": 13,
+          "pasture": 62,
+          "water": 10
+        },
+        "prey": 0.7,
+        "adultPopulation": {
+          "min": 1,
+          "note": "1+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 33,
+          "max": 66
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 75
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Thirsty",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Large Appetite",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Short Lived",
+          "percent": 25,
+          "polarity": "negative"
+        },
+        {
+          "name": "Resilient",
+          "percent": 25,
+          "polarity": "positive"
+        },
+        {
+          "name": "Needy",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 75,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 50,
+          "polarity": "positive"
+        },
+        {
+          "name": "Fit",
+          "percent": 75,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Cretaceous",
+      "family": "Carnivore",
+      "size": "Large"
+    },
+    {
+      "id": "utahraptor",
+      "name": "Utahraptor",
+      "general": {
+        "appeal": 237,
+        "batchSize": {
+          "min": 2,
+          "max": 4
+        },
+        "modificationsMax": 10,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 22,
+          "pasture": 49,
+          "wetland": 19,
+          "water": 10
+        },
+        "prey": 0.5,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "0 - 1",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 37,
+          "max": 72
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Small Appetite",
+          "percent": 25
+        },
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Defensive",
+          "percent": 75
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Early Cretaceous",
+      "family": "Carnivore",
+      "size": "Small"
+    },
+    {
+      "id": "velociraptor",
+      "name": "Velociraptor",
+      "general": {
+        "appeal": 149,
+        "batchSize": {
+          "min": 2,
+          "max": 5
+        },
+        "modificationsMax": 11,
+        "securityRating": 5,
+        "activeTime": [
+          "day"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 16,
+          "pasture": 74,
+          "water": 10
+        },
+        "prey": 0.4,
+        "adultPopulation": {
+          "min": 2,
+          "note": "2+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "2+",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "HIGH",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 35,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 33
+      },
+      "preferences": {
+        "likes": [
+          "Indominus rex",
+          "Spinoraptor",
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Small Carnivore",
+          "Large Carnivore",
+          "Medium Carnivore",
+          "Indoraptor",
+          "Indominus rex",
+          "Therizinosaurus",
+          "Scorpios rex"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Intolerant",
+          "percent": 75,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 75
+        },
+        {
+          "name": "Fit",
+          "percent": 50
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Late Cretaceous",
+      "family": "Carnivore",
+      "size": "Small"
+    },
+    {
+      "id": "yutyrannus",
+      "name": "Yutyrannus",
+      "general": {
+        "appeal": 256,
+        "batchSize": {
+          "min": 2,
+          "max": 3
+        },
+        "modificationsMax": 10,
+        "securityRating": 4,
+        "activeTime": [
+          "day",
+          "night"
+        ],
+        "sex": [
+          "female"
+        ]
+      },
+      "needs": {
+        "habitat": {
+          "cover": 30,
+          "pasture": 51,
+          "water": 19
+        },
+        "prey": 0.5,
+        "adultPopulation": {
+          "min": 3,
+          "note": "3+"
+        },
+        "adultMales": "ANY",
+        "adultFemales": "ANY",
+        "juvenilePopulation": "ANY"
+      },
+      "attributes": {
+        "maxStamina": "MEDIUM",
+        "resilience": "HIGH",
+        "appetite": "MEDIUM",
+        "thirst": "LOW",
+        "lifespan": {
+          "min": 35,
+          "max": 70
+        },
+        "areaNeed": "LOW",
+        "areaNeedGrowthPercent": 25
+      },
+      "preferences": {
+        "likes": [
+          "Scavenger"
+        ],
+        "dislikes": [
+          "Carnivores",
+          "Therizinosaurus"
+        ]
+      },
+      "traits": [
+        {
+          "name": "Intolerant",
+          "percent": 50,
+          "polarity": "negative"
+        },
+        {
+          "name": "Strong",
+          "percent": 75,
+          "polarity": "positive"
+        },
+        {
+          "name": "Defensive",
+          "percent": 25,
+          "polarity": "positive"
+        }
+      ],
+      "enclosureType": "Land",
+      "feedingType": "Carnivore",
+      "era": "Early Cretaceous",
+      "family": "Carnivore",
+      "size": "Medium"
+    }
+  ]
+}
