@@ -1,15 +1,17 @@
 DINO,Era,Size,Likes,Dislikes,Arid,Barren,Cover,Pasture,Wetland,Water
-Dimorphodon,Early Jurassic,Small,Quetzalcoatlus,,    20%,,,    40%,,    40%
+Dimorphodon,Early Jurassic,Small,Quetzalcoatlus,Hybrid Carnivores,    20%,,,    40%,,    40%
 Tapejara,Early Cretaceous,Small,"Quetzalcoatlus
-Caiuajara",Tropeognathus,,,    13%,    77%,,    10%
-Tropeognathus,Early Cretaceous,Medium,,Tapejara,,,    4%,    86%,,    10%
-Geosternbergia,Late Cretaceous,Medium,"Tropeognathus
-Pteranodon",,,,    11%,    52%,    27%,    10%
+Caiuajara","Tropeognathus
+Hybrid Carnivores",,,    13%,    77%,,    10%
+Tropeognathus,Early Cretaceous,Medium,,"Tapejara
+Hybrid Carnivores",,,    4%,    86%,,    10%
+Geosternbergia,Late Cretaceous,Medium,"Pteranodon
+Tropeognathus",Hybrid Carnivores,,,    11%,    52%,    27%,    10%
 Pteranodon,Late Cretaceous,Medium,"Geosternbergia
-Thanatosdrakon",,,    12%,,    60%,,    28%
-Thanatosdrakon,Late Cretaceous,Medium,Pteranodon,,,    10%,,    59%,    8%,    23%
-Caiuajara,Late Cretaceous,Small,"Quetzalcoatlus
-Tapejara",,    60%,    15%,    18%,,,    8%
+Thanatosdrakon",Hybrid Carnivores,,    12%,,    60%,,    28%
+Thanatosdrakon,Late Cretaceous,Medium,Pteranodon,Hybrid Carnivores,,    10%,,    59%,    8%,    23%
+Caiuajara,Late Cretaceous,Small,"Tapejara
+Quetzalcoatlus",Hybrid Carnivores,    60%,    15%,    18%,,,    8%
 Quetzalcoatlus,Late Cretaceous,large,"Dimorphodon
 Tapejara
-Caiuajara",,    26%,    39%,,,    7%,    28%
+Caiuajara",Hybrid Carnivores,    26%,    39%,,,    7%,    28%

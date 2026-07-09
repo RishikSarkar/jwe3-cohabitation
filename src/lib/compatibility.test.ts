@@ -41,6 +41,57 @@ describe("resolveCohabitation", () => {
     expect(isBlockedPair(tapejara, trope)).toBe(true);
   });
 
+  it("blocks when one species dislikes the other", () => {
+    const deino = dino({
+      id: "deinocheirus",
+      name: "Deinocheirus",
+      threatClass: "Piscivore",
+      size: "Large",
+      cohabitation: {
+        likes: [],
+        dislikes: [{ kind: "meta", tag: "LargeCarnivores" }],
+      },
+    });
+    const acro = dino({
+      id: "acrocanthosaurus",
+      name: "Acrocanthosaurus",
+      threatClass: "Carnivore",
+      size: "Large",
+    });
+    const herrera = dino({
+      id: "herrerasaurus",
+      name: "Herrerasaurus",
+      threatClass: "Carnivore",
+      size: "Small",
+      cohabitation: {
+        likes: [{ kind: "meta", tag: "Scavenger" }],
+        dislikes: [],
+      },
+    });
+    expect(resolveCohabitation(deino, acro)).toBe("disliked");
+    expect(isBlockedPair(deino, acro)).toBe(true);
+    expect(isBlockedPair(acro, herrera)).toBe(false);
+  });
+
+  it("allows carnivore pairs with an explicit like", () => {
+    const allo = dino({
+      id: "allosaurus",
+      name: "Allosaurus",
+      threatClass: "Carnivore",
+      cohabitation: {
+        likes: [{ kind: "species", id: "ceratosaurus" }],
+        dislikes: [],
+      },
+    });
+    const cerato = dino({
+      id: "ceratosaurus",
+      name: "Ceratosaurus",
+      threatClass: "Carnivore",
+    });
+    expect(isBlockedPair(allo, cerato)).toBe(false);
+    expect(resolveCohabitation(allo, cerato)).toBe("liked");
+  });
+
   it("likes when family tag matches", () => {
     const trike = dino({
       id: "triceratops",

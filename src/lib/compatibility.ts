@@ -1,9 +1,17 @@
+import {
+  HYBRID_CARNIVORE_IDS,
+  MEDIUM_CARNIVORE_IDS,
+} from "@/constants/canonical";
 import type {
   CohabTag,
   Dinosaur,
   HabitatKey,
   SizeClass,
 } from "@/types/dinosaur";
+
+function isHybridCarnivore(d: Dinosaur): boolean {
+  return HYBRID_CARNIVORE_IDS.has(d.id);
+}
 
 export type CohabResult = "liked" | "disliked" | "neutral";
 
@@ -33,9 +41,6 @@ function matchesTag(tag: CohabTag, target: Dinosaur): boolean {
       if (tag.tag === "Scavenger") {
         return (
           target.threatClass === "Scavenger" ||
-          target.cohabitation.likes.some(
-            (t) => t.kind === "meta" && t.tag === "Scavenger",
-          ) ||
           target.feedingType.toLowerCase().includes("scavenger")
         );
       }
@@ -45,6 +50,19 @@ function matchesTag(tag: CohabTag, target: Dinosaur): boolean {
           target.threatClass === "Piscivore" ||
           target.threatClass === "Scavenger"
         );
+      }
+      if (tag.tag === "LargeCarnivores") {
+        return (
+          target.size === "Large" &&
+          (target.threatClass === "Carnivore" ||
+            target.threatClass === "Piscivore")
+        );
+      }
+      if (tag.tag === "MediumCarnivores") {
+        return MEDIUM_CARNIVORE_IDS.has(target.id);
+      }
+      if (tag.tag === "HybridCarnivores") {
+        return isHybridCarnivore(target);
       }
       if (tag.tag === "Therizinosaurs") {
         return (
@@ -69,7 +87,23 @@ export function resolveCohabitation(
   from: Dinosaur,
   to: Dinosaur,
 ): CohabResult {
+  if (from.id === "indoraptor" && to.id !== "indoraptor") {
+    return "disliked";
+  }
+
+  if (from.id === "scorpios-rex" && !isHybridCarnivore(to)) {
+    return "disliked";
+  }
+
+  if (listMatchesAny(from.cohabitation.likes, to)) {
+    return "liked";
+  }
+
   if (listMatchesAny(from.cohabitation.dislikes, to)) {
+    return "disliked";
+  }
+
+  if (from.id === "indominus-rex") {
     return "disliked";
   }
 
@@ -80,10 +114,6 @@ export function resolveCohabitation(
     if (!isScavengerFriend && to.threatClass !== "Scavenger") {
       return "disliked";
     }
-  }
-
-  if (listMatchesAny(from.cohabitation.likes, to)) {
-    return "liked";
   }
 
   if (isUniversalCarnivoreConflict(from, to)) {
@@ -146,9 +176,10 @@ function isUniversalCarnivoreConflict(a: Dinosaur, b: Dinosaur): boolean {
 
 export function isBlockedPair(a: Dinosaur, b: Dinosaur): boolean {
   if (a.enclosureType !== b.enclosureType) return true;
-  const ab = resolveCohabitation(a, b);
-  const ba = resolveCohabitation(b, a);
-  return ab === "disliked" || ba === "disliked";
+  return (
+    resolveCohabitation(a, b) === "disliked" ||
+    resolveCohabitation(b, a) === "disliked"
+  );
 }
 
 export function cohabitationScore(from: Dinosaur, to: Dinosaur): number {

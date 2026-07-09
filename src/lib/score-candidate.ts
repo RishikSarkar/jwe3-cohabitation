@@ -278,6 +278,29 @@ export function scoreAllDinosaurs(
   return rows;
 }
 
+/** How well a stocked species fits the rest of the enclosure (candidate-list logic). */
+export function scoreMemberAgainstRest(
+  member: Dinosaur,
+  state: EnclosureState,
+  allDinos: Dinosaur[],
+): { score: number; blocked: boolean; tier: CompatibilityTier } {
+  const restState: EnclosureState = {
+    ...state,
+    members: state.members.filter((m) => m.dinosaurId !== member.id),
+  };
+  const profile = buildEnclosureProfile(restState, allDinos);
+  if (!profile) {
+    return { score: 100, blocked: false, tier: "Excellent" };
+  }
+
+  const row = scoreOne(member, restState, profile, false);
+  return {
+    score: row.score ?? 0,
+    blocked: row.blocked,
+    tier: row.tier,
+  };
+}
+
 export function sortScoredRows(
   rows: ScoredCandidate[],
   mode: SortMode,

@@ -103,6 +103,7 @@ export const COHAB_FAMILY_TAGS = new Set([
   "Hadrosaurid",
   "Hadrosaur",
   "Pachycephalosaurid",
+  "Pachycephalosaur",
   "Pachy",
   "Stegosaurid",
   "Carnivores",
@@ -112,6 +113,45 @@ export const COHAB_FAMILY_TAGS = new Set([
   "Medium",
   "Small",
 ]);
+
+/** JWE3 medium carnivore roster (DINODEX guide). */
+export const MEDIUM_CARNIVORE_IDS = new Set([
+  "ceratosaurus",
+  "qianzhousaurus",
+  "carnotaurus",
+  "yutyrannus",
+  "concavenator",
+  "baryonyx",
+  "albertosaurus",
+  "irritator",
+  "metriacanthosaurus",
+  "suchomimus",
+  "allosaurus",
+]);
+
+export const HYBRID_CARNIVORE_IDS = new Set([
+  "spinoraptor",
+  "scorpios-rex",
+  "indominus-rex",
+  "indoraptor",
+]);
+
+/** DINODEX shorthand in likes/dislikes columns. */
+export const COHAB_LINE_ALIASES: Record<string, string> = {
+  ornithomimids: "Ornithomimosaurid",
+  ceratopsids: "Ceratopsid",
+  hadrosaurs: "Hadrosaurid",
+  hadrosaurids: "Hadrosaurid",
+  ankys: "Ankylosaurid",
+  ankylosaurids: "Ankylosaurid",
+  stegos: "Stegosaurid",
+  stegosaurids: "Stegosaurid",
+  pachys: "Pachycephalosaurid",
+  sauropods: "Sauropod",
+  therizino: "Therizinosaurs",
+  therizinosaurus: "Therizinosaurs",
+  scavengers: "Scavengers",
+};
 
 export function normalizeFamily(raw: string): string {
   const trimmed = raw.trim();

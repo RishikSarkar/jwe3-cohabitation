@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "import-data": "tsx scripts/import-spreadsheet.ts",
+    "sync-dinodex": "tsx scripts/sync-csv-from-dinodex.ts",
+    "import-data": "npm run sync-dinodex && tsx scripts/import-spreadsheet.ts",
     "fetch-images": "tsx scripts/fetch-images.ts",
     "setup": "npm run import-data && npm run fetch-images",
     "dev": "npm run import-data && next dev",

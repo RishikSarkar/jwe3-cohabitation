@@ -28,7 +28,13 @@ export type HabitatKey =
   | "tallFiber"
   | "tallFruit";
 
-export type MetaTag = "Scavenger" | "Carnivores" | "Therizinosaurs";
+export type MetaTag =
+  | "Scavenger"
+  | "Carnivores"
+  | "LargeCarnivores"
+  | "MediumCarnivores"
+  | "HybridCarnivores"
+  | "Therizinosaurs";
 
 export type CohabTag =
   | { kind: "species"; id: string }

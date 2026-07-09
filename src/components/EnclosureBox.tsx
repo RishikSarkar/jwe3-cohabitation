@@ -10,8 +10,10 @@ import type {
   ScoredCandidate,
 } from "@/types/dinosaur";
 import { matchesDinoSearch } from "@/lib/search";
+import { computeEnclosureRating } from "@/lib/enclosure-rating";
 import { DinoImage } from "./DinoImage";
 import { DinosaurListRow } from "./DinosaurListRow";
+import { EnclosureRatingBadge } from "./EnclosureRatingBadge";
 
 type Props = {
   state: EnclosureState;
@@ -131,17 +133,30 @@ export function EnclosureBox({
     [state.members, memberById, rowById],
   );
 
+  const rating = useMemo(
+    () => computeEnclosureRating(state, allDinos),
+    [state, allDinos],
+  );
+
   return (
     <section className="panel panel-enclosure p-6 sm:p-8">
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
         <h2 className="title-jwe text-xl sm:text-2xl">
           <span>Enclosure</span>
         </h2>
-        <SegmentedControl
-          options={["Land", "Aviary", "Lagoon"] as EnclosureType[]}
-          value={state.type}
-          onChange={setType}
-        />
+        {rating && (
+          <>
+            <div className="enclosure-rating-divider" aria-hidden />
+            <EnclosureRatingBadge rating={rating} />
+          </>
+        )}
+        <div className="ml-auto">
+          <SegmentedControl
+            options={["Land", "Aviary", "Lagoon"] as EnclosureType[]}
+            value={state.type}
+            onChange={setType}
+          />
+        </div>
       </div>
 
       {orderedMemberRows.length === 0 ? (

@@ -5,6 +5,7 @@ import path from "path";
 import {
   AVIARY_HABITAT_KEYS,
   COHAB_FAMILY_TAGS,
+  COHAB_LINE_ALIASES,
   CSV_HEADER_TO_HABITAT,
   HABITAT_LABELS,
   LAND_HABITAT_KEYS,
@@ -25,6 +26,47 @@ const ROOT = path.join(__dirname, "..");
 const RAW = path.join(ROOT, "data", "raw");
 const CLEAN = path.join(ROOT, "data", "clean");
 const OUT = path.join(ROOT, "src", "data", "dinosaurs.json");
+const DINODEX_PATH = path.join(ROOT, "data", "dinodex-cohab.json");
+
+type DinodexCohab = { likes?: string[]; dislikes?: string[] };
+type DinodexFile = Record<string, DinodexCohab>;
+
+function loadDinodex(): DinodexFile {
+  if (!fs.existsSync(DINODEX_PATH)) return {};
+  const raw = JSON.parse(fs.readFileSync(DINODEX_PATH, "utf-8")) as Record<
+    string,
+    DinodexCohab | string
+  >;
+  const out: DinodexFile = {};
+  for (const [key, value] of Object.entries(raw)) {
+    if (key.startsWith("_") || typeof value === "string") continue;
+    out[key] = value;
+  }
+  return out;
+}
+
+function cohabLinesToField(lines: string[] | undefined): string {
+  if (!lines?.length) return "";
+  return lines.join("\n");
+}
+
+function applyDinodexToRow(
+  row: Record<string, string>,
+  dinodex: DinodexFile,
+): Record<string, string> {
+  const id = slugify(normalizeSpeciesName(row.DINO ?? ""));
+  const entry = dinodex[id];
+  if (!entry) return row;
+  return {
+    ...row,
+    ...(entry.likes !== undefined
+      ? { Likes: cohabLinesToField(entry.likes) }
+      : {}),
+    ...(entry.dislikes !== undefined
+      ? { Dislikes: cohabLinesToField(entry.dislikes) }
+      : {}),
+  };
+}
 
 const LAND_HABITAT_HEADERS = LAND_HABITAT_KEYS.map((k) => HABITAT_LABELS[k]);
 const AVIARY_HABITAT_HEADERS = AVIARY_HABITAT_KEYS.map((k) => HABITAT_LABELS[k]);
@@ -56,12 +98,27 @@ function parseCohabTags(raw: string | undefined): CohabTag[] {
   const tags: CohabTag[] = [];
   for (const line of lines) {
     const lower = line.toLowerCase();
-    if (lower === "everything") continue;
     if (
-      lower === "scavenger" ||
-      lower.startsWith("scavenger") ||
-      lower === "scavengers"
+      lower === "everything" ||
+      lower === "everything else" ||
+      lower === "everything except hybrid carnivores" ||
+      lower === "nothing" ||
+      lower === "none"
     ) {
+      continue;
+    }
+    const alias = COHAB_LINE_ALIASES[lower];
+    if (alias) {
+      if (alias === "Scavengers") {
+        tags.push({ kind: "meta", tag: "Scavenger" });
+      } else if (alias === "Therizinosaurs") {
+        tags.push({ kind: "meta", tag: "Therizinosaurs" });
+      } else {
+        tags.push({ kind: "family", id: alias });
+      }
+      continue;
+    }
+    if (lower === "scavenger" || lower.startsWith("scavenger") || lower === "scavengers") {
       tags.push({ kind: "meta", tag: "Scavenger" });
       continue;
     }
@@ -69,7 +126,19 @@ function parseCohabTags(raw: string | undefined): CohabTag[] {
       tags.push({ kind: "meta", tag: "Carnivores" });
       continue;
     }
-    if (lower === "therizinosaurs") {
+    if (lower === "large carnivores" || lower === "large carnivore") {
+      tags.push({ kind: "meta", tag: "LargeCarnivores" });
+      continue;
+    }
+    if (lower === "medium carnivores" || lower === "medium carnivore") {
+      tags.push({ kind: "meta", tag: "MediumCarnivores" });
+      continue;
+    }
+    if (lower === "hybrid carnivores" || lower === "hybrid carnivore") {
+      tags.push({ kind: "meta", tag: "HybridCarnivores" });
+      continue;
+    }
+    if (lower === "therizinosaurs" || lower === "therizino") {
       tags.push({ kind: "meta", tag: "Therizinosaurs" });
       continue;
     }
@@ -183,10 +252,6 @@ function buildDinosaur(
   const likes = parseCohabTags(normalized.Likes);
   const dislikes = parseCohabTags(normalized.Dislikes);
 
-  if ((normalized.Dislikes ?? "").toLowerCase().includes("everything")) {
-    dislikes.push({ kind: "meta", tag: "Therizinosaurs" });
-  }
-
   return {
     id,
     name,
@@ -213,13 +278,17 @@ function writeCleanCsv(
 }
 
 function main() {
-  const landRows = readLandCsv().map(normalizeCsvHeaders);
-  const aviaryRows = readCsv(path.join(RAW, "aviary.csv")).map(
-    normalizeCsvHeaders,
-  );
-  const lagoonRows = readCsv(path.join(RAW, "lagoon.csv")).map(
-    normalizeCsvHeaders,
-  );
+  const dinodex = loadDinodex();
+
+  const landRows = readLandCsv()
+    .map(normalizeCsvHeaders)
+    .map((row) => applyDinodexToRow(row, dinodex));
+  const aviaryRows = readCsv(path.join(RAW, "aviary.csv"))
+    .map(normalizeCsvHeaders)
+    .map((row) => applyDinodexToRow(row, dinodex));
+  const lagoonRows = readCsv(path.join(RAW, "lagoon.csv"))
+    .map(normalizeCsvHeaders)
+    .map((row) => applyDinodexToRow(row, dinodex));
 
   writeCleanCsv("land.csv", landRows, [
     "DINO",

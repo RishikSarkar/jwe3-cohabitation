@@ -20,7 +20,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/acrocanthosaurus.png",
     "video": "/dinosaurs/acrocanthosaurus.webm"
@@ -46,7 +55,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/concavenator.png",
     "video": "/dinosaurs/concavenator.webm"
@@ -66,8 +84,26 @@
       "water": 10
     },
     "cohabitation": {
-      "likes": [],
-      "dislikes": []
+      "likes": [
+        {
+          "kind": "meta",
+          "tag": "Scavenger"
+        }
+      ],
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        },
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        }
+      ]
     },
     "image": "/dinosaurs/deinonychus.png",
     "video": "/dinosaurs/deinonychus.webm"
@@ -94,7 +130,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/utahraptor.png",
     "video": "/dinosaurs/utahraptor.webm"
@@ -120,7 +165,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/yutyrannus.png",
     "video": "/dinosaurs/yutyrannus.webm"
@@ -165,12 +219,20 @@
       ],
       "dislikes": [
         {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
           "kind": "family",
           "id": "Ankylosaurid"
         },
         {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -219,7 +281,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/iguanodon.png",
     "video": "/dinosaurs/iguanodon.webm"
@@ -261,7 +332,16 @@
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/muttaburrasaurus.png",
     "video": "/dinosaurs/muttaburrasaurus.webm"
@@ -301,10 +381,23 @@
         },
         {
           "kind": "family",
+          "id": "Pachycephalosaurid"
+        },
+        {
+          "kind": "family",
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/psittacosaurus.png",
     "video": "/dinosaurs/psittacosaurus.webm"
@@ -347,7 +440,16 @@
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/hypsilophodon.png",
     "video": "/dinosaurs/hypsilophodon.webm"
@@ -371,18 +473,27 @@
       "likes": [
         {
           "kind": "species",
-          "id": "irritator"
+          "id": "suchomimus"
         },
         {
           "kind": "species",
-          "id": "suchomimus"
+          "id": "irritator"
         },
         {
           "kind": "meta",
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/baryonyx.png",
     "video": "/dinosaurs/baryonyx.webm"
@@ -417,7 +528,20 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        },
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        }
+      ]
     },
     "image": "/dinosaurs/irritator.png",
     "video": "/dinosaurs/irritator.webm"
@@ -440,18 +564,31 @@
       "likes": [
         {
           "kind": "species",
-          "id": "irritator"
+          "id": "baryonyx"
         },
         {
           "kind": "species",
-          "id": "baryonyx"
+          "id": "irritator"
         },
         {
           "kind": "meta",
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        },
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        }
+      ]
     },
     "image": "/dinosaurs/suchomimus.png",
     "video": "/dinosaurs/suchomimus.webm"
@@ -507,6 +644,14 @@
         {
           "kind": "family",
           "id": "Sauropod"
+        },
+        {
+          "kind": "species",
+          "id": "indominus-rex"
+        },
+        {
+          "kind": "species",
+          "id": "scorpios-rex"
         }
       ]
     },
@@ -535,7 +680,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/dilophosaurus.png",
     "video": "/dinosaurs/dilophosaurus.webm"
@@ -561,7 +715,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/dimetrodon.png",
     "video": "/dinosaurs/dimetrodon.webm"
@@ -653,7 +816,11 @@
       "likes": [
         {
           "kind": "species",
-          "id": "stegoceratops"
+          "id": "stegosaurus"
+        },
+        {
+          "kind": "species",
+          "id": "microceratus"
         },
         {
           "kind": "family",
@@ -686,12 +853,20 @@
           "id": "nasutoceratops"
         },
         {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
           "kind": "family",
           "id": "Ankylosaurid"
         },
         {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -732,8 +907,8 @@
           "id": "Hadrosaurid"
         },
         {
-          "kind": "family",
-          "id": "Scavenger"
+          "kind": "meta",
+          "tag": "Scavenger"
         }
       ],
       "dislikes": [
@@ -742,8 +917,16 @@
           "id": "chasmosaurus"
         },
         {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -771,11 +954,24 @@
           "id": "velociraptor"
         },
         {
-          "kind": "species",
-          "id": "indominus-rex"
+          "kind": "meta",
+          "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        },
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        }
+      ]
     },
     "image": "/dinosaurs/spinoraptor.png",
     "video": "/dinosaurs/spinoraptor.webm"
@@ -827,11 +1023,20 @@
           "id": "Stegosaurid"
         },
         {
-          "kind": "family",
-          "id": "Scavenger"
+          "kind": "meta",
+          "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "indominus-rex"
+        },
+        {
+          "kind": "species",
+          "id": "scorpios-rex"
+        }
+      ]
     },
     "image": "/dinosaurs/ankylodocus.png",
     "video": "/dinosaurs/ankylodocus.webm"
@@ -855,14 +1060,27 @@
       "likes": [
         {
           "kind": "species",
-          "id": "canotaurus"
+          "id": "carnotaurus"
         },
         {
           "kind": "meta",
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        },
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        }
+      ]
     },
     "image": "/dinosaurs/albertosaurus.png",
     "video": "/dinosaurs/albertosaurus.webm"
@@ -883,7 +1101,16 @@
     },
     "cohabitation": {
       "likes": [],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/atrociraptor.png",
     "video": "/dinosaurs/atrociraptor.webm"
@@ -905,11 +1132,24 @@
     "cohabitation": {
       "likes": [
         {
+          "kind": "species",
+          "id": "albertosaurus"
+        },
+        {
           "kind": "meta",
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/carnotaurus.png",
     "video": "/dinosaurs/carnotaurus.webm"
@@ -936,7 +1176,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/giganotosaurus.png",
     "video": "/dinosaurs/giganotosaurus.webm"
@@ -962,7 +1211,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/pyroraptor.png",
     "video": "/dinosaurs/pyroraptor.webm"
@@ -989,7 +1247,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/qianzhousaurus.png",
     "video": "/dinosaurs/qianzhousaurus.webm"
@@ -1015,7 +1282,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/spinosaurus.png",
     "video": "/dinosaurs/spinosaurus.webm"
@@ -1041,7 +1317,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/troodon.png",
     "video": "/dinosaurs/troodon.webm"
@@ -1068,7 +1353,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/tyrannosaurus-rex.png",
     "video": "/dinosaurs/tyrannosaurus-rex.webm"
@@ -1094,11 +1388,28 @@
           "id": "indominus-rex"
         },
         {
+          "kind": "species",
+          "id": "spinoraptor"
+        },
+        {
           "kind": "meta",
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        },
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        }
+      ]
     },
     "image": "/dinosaurs/velociraptor.png",
     "video": "/dinosaurs/velociraptor.webm"
@@ -1217,11 +1528,15 @@
           "id": "Pachycephalosaurid"
         },
         {
-          "kind": "family",
-          "id": "Scavenger"
+          "kind": "meta",
+          "tag": "Scavenger"
         }
       ],
       "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
         {
           "kind": "family",
           "id": "Ankylosaurid"
@@ -1229,6 +1544,10 @@
         {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -1274,12 +1593,20 @@
       ],
       "dislikes": [
         {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
           "kind": "family",
           "id": "Ankylosaurid"
         },
         {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -1338,8 +1665,16 @@
           "id": "spinoceratops"
         },
         {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -1394,8 +1729,16 @@
           "id": "stegoceratops"
         },
         {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -1428,7 +1771,16 @@
           "id": "Ceratopsid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/microceratus.png",
     "video": "/dinosaurs/microceratus.webm"
@@ -1480,8 +1832,16 @@
           "id": "stegoceratops"
         },
         {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -1536,8 +1896,16 @@
           "id": "stegoceratops"
         },
         {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -1596,8 +1964,16 @@
           "id": "styracosaurus"
         },
         {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -1656,8 +2032,16 @@
           "id": "sinoceratops"
         },
         {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -1720,8 +2104,16 @@
           "id": "sinoceratops"
         },
         {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -1765,7 +2157,16 @@
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/corythosaurus.png",
     "video": "/dinosaurs/corythosaurus.webm"
@@ -1808,7 +2209,16 @@
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/edmontosaurus.png",
     "video": "/dinosaurs/edmontosaurus.webm"
@@ -1855,7 +2265,16 @@
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/maiasaura.png",
     "video": "/dinosaurs/maiasaura.webm"
@@ -1897,7 +2316,16 @@
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/olorotitan.png",
     "video": "/dinosaurs/olorotitan.webm"
@@ -1935,7 +2363,16 @@
           "id": "Ceratopsid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/parasaurolophus.png",
     "video": "/dinosaurs/parasaurolophus.webm"
@@ -1977,7 +2414,16 @@
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/tsintaosaurus.png",
     "video": "/dinosaurs/tsintaosaurus.webm"
@@ -2019,7 +2465,16 @@
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/archaeornithomimus.png",
     "video": "/dinosaurs/archaeornithomimus.webm"
@@ -2062,7 +2517,16 @@
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/gallimimus.png",
     "video": "/dinosaurs/gallimimus.webm"
@@ -2106,7 +2570,16 @@
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/ornithomimus.png",
     "video": "/dinosaurs/ornithomimus.webm"
@@ -2148,7 +2621,16 @@
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/struthiomimus.png",
     "video": "/dinosaurs/struthiomimus.webm"
@@ -2171,6 +2653,10 @@
     "cohabitation": {
       "likes": [
         {
+          "kind": "species",
+          "id": "psittacosaurus"
+        },
+        {
           "kind": "family",
           "id": "Sauropod"
         },
@@ -2183,7 +2669,16 @@
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/homalocephale.png",
     "video": "/dinosaurs/homalocephale.webm"
@@ -2205,6 +2700,10 @@
     "cohabitation": {
       "likes": [
         {
+          "kind": "species",
+          "id": "psittacosaurus"
+        },
+        {
           "kind": "family",
           "id": "Sauropod"
         },
@@ -2217,7 +2716,16 @@
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/pachycephalosaurus.png",
     "video": "/dinosaurs/pachycephalosaurus.webm"
@@ -2239,6 +2747,10 @@
     "cohabitation": {
       "likes": [
         {
+          "kind": "species",
+          "id": "psittacosaurus"
+        },
+        {
           "kind": "family",
           "id": "Sauropod"
         },
@@ -2251,7 +2763,16 @@
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/stygimoloch.png",
     "video": "/dinosaurs/stygimoloch.webm"
@@ -2273,16 +2794,15 @@
     "cohabitation": {
       "likes": [
         {
+          "kind": "species",
+          "id": "lystrosaurus"
+        },
+        {
           "kind": "meta",
           "tag": "Scavenger"
         }
       ],
-      "dislikes": [
-        {
-          "kind": "meta",
-          "tag": "Therizinosaurs"
-        }
-      ]
+      "dislikes": []
     },
     "image": "/dinosaurs/therizinosaurus.png",
     "video": "/dinosaurs/therizinosaurus.webm"
@@ -2347,6 +2867,10 @@
       "dislikes": [
         {
           "kind": "species",
+          "id": "lystrosaurus"
+        },
+        {
+          "kind": "species",
           "id": "indominus-rex"
         },
         {
@@ -2356,10 +2880,6 @@
         {
           "kind": "species",
           "id": "scorpios-rex"
-        },
-        {
-          "kind": "species",
-          "id": "lystrosaurus"
         }
       ]
     },
@@ -2390,7 +2910,24 @@
           "id": "Hadrosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "LargeCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "MediumCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        },
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        }
+      ]
     },
     "image": "/dinosaurs/deinocheirus.png",
     "video": "/dinosaurs/deinocheirus.webm"
@@ -2417,7 +2954,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/austroraptor.png",
     "video": "/dinosaurs/austroraptor.webm"
@@ -2473,6 +3019,14 @@
         {
           "kind": "family",
           "id": "Sauropod"
+        },
+        {
+          "kind": "species",
+          "id": "indominus-rex"
+        },
+        {
+          "kind": "species",
+          "id": "scorpios-rex"
         }
       ]
     },
@@ -2500,7 +3054,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/proceratosaurus.png",
     "video": "/dinosaurs/proceratosaurus.webm"
@@ -2526,11 +3089,24 @@
           "id": "ceratosaurus"
         },
         {
+          "kind": "species",
+          "id": "metriacanthosaurus"
+        },
+        {
           "kind": "meta",
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/allosaurus.png",
     "video": "/dinosaurs/allosaurus.webm"
@@ -2556,7 +3132,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/guanlong.png",
     "video": "/dinosaurs/guanlong.webm"
@@ -2586,7 +3171,20 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        },
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        }
+      ]
     },
     "image": "/dinosaurs/metriacanthosaurus.png",
     "video": "/dinosaurs/metriacanthosaurus.webm"
@@ -2692,7 +3290,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/ceratosaurus.png",
     "video": "/dinosaurs/ceratosaurus.webm"
@@ -2735,7 +3342,16 @@
           "id": "Stegosaurid"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/dryosaurus.png",
     "video": "/dinosaurs/dryosaurus.webm"
@@ -2779,6 +3395,10 @@
       ],
       "dislikes": [
         {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
           "kind": "family",
           "id": "Ceratopsid"
         },
@@ -2789,6 +3409,10 @@
         {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -2834,6 +3458,10 @@
       ],
       "dislikes": [
         {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
+        {
           "kind": "family",
           "id": "Ceratopsid"
         },
@@ -2844,6 +3472,10 @@
         {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -2875,8 +3507,8 @@
           "id": "Ornithomimosaurid"
         },
         {
-          "kind": "species",
-          "id": "hardrosaur"
+          "kind": "family",
+          "id": "Hadrosaurid"
         },
         {
           "kind": "family",
@@ -2884,6 +3516,10 @@
         }
       ],
       "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        },
         {
           "kind": "family",
           "id": "Ceratopsid"
@@ -2895,6 +3531,10 @@
         {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -2945,6 +3585,10 @@
       ],
       "dislikes": [
         {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
           "kind": "family",
           "id": "Ceratopsid"
         },
@@ -2955,6 +3599,10 @@
         {
           "kind": "family",
           "id": "Stegosaurid"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ]
     },
@@ -3015,6 +3663,14 @@
         {
           "kind": "family",
           "id": "Sauropod"
+        },
+        {
+          "kind": "species",
+          "id": "indominus-rex"
+        },
+        {
+          "kind": "species",
+          "id": "scorpios-rex"
         }
       ]
     },
@@ -3075,6 +3731,14 @@
         {
           "kind": "family",
           "id": "Sauropod"
+        },
+        {
+          "kind": "species",
+          "id": "indominus-rex"
+        },
+        {
+          "kind": "species",
+          "id": "scorpios-rex"
         }
       ]
     },
@@ -3132,6 +3796,14 @@
         {
           "kind": "family",
           "id": "Sauropod"
+        },
+        {
+          "kind": "species",
+          "id": "indominus-rex"
+        },
+        {
+          "kind": "species",
+          "id": "scorpios-rex"
         }
       ]
     },
@@ -3188,6 +3860,14 @@
         {
           "kind": "family",
           "id": "Sauropod"
+        },
+        {
+          "kind": "species",
+          "id": "indominus-rex"
+        },
+        {
+          "kind": "species",
+          "id": "scorpios-rex"
         }
       ]
     },
@@ -3214,12 +3894,20 @@
         {
           "kind": "species",
           "id": "microceratus"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
         }
       ],
       "dislikes": [
         {
           "kind": "species",
           "id": "oviraptor"
+        },
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
         }
       ]
     },
@@ -3247,7 +3935,16 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "Carnivores"
+        },
+        {
+          "kind": "meta",
+          "tag": "Therizinosaurs"
+        }
+      ]
     },
     "image": "/dinosaurs/herrerasaurus.png",
     "video": "/dinosaurs/herrerasaurus.webm"
@@ -3309,7 +4006,20 @@
           "tag": "Scavenger"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "species",
+          "id": "indominus-rex"
+        },
+        {
+          "kind": "species",
+          "id": "indoraptor"
+        },
+        {
+          "kind": "species",
+          "id": "scorpios-rex"
+        }
+      ]
     },
     "image": "/dinosaurs/coelophysis.png",
     "video": "/dinosaurs/coelophysis.webm"
@@ -3335,7 +4045,12 @@
           "id": "quetzalcoatlus"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        }
+      ]
     },
     "image": "/dinosaurs/dimorphodon.png",
     "video": "/dinosaurs/dimorphodon.webm"
@@ -3369,6 +4084,10 @@
         {
           "kind": "species",
           "id": "tropeognathus"
+        },
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
         }
       ]
     },
@@ -3395,6 +4114,10 @@
         {
           "kind": "species",
           "id": "tapejara"
+        },
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
         }
       ]
     },
@@ -3420,14 +4143,19 @@
       "likes": [
         {
           "kind": "species",
-          "id": "tropeognathus"
+          "id": "pteranodon"
         },
         {
           "kind": "species",
-          "id": "pteranodon"
+          "id": "tropeognathus"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        }
+      ]
     },
     "image": "/dinosaurs/geosternbergia.png",
     "video": "/dinosaurs/geosternbergia.webm"
@@ -3457,7 +4185,12 @@
           "id": "thanatosdrakon"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        }
+      ]
     },
     "image": "/dinosaurs/pteranodon.png",
     "video": "/dinosaurs/pteranodon.webm"
@@ -3484,7 +4217,12 @@
           "id": "pteranodon"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        }
+      ]
     },
     "image": "/dinosaurs/thanatosdrakon.png",
     "video": "/dinosaurs/thanatosdrakon.webm"
@@ -3508,14 +4246,19 @@
       "likes": [
         {
           "kind": "species",
-          "id": "quetzalcoatlus"
+          "id": "tapejara"
         },
         {
           "kind": "species",
-          "id": "tapejara"
+          "id": "quetzalcoatlus"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        }
+      ]
     },
     "image": "/dinosaurs/caiuajara.png",
     "video": "/dinosaurs/caiuajara.webm"
@@ -3550,7 +4293,12 @@
           "id": "caiuajara"
         }
       ],
-      "dislikes": []
+      "dislikes": [
+        {
+          "kind": "meta",
+          "tag": "HybridCarnivores"
+        }
+      ]
     },
     "image": "/dinosaurs/quetzalcoatlus.png",
     "video": "/dinosaurs/quetzalcoatlus.webm"
@@ -3589,12 +4337,7 @@
     "habitat": {},
     "cohabitation": {
       "likes": [],
-      "dislikes": [
-        {
-          "kind": "size",
-          "size": "Large"
-        }
-      ]
+      "dislikes": []
     },
     "image": "/dinosaurs/ichthyosaurus.png",
     "video": "/dinosaurs/ichthyosaurus.webm"
