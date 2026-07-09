@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import dinosaursData from "@/data/dinosaurs.json";
 import { EnclosureBox } from "@/components/EnclosureBox";
 import { DinosaurListRow } from "@/components/DinosaurListRow";
+import { SortSelect } from "@/components/SortSelect";
 import { TerrainMixPanel } from "@/components/TerrainMixPanel";
 import { buildEnclosureProfile } from "@/lib/enclosure";
 import { scoreAllDinosaurs, sortScoredRows } from "@/lib/score-candidate";
@@ -16,8 +17,8 @@ const allDinos = dinosaursData as Dinosaur[];
 export function EnclosureOptimizer() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [showBlocked, setShowBlocked] = useState(false);
   const [listSearch, setListSearch] = useState("");
+  const [showBlocked, setShowBlocked] = useState(false);
   const [sortMode, setSortMode] = useState<SortMode>("compatibility");
 
   const state = useMemo(
@@ -59,7 +60,13 @@ export function EnclosureOptimizer() {
   }, [allScored, sortMode, hasEnclosure]);
 
   const sortLabel =
-    sortMode === "compatibility" && hasEnclosure ? "compatibility" : "name";
+    sortMode === "compatibility" && hasEnclosure
+      ? "compatibility"
+      : sortMode === "recommended" && hasEnclosure
+        ? "recommended"
+        : sortMode === "appeal"
+          ? "appeal"
+          : "name";
 
   function addFromList(dinoId: string) {
     if (state.members.some((m) => m.dinosaurId === dinoId)) return;
@@ -102,43 +109,36 @@ export function EnclosureOptimizer() {
         )}
 
         <section className="panel p-6 sm:p-8">
-          <div className="mb-6 flex flex-col gap-4 border-b border-jwe-brand/10 pb-5 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mb-6 flex flex-col gap-4 border-b border-jwe-brand/10 pb-5 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h2 className="title-jwe text-xl sm:text-2xl">
+              <h2 className="title-jwe text-left text-xl sm:text-2xl">
                 <span>All {state.type} species</span>
               </h2>
               <p className="mt-2 text-sm text-jwe-offwhite/50">
                 {rows.length} species · sorted by {sortLabel}
               </p>
             </div>
-            <div className="flex flex-wrap items-center gap-4">
-              <select
-                value={sortMode}
-                onChange={(e) => setSortMode(e.target.value as SortMode)}
-                className="input-jwe select-jwe w-auto min-w-[200px]"
-              >
-                <option value="compatibility">Sort: Compatibility</option>
-                <option value="name">Sort: Name</option>
-              </select>
-              <label className="flex cursor-pointer items-center gap-2 text-sm text-jwe-offwhite/60">
-                <input
-                  type="checkbox"
-                  checked={showBlocked}
-                  onChange={(e) => setShowBlocked(e.target.checked)}
-                  className="checkbox-jwe"
-                />
-                Show blocked
-              </label>
-            </div>
+            <SortSelect value={sortMode} onChange={setSortMode} />
           </div>
 
-          <input
-            type="text"
-            placeholder="Filter list…"
-            value={listSearch}
-            onChange={(e) => setListSearch(e.target.value)}
-            className="input-jwe mb-5"
-          />
+          <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <input
+              type="text"
+              placeholder="Filter by name or family group…"
+              value={listSearch}
+              onChange={(e) => setListSearch(e.target.value)}
+              className="input-jwe min-w-0 flex-1"
+            />
+            <label className="flex shrink-0 cursor-pointer select-none items-center gap-2 text-xs font-semibold uppercase tracking-wide text-jwe-offwhite/45">
+              <input
+                type="checkbox"
+                checked={showBlocked}
+                onChange={(e) => setShowBlocked(e.target.checked)}
+                className="checkbox-jwe"
+              />
+              Show blocked
+            </label>
+          </div>
 
           <div className="species-list">
             {rows.map((row) => (
@@ -146,7 +146,13 @@ export function EnclosureOptimizer() {
                 key={row.dinosaur.id}
                 row={row}
                 showAdd
-                showCompatibility={hasEnclosure}
+                candidateMetrics={
+                  hasEnclosure
+                    ? "full"
+                    : sortMode === "appeal"
+                      ? "appeal-only"
+                      : "none"
+                }
                 onAdd={() => addFromList(row.dinosaur.id)}
               />
             ))}

@@ -15,6 +15,7 @@ export type EnclosureRating = {
   tier: CompatibilityTier;
   headcount: number;
   speciesCount: number;
+  baseAppeal: number;
   blocked: boolean;
   breakdown: {
     social: number;
@@ -54,6 +55,13 @@ function memberEntries(
   }
 
   return entries;
+}
+
+function enclosureBaseAppeal(entries: MemberEntry[]): number {
+  return entries.reduce(
+    (sum, { dinosaur, count }) => sum + (dinosaur.appeal ?? 0) * count,
+    0,
+  );
 }
 
 function pairSocialScore(
@@ -151,6 +159,7 @@ export function computeEnclosureRating(
   if (entries.length === 0) return null;
 
   const headcount = entries.reduce((sum, e) => sum + e.count, 0);
+  const baseAppeal = enclosureBaseAppeal(entries);
   const social = enclosureSocialScore(entries);
   const logistics = enclosureLogisticsScore(entries, state, allDinos);
 
@@ -160,6 +169,7 @@ export function computeEnclosureRating(
       tier: "Blocked",
       headcount,
       speciesCount: entries.length,
+      baseAppeal,
       blocked: true,
       breakdown: {
         social: social.score,
@@ -179,6 +189,7 @@ export function computeEnclosureRating(
     tier: tierFromScore(score, false),
     headcount,
     speciesCount: entries.length,
+    baseAppeal,
     blocked: false,
     breakdown: {
       social: social.score,

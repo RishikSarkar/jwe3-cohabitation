@@ -27,9 +27,24 @@ const RAW = path.join(ROOT, "data", "raw");
 const CLEAN = path.join(ROOT, "data", "clean");
 const OUT = path.join(ROOT, "src", "data", "dinosaurs.json");
 const DINODEX_PATH = path.join(ROOT, "data", "dinodex-cohab.json");
+const APPEAL_PATH = path.join(ROOT, "data", "dinodex-appeal.json");
 
 type DinodexCohab = { likes?: string[]; dislikes?: string[] };
 type DinodexFile = Record<string, DinodexCohab>;
+
+function loadDinodexAppeal(): Record<string, number> {
+  if (!fs.existsSync(APPEAL_PATH)) return {};
+  const raw = JSON.parse(fs.readFileSync(APPEAL_PATH, "utf-8")) as Record<
+    string,
+    number | string
+  >;
+  const out: Record<string, number> = {};
+  for (const [key, value] of Object.entries(raw)) {
+    if (key.startsWith("_") || typeof value !== "number") continue;
+    out[key] = value;
+  }
+  return out;
+}
 
 function loadDinodex(): DinodexFile {
   if (!fs.existsSync(DINODEX_PATH)) return {};
@@ -241,6 +256,7 @@ function buildDinosaur(
   row: Record<string, string>,
   enclosureType: EnclosureType,
   habitatKeys: HabitatKey[],
+  appealById: Record<string, number>,
 ): Dinosaur | null {
   const normalized = normalizeCsvHeaders(row);
   const name = normalizeSpeciesName(normalized.DINO ?? "");
@@ -263,6 +279,7 @@ function buildDinosaur(
     size: normalizeSize(normalized.Size ?? "Medium"),
     habitat: parseHabitatFromRow(normalized, habitatKeys),
     cohabitation: { likes, dislikes },
+    ...(appealById[id] != null ? { appeal: appealById[id] } : {}),
     image: `/dinosaurs/${id}.png`,
   };
 }
@@ -279,6 +296,7 @@ function writeCleanCsv(
 
 function main() {
   const dinodex = loadDinodex();
+  const appealById = loadDinodexAppeal();
 
   const landRows = readLandCsv()
     .map(normalizeCsvHeaders)
@@ -319,15 +337,15 @@ function main() {
 
   const dinosaurs: Dinosaur[] = [];
   for (const row of landRows) {
-    const d = buildDinosaur(row, "Land", [...LAND_HABITAT_KEYS]);
+    const d = buildDinosaur(row, "Land", [...LAND_HABITAT_KEYS], appealById);
     if (d) dinosaurs.push(d);
   }
   for (const row of aviaryRows) {
-    const d = buildDinosaur(row, "Aviary", [...AVIARY_HABITAT_KEYS]);
+    const d = buildDinosaur(row, "Aviary", [...AVIARY_HABITAT_KEYS], appealById);
     if (d) dinosaurs.push(d);
   }
   for (const row of lagoonRows) {
-    const d = buildDinosaur(row, "Lagoon", []);
+    const d = buildDinosaur(row, "Lagoon", [], appealById);
     if (d) dinosaurs.push(d);
   }
 

@@ -17,12 +17,12 @@ const tierClass: Record<string, string> = {
   Blocked: "tier-blocked",
 };
 
-const scoreColor: Record<string, string> = {
-  Excellent: "text-jwe-brand",
-  Good: "text-sky-400",
-  Risky: "text-jwe-amber",
-  Poor: "text-red-400",
-  Blocked: "text-red-400",
+const scoreTierClass: Record<string, string> = {
+  Excellent: "tier-score-excellent",
+  Good: "tier-score-good",
+  Risky: "tier-score-risky",
+  Poor: "tier-score-poor",
+  Blocked: "tier-score-blocked",
 };
 
 type Props = {
@@ -33,7 +33,8 @@ type Props = {
   onRemove?: () => void;
   onUpdateMember?: (patch: Partial<EnclosureMember>) => void;
   showAdd?: boolean;
-  showCompatibility?: boolean;
+  /** What to show in the candidate column (list rows only). */
+  candidateMetrics?: "none" | "appeal-only" | "full";
 };
 
 export function DinosaurListRow({
@@ -44,14 +45,16 @@ export function DinosaurListRow({
   onRemove,
   onUpdateMember,
   showAdd,
-  showCompatibility = true,
+  candidateMetrics = "none",
 }: Props) {
   const { dinosaur, score, tier, delta, blocked } = row;
   const isMember = mode === "member";
+  const showCompatibility =
+    candidateMetrics === "full";
+  const showAppeal =
+    candidateMetrics === "full" || candidateMetrics === "appeal-only";
   const notes = meaningfulDeltaNotes(delta);
   const officialUrl = jwe3DinosaurUrl(dinosaur.id);
-  const hasDetailBelow =
-    !isMember && showCompatibility && notes.length > 0;
 
   function handleRowClick(e: React.MouseEvent<HTMLElement>) {
     if (isInteractiveRowTarget(e.target)) return;
@@ -65,7 +68,7 @@ export function DinosaurListRow({
 
   return (
     <article
-      className={`group dino-row ${hasDetailBelow ? "dino-row-detailed" : ""} ${!isMember && blocked ? "opacity-55" : ""}`}
+      className={`group dino-row ${!isMember && blocked ? "opacity-55" : ""}`}
       onClick={handleRowClick}
       onKeyDown={handleRowKeyDown}
       role="link"
@@ -80,12 +83,27 @@ export function DinosaurListRow({
         variant="row"
       />
 
-      <div className="min-w-0 flex-1">
-        <div className="flex flex-wrap items-center justify-between gap-3">
+      <div className="min-w-0 flex-1 dino-row-content">
+        <div className="dino-row-primary">
           <h3 className="dino-row-name font-display text-xl font-bold uppercase tracking-wide text-jwe-offwhite sm:text-2xl">
             {dinosaur.name}
           </h3>
 
+          {!isMember && showCompatibility && notes.length > 0 && (
+            <ul className="dino-delta">
+              {notes.map((line) => (
+                <li
+                  key={line.text}
+                  data-positive={line.positive ? "true" : undefined}
+                >
+                  {line.text}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <div className="dino-row-actions">
           {isMember && member ? (
             <div className="flex flex-wrap items-center gap-4">
               <label className="flex items-center gap-2 text-sm font-semibold uppercase text-jwe-offwhite/70">
@@ -127,20 +145,49 @@ export function DinosaurListRow({
               </button>
             </div>
           ) : (
-            <div className="flex items-center gap-3">
-              {showCompatibility && (
-                <>
-                  <span
-                    className={`font-display text-3xl font-bold ${scoreColor[tier] ?? "text-jwe-brand"}`}
-                  >
-                    {score ?? "-"}
-                  </span>
-                  <span className={`tier-badge ${tierClass[tier] ?? ""}`}>
-                    {tier}
-                  </span>
-                </>
+            <div className="dino-row-metrics">
+              {(showCompatibility || showAppeal) && (
+                <div className="dino-row-stats">
+                  {showCompatibility && (
+                    <div className="dino-row-compat">
+                      <span
+                        className={`font-display text-3xl font-bold leading-none ${scoreTierClass[tier] ?? "tier-score-excellent"}`}
+                      >
+                        {score ?? "-"}
+                      </span>
+                      <span className={`tier-badge ${tierClass[tier] ?? ""}`}>
+                        {tier}
+                      </span>
+                    </div>
+                  )}
+                  {showAppeal && (
+                    <p
+                      className={
+                        showCompatibility
+                          ? "dino-row-appeal-line"
+                          : "dino-row-appeal-primary"
+                      }
+                    >
+                      {showCompatibility ? (
+                        <>
+                          appeal{" "}
+                          {dinosaur.appeal?.toLocaleString() ?? "—"}
+                        </>
+                      ) : (
+                        <>
+                          <span className="dino-row-appeal-value">
+                            {dinosaur.appeal?.toLocaleString() ?? "—"}
+                          </span>
+                          <span className="dino-row-appeal-label">
+                            base appeal
+                          </span>
+                        </>
+                      )}
+                    </p>
+                  )}
+                </div>
               )}
-              {showAdd && onAdd && !blocked && (
+              {showAdd && onAdd && (
                 <button
                   type="button"
                   onClick={(e) => {
@@ -155,19 +202,6 @@ export function DinosaurListRow({
             </div>
           )}
         </div>
-
-        {!isMember && showCompatibility && notes.length > 0 && (
-          <ul className="dino-delta">
-            {notes.map((line) => (
-              <li
-                key={line.text}
-                data-positive={line.positive ? "true" : undefined}
-              >
-                {line.text}
-              </li>
-            ))}
-          </ul>
-        )}
       </div>
 
       <a

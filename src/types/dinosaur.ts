@@ -131,4 +131,4 @@ export const ENCLOSURE_CAPACITY: Record<EnclosureSize, number> = {
   Spacious: 56,
 };
 
-export type SortMode = "compatibility" | "name";
+export type SortMode = "compatibility" | "recommended" | "name" | "appeal";

@@ -37,3 +37,9 @@ export const COHAB_SCORE = {
 export const NEW_TERRAIN_KEY_PENALTY = 12;
 
 export const ENVELOPE_WIDEN_SCALE = 2;
+
+/** Recommended sort: compatibility-first blend with normalized base appeal (sums to 1). */
+export const RECOMMENDED_SORT_WEIGHTS = {
+  compatibility: 0.8,
+  appeal: 0.2,
+} as const;

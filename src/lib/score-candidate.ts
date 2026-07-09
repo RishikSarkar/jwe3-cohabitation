@@ -13,6 +13,7 @@ import {
   COHAB_SCORE,
   NEW_TERRAIN_KEY_PENALTY,
   SCORE_WEIGHTS,
+  RECOMMENDED_SORT_WEIGHTS,
 } from "@/constants/scoring";
 import { isBlockedPair, resolveCohabitation } from "./compatibility";
 import {
@@ -27,6 +28,7 @@ import {
   habitatToVector,
   sharedKeyCoverage,
 } from "./vectors";
+import { matchesDinoSearch } from "./search";
 
 function tierFromScore(
   score: number | null,
@@ -204,8 +206,8 @@ function scoreOne(
       newFeedingTypes: newFeeding,
       socialNotes: cohab.notes,
       space: spaceLabel,
-      appealNote: candidate.appealPerHectare
-        ? `${candidate.appealPerHectare} appeal/hectare`
+      appealNote: candidate.appeal
+        ? `Base appeal ${candidate.appeal.toLocaleString()}`
         : undefined,
     },
     breakdown: {
@@ -267,8 +269,7 @@ export function scoreAllDinosaurs(
   }
 
   if (searchQuery.trim()) {
-    const q = searchQuery.trim().toLowerCase();
-    rows = rows.filter((r) => r.dinosaur.name.toLowerCase().includes(q));
+    rows = rows.filter((r) => matchesDinoSearch(searchQuery, r.dinosaur));
   }
 
   if (!showBlocked) {
@@ -301,23 +302,85 @@ export function scoreMemberAgainstRest(
   };
 }
 
+function appealRange(rows: ScoredCandidate[]): { min: number; max: number } {
+  const values = rows.map((r) => r.dinosaur.appeal ?? 0);
+  return {
+    min: Math.min(...values),
+    max: Math.max(...values),
+  };
+}
+
+function normalizedAppealScore(
+  appeal: number | undefined,
+  min: number,
+  max: number,
+): number {
+  const value = appeal ?? 0;
+  if (max <= min) return value > 0 ? 100 : 0;
+  return ((value - min) / (max - min)) * 100;
+}
+
+/** Blends candidate compatibility with appeal normalized across the current list. */
+export function recommendedCandidateScore(
+  row: ScoredCandidate,
+  appealMin: number,
+  appealMax: number,
+): number {
+  if (row.blocked) return 0;
+  const compatibility = row.score ?? 0;
+  const appeal = normalizedAppealScore(
+    row.dinosaur.appeal,
+    appealMin,
+    appealMax,
+  );
+  return (
+    compatibility * RECOMMENDED_SORT_WEIGHTS.compatibility +
+    appeal * RECOMMENDED_SORT_WEIGHTS.appeal
+  );
+}
+
 export function sortScoredRows(
   rows: ScoredCandidate[],
   mode: SortMode,
   hasEnclosure: boolean,
 ): ScoredCandidate[] {
   const sorted = [...rows];
+  const { min: appealMin, max: appealMax } = appealRange(sorted);
 
   sorted.sort((a, b) => {
     switch (mode) {
       case "name":
         return a.dinosaur.name.localeCompare(b.dinosaur.name);
+      case "appeal": {
+        const appealDiff =
+          (b.dinosaur.appeal ?? 0) - (a.dinosaur.appeal ?? 0);
+        if (appealDiff !== 0) return appealDiff;
+        return a.dinosaur.name.localeCompare(b.dinosaur.name);
+      }
+      case "recommended":
+        if (!hasEnclosure) {
+          const appealDiff =
+            (b.dinosaur.appeal ?? 0) - (a.dinosaur.appeal ?? 0);
+          if (appealDiff !== 0) return appealDiff;
+          return a.dinosaur.name.localeCompare(b.dinosaur.name);
+        }
+        {
+          const recommendedDiff =
+            recommendedCandidateScore(b, appealMin, appealMax) -
+            recommendedCandidateScore(a, appealMin, appealMax);
+          if (recommendedDiff !== 0) return recommendedDiff;
+          return a.dinosaur.name.localeCompare(b.dinosaur.name);
+        }
       case "compatibility":
       default:
         if (!hasEnclosure) {
           return a.dinosaur.name.localeCompare(b.dinosaur.name);
         }
-        return (b.score ?? 0) - (a.score ?? 0);
+        {
+          const scoreDiff = (b.score ?? 0) - (a.score ?? 0);
+          if (scoreDiff !== 0) return scoreDiff;
+          return a.dinosaur.name.localeCompare(b.dinosaur.name);
+        }
     }
   });
 
@@ -328,9 +391,6 @@ export function sortScoredRows(
 export function scoreCandidates(
   state: EnclosureState,
   allDinos: Dinosaur[],
-  showBlocked = false,
 ): ScoredCandidate[] {
-  return scoreAllDinosaurs(state, allDinos, { showBlocked }).filter(
-    (r) => !r.inEnclosure,
-  );
+  return scoreAllDinosaurs(state, allDinos).filter((r) => !r.inEnclosure);
 }

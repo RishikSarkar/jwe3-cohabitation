@@ -68,8 +68,7 @@ export function EnclosureBox({
     return allDinos
       .filter((d) => d.enclosureType === state.type)
       .filter((d) => !memberIds.has(d.id))
-      .filter((d) => matchesDinoSearch(query, d.name, d.id))
-      .slice(0, 8);
+      .filter((d) => matchesDinoSearch(query, d));
   }, [allDinos, state.type, state.members, query]);
 
   function setType(type: EnclosureType) {
@@ -144,20 +143,18 @@ export function EnclosureBox({
         <h2 className="title-jwe text-xl sm:text-2xl">
           <span>Enclosure</span>
         </h2>
-        {rating && (
-          <>
-            <div className="enclosure-rating-divider" aria-hidden />
-            <EnclosureRatingBadge rating={rating} />
-          </>
-        )}
-        <div className="ml-auto">
-          <SegmentedControl
-            options={["Land", "Aviary", "Lagoon"] as EnclosureType[]}
-            value={state.type}
-            onChange={setType}
-          />
-        </div>
+        <SegmentedControl
+          options={["Land", "Aviary", "Lagoon"] as EnclosureType[]}
+          value={state.type}
+          onChange={setType}
+        />
       </div>
+
+      {rating && (
+        <div className="enclosure-stats-banner mb-6">
+          <EnclosureRatingBadge rating={rating} />
+        </div>
+      )}
 
       {orderedMemberRows.length === 0 ? (
         <p className="py-8 text-center text-base text-jwe-offwhite/50">
@@ -187,7 +184,7 @@ export function EnclosureBox({
         <div className="search-picker flex-1" ref={pickerRef}>
           <input
             type="text"
-            placeholder="Search to add…"
+            placeholder="Search by name or family group…"
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);

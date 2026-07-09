@@ -73,4 +73,23 @@ describe("computeEnclosureRating", () => {
     expect(rating?.headcount).toBe(7);
     expect(rating?.speciesCount).toBe(2);
   });
+
+  it("sums base appeal by headcount", () => {
+    const state: EnclosureState = {
+      type: "Land",
+      size: "Standard",
+      members: [
+        { dinosaurId: "acrocanthosaurus", males: 2, females: 2 },
+        { dinosaurId: "compsognathus", males: 0, females: 1 },
+      ],
+    };
+    const rating = computeEnclosureRating(state, all);
+    const acro = all.find((d) => d.id === "acrocanthosaurus");
+    const compy = all.find((d) => d.id === "compsognathus");
+    expect(acro?.appeal).toBeDefined();
+    expect(compy?.appeal).toBeDefined();
+    expect(rating?.baseAppeal).toBe(
+      (acro!.appeal ?? 0) * 4 + (compy!.appeal ?? 0),
+    );
+  });
 });

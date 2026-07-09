@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import dinosaurs from "@/data/dinosaurs.json";
 import { scoreAllDinosaurs, sortScoredRows } from "@/lib/score-candidate";
-import type { Dinosaur, EnclosureState } from "@/types/dinosaur";
+import type { Dinosaur, EnclosureState, ScoredCandidate } from "@/types/dinosaur";
 
 const all = dinosaurs as Dinosaur[];
 
@@ -33,5 +33,93 @@ describe("scoreAllDinosaurs", () => {
     const self = rows.find((r) => r.dinosaur.id === "triceratops");
     expect(self?.inEnclosure).toBe(true);
     expect(self?.score).toBeNull();
+  });
+
+  it("sorts compatibility by score only, not base appeal", () => {
+    const low = all.find((d) => d.id === "dryosaurus");
+    const high = all.find((d) => d.id === "deinocheirus");
+    if (!low?.appeal || !high?.appeal) {
+      throw new Error("expected appeal on fixture dinosaurs");
+    }
+    expect(high.appeal).toBeGreaterThan(low.appeal);
+
+    const row = (d: Dinosaur, score: number): ScoredCandidate => ({
+      dinosaur: d,
+      score,
+      tier: "Good",
+      blocked: false,
+      inEnclosure: false,
+      delta: {
+        terrain: "-",
+        newTerrainKeys: [],
+        diet: "-",
+        newFeedingTypes: [],
+        socialNotes: [],
+        space: "-",
+      },
+      breakdown: {
+        habitatCosine: 0,
+        sharedKeyCoverage: 0,
+        envelopeTightness: 0,
+        dietCompatibility: 0,
+        cohabitation: 0,
+        spaceHeadroom: 0,
+      },
+    });
+
+    const sorted = sortScoredRows(
+      [row(low, 75), row(high, 74)],
+      "compatibility",
+      true,
+    );
+    expect(sorted[0]?.dinosaur.id).toBe("dryosaurus");
+  });
+
+  it("sorts by base appeal descending", () => {
+    const state: EnclosureState = {
+      type: "Land",
+      size: "Standard",
+      members: [],
+    };
+    const rows = sortScoredRows(scoreAllDinosaurs(state, all), "appeal", false);
+    const appeals = rows.map((r) => r.dinosaur.appeal ?? 0);
+    expect(appeals).toEqual([...appeals].sort((a, b) => b - a));
+    expect(rows[0]?.dinosaur.id).toBe("indoraptor");
+  });
+
+  it("recommended sort prefers strong compatibility with a boost from appeal", () => {
+    const trike = all.find((d) => d.id === "triceratops");
+    const dryo = all.find((d) => d.id === "dryosaurus");
+    if (!trike?.appeal || !dryo?.appeal) {
+      throw new Error("expected appeal on fixture dinosaurs");
+    }
+
+    const row = (d: Dinosaur, score: number): ScoredCandidate => ({
+      dinosaur: d,
+      score,
+      tier: "Good",
+      blocked: false,
+      inEnclosure: false,
+      delta: {
+        terrain: "-",
+        newTerrainKeys: [],
+        diet: "-",
+        newFeedingTypes: [],
+        socialNotes: [],
+        space: "-",
+      },
+      breakdown: {
+        habitatCosine: 0,
+        sharedKeyCoverage: 0,
+        envelopeTightness: 0,
+        dietCompatibility: 0,
+        cohabitation: 0,
+        spaceHeadroom: 0,
+      },
+    });
+
+    const rows = [row(dryo, 60), row(trike, 80)];
+    const sorted = sortScoredRows(rows, "recommended", true);
+    expect(sorted[0]?.dinosaur.id).toBe("triceratops");
   });
 });

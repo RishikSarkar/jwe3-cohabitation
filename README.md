@@ -7,9 +7,11 @@ Not affiliated with Frontier Developments.
 ## Features
 
 - **Enclosure box**: add species with male/female counts; Land, Aviary, or Lagoon
-- **Enclosure rating**: compact badge in the enclosure header (social + logistics; blocked when any active dislike is present)
-- **Ranked species list**: compatibility scoring when the enclosure has members; name sort always available
-- **Official-style UI**: topo background, Chakra Petch, JWE3 green accents
+- **Enclosure stats banner**: compatibility score and tier, headcount, and total base appeal when stocked
+- **Ranked species list**: compatibility, recommended (80% compat + 20% appeal), appeal, or name sort
+- **Family group search**: filter by shorthand (`ceratops`, `hadrosaur`, `marine`, `aviary`, etc.) in the enclosure picker and species list
+- **Show blocked toggle**: hide incompatible candidates by default; blocked species remain addable and show as informational warnings
+- **Official-style UI**: topo background, Chakra Petch, JWE3 green accents, themed sort dropdown
 - **Official portraits and hover videos**: pulled from the JWE3 CDN
 - **Row links**: click a species row to open its page on [jurassicworldevolution.com](https://www.jurassicworldevolution.com/en-US/3/dinosaurs) in a new tab
 - **Shareable URLs**: full enclosure state encoded in query params
@@ -32,6 +34,7 @@ Open [http://localhost:3000](http://localhost:3000).
 | Stage | Location | Purpose |
 |-------|----------|---------|
 | Cohab reference | `data/dinodex-cohab.json` | Likes/dislikes from the [Steam DINODEX guide](https://steamcommunity.com/sharedfiles/filedetails/?id=3643162109) |
+| Appeal reference | `data/dinodex-appeal.json` | Base appeal per species from the same DINODEX guide |
 | Raw (editable) | `data/raw/*.csv` | Spreadsheet exports (habitat percentages; cohab synced from DINODEX) |
 | Clean (generated) | `data/clean/*.csv` | Normalized headers and families |
 | Runtime | `src/data/dinosaurs.json` | Typed app data |
@@ -40,7 +43,9 @@ Open [http://localhost:3000](http://localhost:3000).
 
 To update cohabitation rules, edit `data/dinodex-cohab.json` and run `npm run import-data` (or `npm run setup`).
 
-Habitat percentages still come from the raw CSVs. Cohabitation likes and dislikes are owned by the DINODEX file.
+To refresh base appeal values, edit `data/dinodex-appeal.json` (or run `scripts/extract-dinodex-appeal.ts`) and run `npm run import-data`.
+
+Habitat percentages still come from the raw CSVs. Cohabitation likes and dislikes are owned by the DINODEX cohab file. Base appeal is imported from `dinodex-appeal.json`, shown on candidate rows and as total enclosure base appeal in the banner.
 
 ## Scripts
 
@@ -74,5 +79,5 @@ Refresh assets: `npm run fetch-images -- --refresh`
 ## Attribution
 
 - Habitat percentages from community spreadsheet exports
-- Cohabitation likes/dislikes from [DINODEX // Jurassic World Evolution 3 Full Dino Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=3643162109) by Kitxunei
+- Cohabitation likes/dislikes and base appeal from [DINODEX // Jurassic World Evolution 3 Full Dino Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=3643162109) by Kitxunei
 - Images and hover videos from the official JWE3 website CDN where available

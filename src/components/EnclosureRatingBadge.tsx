@@ -10,12 +10,12 @@ const tierClass: Record<string, string> = {
   Blocked: "tier-blocked",
 };
 
-const scoreColor: Record<string, string> = {
-  Excellent: "text-jwe-brand",
-  Good: "text-sky-400",
-  Risky: "text-jwe-amber",
-  Poor: "text-red-400",
-  Blocked: "text-red-400",
+const scoreTierClass: Record<string, string> = {
+  Excellent: "tier-score-excellent",
+  Good: "tier-score-good",
+  Risky: "tier-score-risky",
+  Poor: "tier-score-poor",
+  Blocked: "tier-score-blocked",
 };
 
 type Props = {
@@ -42,35 +42,52 @@ export function EnclosureRatingBadge({ rating }: Props) {
 
   return (
     <div
-      className="enclosure-rating"
+      className="enclosure-stats-bar"
       aria-label={`Enclosure rating ${rating.score}, ${rating.tier}`}
       title={ratingSummary(rating)}
     >
-      <div
-        className="enclosure-rating-ring"
-        style={
-          {
-            "--rating-deg": `${rating.score * 3.6}deg`,
-            "--rating-color": ringColor,
-          } as React.CSSProperties
-        }
-      >
-        <span
-          className={`enclosure-rating-value ${scoreColor[rating.tier] ?? "text-jwe-brand"}`}
-        >
-          {rating.score}
-        </span>
+      <div className="enclosure-stat-group enclosure-stat-rating">
+        <div
+          className="enclosure-rating-bar"
+          style={
+            {
+              "--rating-pct": `${rating.score}%`,
+              "--rating-color": ringColor,
+            } as React.CSSProperties
+          }
+          aria-hidden
+        />
+        <div className="enclosure-stat-copy">
+          <div className="enclosure-stat-score-row">
+            <span
+              className={`enclosure-stat-value enclosure-stat-score ${scoreTierClass[rating.tier] ?? "tier-score-excellent"}`}
+            >
+              {rating.score}
+            </span>
+            <span className={`tier-badge ${tierClass[rating.tier] ?? ""}`}>
+              {rating.tier}
+            </span>
+          </div>
+          <span className="enclosure-stat-label">Compatibility</span>
+        </div>
       </div>
-      <p className="enclosure-rating-line">
-        <span className={`tier-badge ${tierClass[rating.tier] ?? ""}`}>
-          {rating.tier}
-        </span>
-        <span className="enclosure-rating-count">
-          {rating.headcount} {rating.headcount === 1 ? "animal" : "animals"} ·{" "}
-          {rating.speciesCount}{" "}
+
+      <div className="enclosure-stat-group enclosure-stat-stack">
+        <span className="enclosure-stat-value">{rating.headcount}</span>
+        <span className="enclosure-stat-label">
+          {rating.headcount === 1 ? "animal" : "animals"} · {rating.speciesCount}{" "}
           {rating.speciesCount === 1 ? "species" : "species"}
         </span>
-      </p>
+      </div>
+
+      {rating.baseAppeal > 0 && (
+        <div className="enclosure-stat-group enclosure-stat-stack enclosure-stat-end">
+          <span className="enclosure-stat-value">
+            {rating.baseAppeal.toLocaleString()}
+          </span>
+          <span className="enclosure-stat-label">base appeal</span>
+        </div>
+      )}
     </div>
   );
 }
