@@ -50,7 +50,7 @@ export function TerrainMixPanel({ profile }: Props) {
       )}
       <p className="text-jwe-offwhite/65">
         <span className="text-jwe-offwhite/45">Feeders:</span>{" "}
-        {feeders.join(", ") || "—"}
+        {feeders.join(", ") || "-"}
       </p>
     </div>
   );

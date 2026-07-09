@@ -5,10 +5,9 @@
   "scripts": {
     "import-data": "tsx scripts/import-spreadsheet.ts",
     "fetch-images": "tsx scripts/fetch-images.ts",
-    "predev": "npm run import-data",
-    "prebuild": "npm run import-data",
-    "dev": "next dev",
-    "build": "next build",
+    "setup": "npm run import-data && npm run fetch-images",
+    "dev": "npm run import-data && next dev",
+    "build": "npm run import-data && next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",

@@ -17,7 +17,7 @@ describe("meaningfulDeltaNotes", () => {
       ...base,
       terrain: "+ Ground Fiber required",
       socialNotes: [
-        "Chungkingosaurus likes Tsintaosaurus ✓",
+        "Chungkingosaurus likes Tsintaosaurus",
         "Neutral with Atrociraptor (−comfort)",
       ],
     });
@@ -25,7 +25,7 @@ describe("meaningfulDeltaNotes", () => {
     expect(notes.map((n) => n.text)).toEqual([
       "+ Ground Fiber required",
       "Same feeders",
-      "Chungkingosaurus likes Tsintaosaurus ✓",
+      "Chungkingosaurus likes Tsintaosaurus",
     ]);
   });
 

@@ -6,22 +6,23 @@ Not affiliated with Frontier Developments.
 
 ## Features
 
-- **Enclosure box** — add species with male/female counts; Land, Aviary, or Lagoon
-- **Ranked species list** — compatibility scoring when the enclosure has members; name sort always available
-- **Official-style UI** — topo background, Chakra Petch, JWE3 green accents
-- **Official portraits & hover videos** — pulled from the JWE3 CDN (`npm run fetch-images`)
-- **Row links** — click a species row to open its page on [jurassicworldevolution.com](https://www.jurassicworldevolution.com/en-US/3/dinosaurs) in a new tab
-- **Shareable URLs** — full enclosure state encoded in query params
-- **Deterministic scoring** — habitat cosine similarity, shared terrain coverage, explicit cohabitation rules
+- **Enclosure box**: add species with male/female counts; Land, Aviary, or Lagoon
+- **Ranked species list**: compatibility scoring when the enclosure has members; name sort always available
+- **Official-style UI**: topo background, Chakra Petch, JWE3 green accents
+- **Official portraits and hover videos**: pulled from the JWE3 CDN
+- **Row links**: click a species row to open its page on [jurassicworldevolution.com](https://www.jurassicworldevolution.com/en-US/3/dinosaurs) in a new tab
+- **Shareable URLs**: full enclosure state encoded in query params
+- **Deterministic scoring**: habitat cosine similarity, shared terrain coverage, explicit cohabitation rules
 
 ## Quick start
 
 ```bash
 npm install
-npm run import-data   # raw CSVs → clean CSVs + dinosaurs.json
-npm run fetch-images  # optional: official portraits + hover .webm loops
+npm run setup
 npm run dev
 ```
+
+`npm run setup` imports spreadsheet data and downloads official images/videos. On Vercel, `npm run build` runs the data import automatically; assets in `public/dinosaurs/` are already in the repo.
 
 Open [http://localhost:3000](http://localhost:3000).
 
@@ -33,33 +34,23 @@ Open [http://localhost:3000](http://localhost:3000).
 | Clean (generated) | `data/clean/*.csv` | Normalized headers and families |
 | Runtime | `src/data/dinosaurs.json` | Typed app data |
 
-Re-run after CSV edits:
-
-```bash
-npm run import-data
-```
+After CSV edits, run `npm run setup` or `npm run import-data`.
 
 ## Scripts
 
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Dev server (runs `import-data` first) |
-| `npm run build` | Production build |
+| `npm run setup` | Import data and fetch images/videos (one command) |
+| `npm run dev` | Import data, then start dev server |
+| `npm run build` | Import data, then production build (used by Vercel) |
 | `npm run start` | Serve production build |
-| `npm test` | Vitest unit tests |
+| `npm run test` | Vitest unit tests |
 | `npm run lint` | ESLint |
 | `npm run format` | Prettier write |
-| `npm run import-data` | CSV → JSON pipeline |
-| `npm run fetch-images` | Download official images/videos; wiki fallback |
+| `npm run import-data` | CSV to JSON only |
+| `npm run fetch-images` | Download images/videos only |
 
-## Images & videos
-
-```bash
-npm run fetch-images
-# npm run fetch-images -- --refresh   # re-download everything
-```
-
-Assets are saved under `public/dinosaurs/`. Species without an official listing entry show a letter fallback.
+Refresh assets: `npm run fetch-images -- --refresh`
 
 ## URL format
 
@@ -71,7 +62,7 @@ Assets are saved under `public/dinosaurs/`. Species without an official listing 
 
 - Next.js 14 (App Router), TypeScript, Tailwind CSS
 - Vitest for scoring/compatibility tests
-- Static-friendly deploy (e.g. Vercel)
+- Deployable on Vercel (`npm run build`)
 
 ## Attribution
 

@@ -133,7 +133,7 @@ export function DinosaurListRow({
                   <span
                     className={`font-display text-3xl font-bold ${scoreColor[tier] ?? "text-jwe-brand"}`}
                   >
-                    {score ?? "—"}
+                    {score ?? "-"}
                   </span>
                   <span className={`tier-badge ${tierClass[tier] ?? ""}`}>
                     {tier}

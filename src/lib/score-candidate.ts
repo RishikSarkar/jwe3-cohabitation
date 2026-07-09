@@ -67,10 +67,10 @@ function cohabitationAggregate(
     const mr = resolveCohabitation(member, candidate);
     const cr = resolveCohabitation(candidate, member);
     if (mr === "liked") {
-      notes.push(`${member.name} likes ${candidate.name} ✓`);
+      notes.push(`${member.name} likes ${candidate.name}`);
       total += COHAB_SCORE.memberLikesCandidate;
     } else if (cr === "liked") {
-      notes.push(`${candidate.name} likes ${member.name} ✓`);
+      notes.push(`${candidate.name} likes ${member.name}`);
       total += COHAB_SCORE.candidateLikesMember;
     } else {
       notes.push(`Neutral with ${member.name} (−comfort)`);
@@ -105,7 +105,7 @@ function scoreOne(
         diet: "Current feeder set",
         newFeedingTypes: [],
         socialNotes: [],
-        space: "—",
+        space: "-",
       },
       breakdown: {
         habitatCosine: 100,
@@ -244,12 +244,12 @@ export function scoreAllDinosaurs(
       blocked: false,
       inEnclosure: false,
       delta: {
-        terrain: "—",
+        terrain: "-",
         newTerrainKeys: [],
-        diet: "—",
+        diet: "-",
         newFeedingTypes: [],
         socialNotes: [],
-        space: "—",
+        space: "-",
       },
       breakdown: {
         habitatCosine: 0,

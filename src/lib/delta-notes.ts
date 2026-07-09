@@ -20,7 +20,7 @@ export function meaningfulDeltaNotes(delta: CandidateDelta): DeltaNote[] {
   }
 
   for (const note of delta.socialNotes) {
-    if (note.includes("✓") || /\blikes\b/i.test(note)) {
+    if (/\blikes\b/i.test(note)) {
       lines.push({ text: note, positive: true });
     }
   }
